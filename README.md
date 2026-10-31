@@ -25,6 +25,7 @@ Target board: 70 × 60 mm, 2 layers, all SMT parts on the top, only screw termin
 | [docs/04-firmware.md](docs/04-firmware.md) | Firmware notes |
 | [docs/06-bringup.md](docs/06-bringup.md) | Bring-up and test plan |
 | [docs/07-parts-check.md](docs/07-parts-check.md) | Web check of the risky parts, LCSC numbers, risks |
+| [docs/08-fabrication.md](docs/08-fabrication.md) | JLCPCB order settings, files, checks |
 | [hardware/README.md](hardware/README.md) | How the schematic and board are generated |
 
 ## Schematic

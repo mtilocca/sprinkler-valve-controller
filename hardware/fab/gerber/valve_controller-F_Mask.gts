@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,10.0.7*%
-%TF.CreationDate,2026-10-31T22:39:41+01:00*%
+%TF.CreationDate,2026-10-31T22:52:06+01:00*%
 %TF.ProjectId,valve_controller,76616c76-655f-4636-9f6e-74726f6c6c65,rev?*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Soldermask,Top*%
 %TF.FilePolarity,Negative*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 10.0.7) date 2026-10-31 22:39:41*
+G04 Created by KiCad (PCBNEW 10.0.7) date 2026-10-31 22:52:06*
 %MOMM*%
 %LPD*%
 G01*
@@ -67,7 +67,7 @@ G04 Aperture macros list end*
 %ADD45RoundRect,0.250000X-0.525000X-0.400000X0.525000X-0.400000X0.525000X0.400000X-0.525000X0.400000X0*%
 %ADD46R,1.500000X0.900000*%
 %ADD47R,0.900000X1.500000*%
-%ADD48C,0.600000*%
+%ADD48C,0.700000*%
 %ADD49R,3.900000X3.900000*%
 %ADD50RoundRect,0.250000X-1.000000X-0.900000X1.000000X-0.900000X1.000000X0.900000X-1.000000X0.900000X0*%
 G04 APERTURE END LIST*
