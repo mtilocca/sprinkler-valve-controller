@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "valve_custom")(type "KiCad")(uri "${KIPRJMOD}/valve_custom.kicad_sym")(options "")(descr "Parts without a KiCad symbol: CA-IS3092W and the numbered P-FET"))
+)
