@@ -65,6 +65,14 @@ def build_occ(net, w):
             for j in range(j0, j1 + 1):
                 if not occ[L][i, j] and shp.Collide(pt(i, j), R):
                     occ[L][i, j] = True
+    for rect in os.environ.get('MINI_AVOID', '').split(';'):      # keep-out rectangles 'x0,y0,x1,y1' (mm)
+        if rect.strip():
+            x0, y0, x1, y1 = (float(v) for v in rect.split(','))
+            pad = w / 2 + CLR
+            i0, i1 = max(0, int((x0 - pad) / RES)), min(NG - 1, int((x1 + pad) / RES) + 1)
+            j0, j1 = max(0, int((y0 - pad) / RES)), min(NG - 1, int((y1 + pad) / RES) + 1)
+            for L in LAYERS:
+                occ[L][i0:i1 + 1, j0:j1 + 1] = True
     m = int((0.5 + w / 2) / RES) + 1
     for L in LAYERS:
         occ[L][:m, :] = occ[L][-m:, :] = True
