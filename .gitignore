@@ -1,0 +1,14 @@
+# KiCad / ProtoFlow local state
+~*.lck
+*.kicad_prl
+fp-info-cache
+*-backups/
+*.bak
+.history/
+.fasteda/
+*.protoflow.json
+# Python
+__pycache__/
+.venv/
+# scratch files from the helper scripts
+_*
