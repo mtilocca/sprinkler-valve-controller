@@ -25,7 +25,7 @@ Everything for the order is in `hardware/fab/`.
 | Outer copper | 1 oz |
 | Solder mask, silkscreen | any colour; white silkscreen |
 | Via covering | tented (default) |
-| Remove order number | choose "specify a location" is not needed: the bottom silkscreen has no placeholder; accept the default or pay the small fee to remove it |
+| Order number on the board | JLCPCB prints a small order number on the silkscreen; accept the default, or pay the small fee to remove it (there is no placeholder text on this board) |
 
 Board rules used: tracks and gaps 0.2 mm, smallest drill 0.3 mm (the ESP32 pad vias were enlarged from 0.2 to 0.3 mm because 0.2 mm is not available on 2 layers), copper 0.3 mm from the edge, hole to hole 0.5 mm.
 
