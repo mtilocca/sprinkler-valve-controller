@@ -1,4 +1,4 @@
-"""Silkscreen labels, board name and fiducials (run: $K fab_prep.py <abs pcb path>)."""
+"""Silkscreen labels and board name (no fiducials: one-sided assembly) (run: $K fab_prep.py <abs pcb path>)."""
 import gc, math, os, sys
 import pcbnew
 from pcbnew import VECTOR2I, FromMM as mm
@@ -54,8 +54,12 @@ def obstacles(layer_top):
     return ob
 
 
+_eb = b.GetBoardEdgesBoundingBox()
+BW, BH = _eb.GetRight() / 1e6, _eb.GetBottom() / 1e6
+
+
 def board_ok(r):
-    return 1.0 <= r[0] and r[2] <= 99.0 and 1.0 <= r[1] and r[3] <= 99.0
+    return 0.8 <= r[0] and r[2] <= BW - 0.8 and 0.8 <= r[1] and r[3] <= BH - 0.8
 
 
 def add_text(txt, x, y, top=True, size=1.0, rot=0):
@@ -89,13 +93,14 @@ def padxy(ref, num):
     return q.x / 1e6, q.y / 1e6
 
 
-labels = [("J1", 1, "PV+"), ("J1", 2, "PV-"), ("J2", 1, "BAT+"), ("J2", 2, "BAT-"),
-          ("J6", 1, "V1+"), ("J6", 2, "V1-"), ("J7", 1, "V2+"), ("J7", 2, "V2-"),
-          ("J8", 1, "V3+"), ("J8", 2, "V3-"), ("J9", 1, "V4+"), ("J9", 2, "V4-"),
-          ("J10", 1, "A"), ("J10", 2, "B"), ("J10", 3, "GND"),
-          ("J11", 1, "3V3"), ("J11", 2, "DQ"), ("J11", 3, "GND"),
-          ("D13", 1, "OK"), ("D14", 1, "CHG"), ("D15", 1, "COM"), ("D16", 1, "ERR"),
-          ("SW1", 1, "RESET"), ("SW2", 1, "BOOT"), ("JP1", 1, "TERM"), ("JP2", 1, "BIAS A"), ("JP3", 1, "BIAS B")]
+labels = [("J1", 1, "12V+"), ("J1", 2, "GND"),
+          ("J4", 1, "V1+"), ("J4", 2, "V1-"), ("J5", 1, "V2+"), ("J5", 2, "V2-"),
+          ("J6", 1, "V3+"), ("J6", 2, "V3-"), ("J7", 1, "V4+"), ("J7", 2, "V4-"),
+          ("J8", 1, "A"), ("J8", 2, "B"), ("J8", 3, "GND"),
+          ("J2", 1, "GND"), ("J2", 2, "TX"), ("J2", 3, "RX"), ("J2", 4, "3V3"),
+          ("D10", 1, "OK"), ("D11", 1, "USR"), ("D12", 1, "COM"), ("D13", 1, "ERR"),
+          ("SW1", 1, "RESET"), ("SW2", 1, "BOOT"), ("JP1", 1, "TERM"), ("JP2", 1, "BIAS A"), ("JP3", 1, "BIAS B"),
+          ("TP1", 1, "12V"), ("TP2", 1, "5V"), ("TP3", 1, "3V3"), ("TP4", 1, "GND")]
 done = failed = 0
 ob = obstacles(True)
 for ref, n, txt in labels:
@@ -107,18 +112,17 @@ for ref, n, txt in labels:
     if pos:
         done += 1
         ob = obstacles(True)
-    elif ref.startswith("J") and place_label(txt, ax, ay, False, 1.0):    # bottom silkscreen, next to the same pad
+    elif ref.startswith(("J", "TP")) and place_label(txt, ax, ay, False, 1.0):    # bottom silkscreen, next to the same pad
         done += 1; print("label on bottom side:", txt)
     else:
         failed += 1; print("no room for", txt)
 print("labels placed", done, "failed", failed)
 
 # board name / revision / JLC order-number placeholder
-for txt, size, top in (("SPRINKLER-MPPT Rev A", 1.2, True), ("ESP32-S3  2026-10", 1.0, True),
-                       ("SPRINKLER-MPPT Rev A", 1.2, False), ("JLCJLCJLCJLC", 1.0, False)):
+for txt, size, top in (("VALVE-CTRL Rev A", 1.2, True), ("12V 4-VALVE ESP32-S3", 1.0, True)):
     ob = obstacles(top)
     placed = None
-    for (x, y) in [(55 + 8 * i, 24 + 4 * j) for j in range(0, 14) for i in range(0, 4)] + [(15 + 10 * i, 90 + 3 * j) for j in range(0, 3) for i in range(0, 8)]:
+    for (x, y) in [(x, y) for y in range(24, 56, 3) for x in range(14, 60, 4)]:
         t = add_text(txt, x, y, top, size)
         r = rect_of(t.GetBoundingBox(), 0.0)
         if board_ok(r) and not any(hit(r, o) for o in ob):
@@ -126,45 +130,5 @@ for txt, size, top in (("SPRINKLER-MPPT Rev A", 1.2, True), ("ESP32-S3  2026-10"
         b.Remove(t) if t.GetParent() else None
     print(txt, "->", placed)
 
-# fiducials: 3 per side (two-sided assembly)
-def fid(ref, x, y, top):
-    f = pcbnew.FootprintLoad(os.path.join(FP_ROOT, "Fiducial.pretty"), "Fiducial_1mm_Mask2mm")
-    f.SetReference(ref); f.SetValue("Fiducial"); f.Reference().SetVisible(False); f.Value().SetVisible(False)
-    f.SetPosition(VECTOR2I(mm(x), mm(y)))
-    b.Add(f); _keep.append(f)
-    if not top:
-        f.Flip(f.GetPosition(), pcbnew.FLIP_DIRECTION_LEFT_RIGHT)
-    f.SetAttributes(pcbnew.FP_EXCLUDE_FROM_POS_FILES | pcbnew.FP_EXCLUDE_FROM_BOM | pcbnew.FP_BOARD_ONLY)
-
-
-def free_spot(cands, top, rad=2.6):
-    ob = obstacles(top)
-    for (x, y) in cands:
-        r = (x - rad, y - rad, x + rad, y + rad)
-        if board_ok((x - 1.5, y - 1.5, x + 1.5, y + 1.5)) and not any(hit(r, o) for o in ob):
-            return (x, y)
-
-
-groups = [[(x, 97.4) for x in range(12, 40, 2)], [(x, 97.4) for x in range(60, 90, 2)], [(2.6, y) for y in range(8, 34, 2)] + [(x, 2.6) for x in range(8, 24, 2)]]
-for top in (True, False):
-    for gi, cands in enumerate(groups):
-        p = free_spot(cands, top)
-        print("fiducial", "top" if top else "bottom", gi, p)
-        if p:
-            fid(f"FID{gi + 1}{'T' if top else 'B'}", p[0], p[1], top)
-            for v in list(b.GetTracks()):
-                if v.Type() == pcbnew.PCB_VIA_T and v.GetNetname() == "GND":
-                    q = v.GetPosition()
-                    if abs(q.x / 1e6 - p[0]) < 2.2 and abs(q.y / 1e6 - p[1]) < 2.2:
-                        _keep.append(v); b.Remove(v)
-            # copper-free ring: no pour inside the 2.6 mm square around it
-            z = pcbnew.ZONE(b); z.SetIsRuleArea(True)
-            ls = pcbnew.LSET(); ls.AddLayer(pcbnew.F_Cu if top else pcbnew.B_Cu); z.SetLayerSet(ls)
-            z.SetDoNotAllowZoneFills(True); z.SetDoNotAllowTracks(False); z.SetDoNotAllowVias(False)
-            z.SetDoNotAllowPads(False); z.SetDoNotAllowFootprints(False)
-            o = z.Outline(); o.NewOutline()
-            for (dx, dy) in ((-1.4, -1.4), (1.4, -1.4), (1.4, 1.4), (-1.4, 1.4)):
-                o.Append(mm(p[0] + dx), mm(p[1] + dy))
-            b.Add(z); _keep.append(z)
 pcbnew.ZONE_FILLER(b).Fill(b.Zones())
 b.Save(sys.argv[1])

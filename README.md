@@ -1,6 +1,6 @@
 # Sprinkler Valve Controller — ESP32-S3, 12 V in, 4 valves, isolated RS485
 
-**Status:** schematic done (ERC clean). Layout not started. This project is the simplified successor of the MPPT board (`../sprinkler-mppt-pcb`): PV and MPPT moved to a separate module.
+**Status:** Rev A draft: schematic ERC clean, board routed and DRC clean (0 errors, 0 unconnected), fab files generated. Not ordered yet. This project is the simplified successor of the MPPT board (`../sprinkler-mppt-pcb`): PV and MPPT moved to a separate module.
 
 ## What it is
 
@@ -40,3 +40,43 @@ PDF: [hardware/valve_controller_schematic.pdf](hardware/valve_controller_schemat
 | `rs485` | CA-IS3092W, TVS, termination and bias jumpers, terminal |
 | `leds` | 4 LEDs and resistors |
 | `test_points` | V12, 5V, 3V3, GND |
+
+## Board
+
+Open `hardware/valve_controller.kicad_pcb` (or the project `hardware/valve_controller.kicad_pro`) in KiCad 10.
+
+![3D view, top](docs/images/board-3d-top-routed.png)
+
+![3D view, bottom](docs/images/board-3d-bottom-routed.png)
+
+## Fabrication specs
+
+| Item | Value |
+|------|-------|
+| Size | 70 x 60 mm, 3 x M3 mounting holes |
+| Layers | 2, GND pour on both layers with stitching vias |
+| Copper, finish | 1 oz, HASL lead-free (ENIG optional) |
+| Track and space | 0.2 / 0.2 mm; V12 rail 1.0 mm, valve returns 0.6 mm, 5 V rails 0.5 mm |
+| Vias | 0.6 / 0.3 mm |
+| Antenna area | No copper in the strip at the top edge around the ESP32 antenna |
+| RS485 isolation | Bus side right of the isolator: no GND pour, nothing under the chip body between the pin rows (about 7 mm) |
+| Assembly | One side (top), SMT by JLCPCB; screw terminals and the debug header soldered by hand |
+| Checks | ERC 0 violations; DRC 0 errors, 0 unconnected |
+
+Files in `hardware/fab/`: `gerbers_valve_controller_RevA.zip` (and `gerber/`), `BOM_valve_controller.csv` (draft with suggested parts and rough prices), `BOM_JLCPCB_import.csv` (LCSC numbers to fill), `CPL_valve_controller.csv` (SMD positions, top side).
+
+## Costs
+
+**Rough estimates from memory, not quotes.** Upload the files to the JLCPCB quote page for real numbers. USD.
+
+| Item | Estimate |
+|------|----------|
+| Components per board | about 14 (84 parts, 15 of the BOM lines are JLCPCB "extended" parts) |
+| 5 bare 2-layer boards | about 2-8 |
+| Shipping | 15-25 |
+| JLCPCB SMT assembly fees (one side) | about 55-65 (setup, stencil, about 3 per extended part type) |
+| **5 boards assembled by JLCPCB** (terminals and header soldered by hand) | **about 150-180, roughly 30-35 per board** |
+| **2 boards assembled** | about 100-120 |
+| **2 boards built entirely by hand** | about 50-70 (boards, shipping, parts) |
+
+Open items before ordering: fill in LCSC numbers and check stock; confirm the PTC fuse (3 A hold drops when hot); confirm the datasheet pinouts of the parts not yet checked (AP7361C, USBLC6-2P6, the AO3407A footprint); two small silkscreen labels did not fit (RESET, BIAS B); terminal polarity labels are on the bottom side, next to the pads.
