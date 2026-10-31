@@ -156,7 +156,7 @@ SW5 += u5["SW"]
 BOOT5 = Net("BOOT_5V")
 BOOT5 += u5["BST"]
 cap_between(BOOT5, SW5, "100n")
-l5 = Part("Device", "L", value="4.7u 3A", footprint=fp("Inductor_SMD:L_Bourns-SRN4018"))
+l5 = Part("Device", "L", value="4.7u Isat>=2A", footprint=fp("Inductor_SMD:L_Bourns-SRN4018"))
 SW5 += l5[1]
 V5B += l5[2], u5["FB"]                      # fixed 5 V version: FB goes straight to the output
 cap_between(V5B, GND, "22u 10V", C1206, n=2)

@@ -1,52 +1,52 @@
-Designators,Qty,Value,Footprint,Suggested part (VERIFY),"JLC class guess (B basic, E extended, H through-hole)",LCSC part # (to fill),Est. unit USD (rough),Est. line USD (rough)
-"C1,C3,C4,C10,C11,C16,C18",7,100n,C_0603_1608Metric,Samsung CL10B104KB8NNNC (X7R 50V),B,,0.004,0.03
-C2,1,10u 25V,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.12
-"C5,C6",2,22u 10V,C_1206_3216Metric,Samsung CL31A226MPHNNNE (X5R 10V); datasheet table uses 2 x 22 uF,E,,0.150,0.30
-"C7-C9,C14,C17,C19",6,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.72
-C12,1,1u,C_0603_1608Metric,Samsung CL10A105KA8NNNC (X5R 25V),B,,0.010,0.01
-C13,1,4.7n,C_0603_1608Metric,Samsung CL10B472KB8NNNC,B,,0.005,0.01
-C15,1,100u 25V,CP_Elec_6.3x7.7,Nichicon UWT1E101MCL1GS or similar 6.3x7.7 SMD electrolytic 25V,E,,0.250,0.25
-D1,1,BZT52C12 12V,D_SOD-123,"BZT52C12 12V zener, SOD-123",B,,0.030,0.03
-D2,1,SMBJ15A,D_SMB,Littelfuse SMBJ15A,E,,0.200,0.20
-"D3,D4",2,B5819W,D_SOD-123,"B5819W (1A 40V Schottky, SOD-123)",B,,0.030,0.06
-D5-D8,4,SS34,D_SMA,"SS34 (3A 40V Schottky, SMA)",B,,0.060,0.24
-D9,1,SM712,SOT-23,Semtech SM712.TCT,E,,0.300,0.30
-D10,1,green,LED_0603_1608Metric,"generic 0603 LED, green",B,,0.030,0.03
-D11,1,yellow,LED_0603_1608Metric,"generic 0603 LED, yellow",B,,0.030,0.03
-D12,1,blue,LED_0603_1608Metric,"generic 0603 LED, blue",B,,0.040,0.04
-D13,1,red,LED_0603_1608Metric,"generic 0603 LED, red",B,,0.030,0.03
-F1,1,PTC 3A 16V,Fuse_1812_4532Metric,"1812 PTC resettable fuse 3A hold, >=16V (e.g. Bourns MF-MSMF300 series; verify)",E,,0.300,0.30
-J1,1,J_12V IN,TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,"5.08 mm 2-pin screw terminal, horizontal (Phoenix MKDS 1,5/2-5.08 or equivalent)",H,,0.450,0.45
-J2,1,"J_DBG (GND, TX, RX, 3V3)",PinHeader_1x04_P2.54mm_Vertical,1x4 pin header 2.54 mm,H,,0.060,0.06
-J3,1,J_USB,USB_C_Receptacle_HRO_TYPE-C-31-M-12,HRO TYPE-C-31-M-12 (USB-C 16-pin receptacle),E,,0.300,0.30
-J4,1,J_VALVE1,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45
-J5,1,J_VALVE2,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45
-J6,1,J_VALVE3,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45
-J7,1,J_VALVE4,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45
-J8,1,"J_485 (A, B, GND)","TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal","3.5 mm 3-pin screw terminal, horizontal (Phoenix PT 1,5/3-3.5-H or equivalent)",H,,0.400,0.40
-JP1,1,JP_TERM,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00
-JP2,1,JP_BIAS_A,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00
-JP3,1,JP_BIAS_B,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00
-L1,1,4.7u 3A,L_Bourns-SRN4018,"Bourns SRN4018-4R7M or similar 4 x 4 mm 4.7 uH, Isat >= 3 A",E,,0.250,0.25
-Q1,1,AO3407A,SOT-23,"Alpha&Omega AO3407A (P-FET 30V, Vgs +-20V)",E,,0.080,0.08
-Q2-Q5,4,AO3400A,SOT-23,Alpha&Omega AO3400A,B,,0.040,0.16
-"R1,R4,R5",3,10k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01
-"R2,R10,R12,R14,R16",5,100k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01
-R3,1,22k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00
-"R6,R7",2,5.1k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01
-R8,1,1M,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00
-"R9,R11,R13,R15",4,100,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01
-R17,1,120,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00
-"R18,R19,R23",3,680,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01
-"R20,R21",2,620,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01
-R22,1,200,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00
-SW1,1,RESET,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,,0.120,0.12
-SW2,1,BOOT,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,,0.120,0.12
-TP1-TP4,4,TP,TestPoint_Pad_D1.5mm,"test pad (copper only, no part)",-,,0.000,0.00
-U1,1,AP63205WU-7 (5V 2A buck),TSOT-23-6,Diodes AP63205WU-7,E,,0.450,0.45
-U2,1,AP7361C-33E,SOT-223-3_TabPin2,Diodes AP7361C-33E-13,E,,0.450,0.45
-U3,1,ESP32-S3-WROOM-1-N8,ESP32-S3-WROOM-1,Espressif ESP32-S3-WROOM-1-N8,E,,4.200,4.20
-U4,1,USBLC6-2P6,SOT-666,ST USBLC6-2P6,E,,0.300,0.30
-U5,1,CA-IS3092W,SOIC-16W_7.5x10.3mm_P1.27mm,Chipanalog CA-IS3092W (LCSC C2890051),E,,2.000,2.00
+Designators,Qty,Value,Footprint,Suggested part (VERIFY),"JLC class guess (B basic, E extended, H through-hole)",LCSC part # (verify),Est. unit USD (rough),Est. line USD (rough),Note
+"C1,C3,C4,C10,C11,C16,C18",7,100n,C_0603_1608Metric,Samsung CL10B104KB8NNNC (X7R 50V),B,,0.004,0.03,
+C2,1,10u 25V,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.12,
+"C5,C6",2,22u 10V,C_1206_3216Metric,Samsung CL31A226MPHNNNE (X5R 10V); datasheet table uses 2 x 22 uF,E,,0.150,0.30,
+"C7-C9,C14,C17,C19",6,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.72,
+C12,1,1u,C_0603_1608Metric,Samsung CL10A105KA8NNNC (X5R 25V),B,,0.010,0.01,
+C13,1,4.7n,C_0603_1608Metric,Samsung CL10B472KB8NNNC,B,,0.005,0.01,
+C15,1,100u 25V,CP_Elec_6.3x7.7,Nichicon UWT1E101MCL1GS or similar 6.3x7.7 SMD electrolytic 25V,E,C569574,0.250,0.25,"Suncon 25CE100LX 6.3x7.7, 2000 h; cheaper C179802 (stock was 59)"
+D1,1,BZT52C12 12V,D_SOD-123,"BZT52C12 12V zener, SOD-123",B,,0.030,0.03,
+D2,1,SMBJ15A,D_SMB,Littelfuse SMBJ15A,E,C2961881,0.200,0.20,"RUILON SMBJ15A (unidirectional, SMB); many clones, check polarity type"
+"D3,D4",2,B5819W,D_SOD-123,"B5819W (1A 40V Schottky, SOD-123)",B,,0.030,0.06,
+D5-D8,4,SS34,D_SMA,"SS34 (3A 40V Schottky, SMA)",B,,0.060,0.24,
+D9,1,SM712,SOT-23,Semtech SM712.TCT,E,C5247923,0.300,0.30,LGE SM712; alternative C5364052
+D10,1,green,LED_0603_1608Metric,"generic 0603 LED, green",B,,0.030,0.03,
+D11,1,yellow,LED_0603_1608Metric,"generic 0603 LED, yellow",B,,0.030,0.03,
+D12,1,blue,LED_0603_1608Metric,"generic 0603 LED, blue",B,,0.040,0.04,
+D13,1,red,LED_0603_1608Metric,"generic 0603 LED, red",B,,0.030,0.03,
+F1,1,PTC 3A 16V,Fuse_1812_4532Metric,"1812 PTC resettable fuse 3A hold, >=16V (e.g. Bourns MF-MSMF300 series; verify)",E,C6851473,0.300,0.30,"TECHFUSE mSMD300-16V, 3 A hold 5 A trip 16 V; alternatives C702820, C21261157"
+J1,1,J_12V IN,TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,"5.08 mm 2-pin screw terminal, horizontal (Phoenix MKDS 1,5/2-5.08 or equivalent)",H,,0.450,0.45,
+J2,1,"J_DBG (GND, TX, RX, 3V3)",PinHeader_1x04_P2.54mm_Vertical,1x4 pin header 2.54 mm,H,,0.060,0.06,
+J3,1,J_USB,USB_C_Receptacle_HRO_TYPE-C-31-M-12,HRO TYPE-C-31-M-12 (USB-C 16-pin receptacle),E,C165948,0.300,0.30,HRO TYPE-C-31-M-12; JLCPCB may list it under another number: check
+J4,1,J_VALVE1,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
+J5,1,J_VALVE2,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
+J6,1,J_VALVE3,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
+J7,1,J_VALVE4,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
+J8,1,"J_485 (A, B, GND)","TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal","3.5 mm 3-pin screw terminal, horizontal (Phoenix PT 1,5/3-3.5-H or equivalent)",H,,0.400,0.40,
+JP1,1,JP_TERM,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
+JP2,1,JP_BIAS_A,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
+JP3,1,JP_BIAS_B,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
+L1,1,4.7u Isat>=2A,L_Bourns-SRN4018,"FNR4018S4R7MT or similar 4 x 4 mm shielded 4.7 uH, Isat >= 2 A",E,C167806,0.250,0.25,"FNR4018S4R7MT 4x4 shielded, 1.8 A / 2.2 A Isat; enough for a rail under 1 A"
+Q1,1,AO3407A,SOT-23,"Alpha&Omega AO3407A (P-FET 30V, Vgs +-20V)",E,C347478,0.080,0.08,"UMW clone, extended; other AO3407A clones exist"
+Q2-Q5,4,AO3400A,SOT-23,Alpha&Omega AO3400A,B,,0.040,0.16,
+"R1,R4,R5",3,10k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
+"R2,R10,R12,R14,R16",5,100k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
+R3,1,22k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
+"R6,R7",2,5.1k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
+R8,1,1M,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
+"R9,R11,R13,R15",4,100,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
+R17,1,120,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
+"R18,R19,R23",3,680,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
+"R20,R21",2,620,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
+R22,1,200,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
+SW1,1,RESET,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C221880,0.120,0.12,C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871
+SW2,1,BOOT,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C221880,0.120,0.12,C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871
+TP1-TP4,4,TP,TestPoint_Pad_D1.5mm,"test pad (copper only, no part)",-,,0.000,0.00,
+U1,1,AP63205WU-7 (5V 2A buck),TSOT-23-6,Diodes AP63205WU-7,E,C2071056,0.450,0.45,
+U2,1,AP7361C-33E,SOT-223-3_TabPin2,Diodes AP7361C-33E-13,E,C500795,0.450,0.45,stock was low in one snapshot (about 115): check before ordering
+U3,1,ESP32-S3-WROOM-1-N8,ESP32-S3-WROOM-1,Espressif ESP32-S3-WROOM-1-N8,E,C2913198,4.200,4.20,
+U4,1,USBLC6-2P6,SOT-666,ST USBLC6-2P6,E,C2827693,0.300,0.30,TECH PUBLIC clone; ST original is C15999
+U5,1,CA-IS3092W,SOIC-16W_7.5x10.3mm_P1.27mm,Chipanalog CA-IS3092W (LCSC C2890051),E,C2890051,2.000,2.00,
 
 ,,,,"TOTAL parts per board (rough estimate, not a quote)",,,,13.90

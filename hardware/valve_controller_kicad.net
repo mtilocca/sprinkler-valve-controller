@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/baloo/sprinkler-valve-controller/hardware/valve_controller.kicad_sch")
-		(date "2026-10-31T22:11:43")
+		(date "2026-10-31T22:45:43")
 		(tool "Eeschema 10.0.7")
 		(sheet
 			(number "1")
@@ -1407,7 +1407,7 @@
 		)
 		(comp
 			(ref "L1")
-			(value "4.7u 3A")
+			(value "4.7u Isat>=2A")
 			(footprint "Inductor_SMD:L_Bourns-SRN4018")
 			(fields
 				(field

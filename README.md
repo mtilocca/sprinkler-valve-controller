@@ -24,6 +24,7 @@ Target board: 70 × 60 mm, 2 layers, all SMT parts on the top, only screw termin
 | [docs/03-pinmap.md](docs/03-pinmap.md) | ESP32-S3 GPIO map |
 | [docs/04-firmware.md](docs/04-firmware.md) | Firmware notes |
 | [docs/06-bringup.md](docs/06-bringup.md) | Bring-up and test plan |
+| [docs/07-parts-check.md](docs/07-parts-check.md) | Web check of the risky parts, LCSC numbers, risks |
 | [hardware/README.md](hardware/README.md) | How the schematic and board are generated |
 
 ## Schematic
@@ -79,4 +80,4 @@ Files in `hardware/fab/`: `gerbers_valve_controller_RevA.zip` (and `gerber/`), `
 | **2 boards assembled** | about 100-120 |
 | **2 boards built entirely by hand** | about 50-70 (boards, shipping, parts) |
 
-Open items before ordering: fill in LCSC numbers and check stock; confirm the PTC fuse (3 A hold drops when hot); confirm the datasheet pinouts of the parts not yet checked (AP7361C, USBLC6-2P6, the AO3407A footprint); two small silkscreen labels did not fit (RESET, BIAS B); terminal polarity labels are on the bottom side, next to the pads.
+Open items before ordering: confirm stock and basic/extended class on the JLCPCB parts pages for the LCSC numbers in the BOM (see docs/07-parts-check.md), especially the LDO (low stock seen); the PTC fuse hold current drops when hot; two small silkscreen labels did not fit (RESET, BIAS B); terminal polarity labels are on the bottom side, next to the pads.

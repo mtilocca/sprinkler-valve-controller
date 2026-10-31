@@ -25,7 +25,7 @@ M = [
  ("J_DBG", "PinHeader_1x04", "1x4 pin header 2.54 mm", 0.06, "H"),
  ("J_USB", "USB_C", "HRO TYPE-C-31-M-12 (USB-C 16-pin receptacle)", 0.30, "E"),
  ("JP_", "SolderJumper", "solder jumper (copper pads, no part)", 0.0, "-"),
- ("4.7u 3A", "SRN4018", "Bourns SRN4018-4R7M or similar 4 x 4 mm 4.7 uH, Isat >= 3 A", 0.25, "E"),
+ ("4.7u", "SRN4018", "FNR4018S4R7MT or similar 4 x 4 mm shielded 4.7 uH, Isat >= 2 A", 0.25, "E"),
  ("AO3407A", "SOT-23", "Alpha&Omega AO3407A (P-FET 30V, Vgs +-20V)", 0.08, "E"),
  ("AO3400A", "SOT-23", "Alpha&Omega AO3400A", 0.04, "B"),
  ("RESET", "SW_SPST", "C&K PTS645SK43SMTR92 LFS tactile switch", 0.12, "E"), ("BOOT", "SW_SPST", "C&K PTS645SK43SMTR92 LFS tactile switch", 0.12, "E"),
@@ -36,6 +36,29 @@ M = [
  ("USBLC6-2P6", "SOT-666", "ST USBLC6-2P6", 0.30, "E"),
  ("CA-IS3092W", "SOIC-16W", "Chipanalog CA-IS3092W (LCSC C2890051)", 2.00, "E"),
 ]
+LCSC = {   # (value prefix, footprint fragment) -> (LCSC number, note)
+ ("CA-IS3092W", "SOIC-16W"): ("C2890051", ""),
+ ("AP63205WU", "TSOT-23-6"): ("C2071056", ""),
+ ("AP7361C", "SOT-223"): ("C500795", "stock was low in one snapshot (about 115): check before ordering"),
+ ("ESP32-S3-WROOM-1-N8", "ESP32-S3-WROOM-1"): ("C2913198", ""),
+ ("USBLC6-2P6", "SOT-666"): ("C2827693", "TECH PUBLIC clone; ST original is C15999"),
+ ("AO3407A", "SOT-23"): ("C347478", "UMW clone, extended; other AO3407A clones exist"),
+ ("PTC 3A", "Fuse_1812"): ("C6851473", "TECHFUSE mSMD300-16V, 3 A hold 5 A trip 16 V; alternatives C702820, C21261157"),
+ ("4.7u", "SRN4018"): ("C167806", "FNR4018S4R7MT 4x4 shielded, 1.8 A / 2.2 A Isat; enough for a rail under 1 A"),
+ ("SMBJ15A", "D_SMB"): ("C2961881", "RUILON SMBJ15A (unidirectional, SMB); many clones, check polarity type"),
+ ("SM712", "SOT-23"): ("C5247923", "LGE SM712; alternative C5364052"),
+ ("100u 25V", "CP_Elec"): ("C569574", "Suncon 25CE100LX 6.3x7.7, 2000 h; cheaper C179802 (stock was 59)"),
+ ("RESET", "SW_SPST"): ("C221880", "C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871"),
+ ("BOOT", "SW_SPST"): ("C221880", "C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871"),
+ ("J_USB", "USB_C"): ("C165948", "HRO TYPE-C-31-M-12; JLCPCB may list it under another number: check"),
+}
+def lcsc(v, f):
+    for (kv, kf), val in LCSC.items():
+        if v.startswith(kv) and kf in f:
+            return val
+    return ("", "")
+
+
 def look(v, f):
     for kv, kf, mpn, u, cls in M:
         if v.startswith(kv) and kf in f:
@@ -48,15 +71,16 @@ for r in rows:
     mpn, u, cls = look(r["Value"], r["Footprint"])
     q = int(r["Qty"]); tot += u * q
     if mpn == "?": miss.append(r["Refs"])
-    out.append([r["Refs"], q, r["Value"], r["Footprint"].split(":")[-1], mpn, cls, "", f"{u:.3f}", f"{u * q:.2f}"])
+    ln, note = lcsc(r["Value"], r["Footprint"])
+    out.append([r["Refs"], q, r["Value"], r["Footprint"].split(":")[-1], mpn, cls, ln, f"{u:.3f}", f"{u * q:.2f}", note])
 with open("fab/BOM_valve_controller.csv", "w", newline="") as f:
     w = csv.writer(f)
-    w.writerow(["Designators", "Qty", "Value", "Footprint", "Suggested part (VERIFY)", "JLC class guess (B basic, E extended, H through-hole)", "LCSC part # (to fill)", "Est. unit USD (rough)", "Est. line USD (rough)"])
+    w.writerow(["Designators", "Qty", "Value", "Footprint", "Suggested part (VERIFY)", "JLC class guess (B basic, E extended, H through-hole)", "LCSC part # (verify)", "Est. unit USD (rough)", "Est. line USD (rough)", "Note"])
     w.writerows(out)
     w.writerow([]); w.writerow(["", "", "", "", "TOTAL parts per board (rough estimate, not a quote)", "", "", "", f"{tot:.2f}"])
 with open("fab/BOM_JLCPCB_import.csv", "w", newline="") as f:
     w = csv.writer(f); w.writerow(["Comment", "Designator", "Footprint", "LCSC Part #"])
     for r in out:
-        if "no part" not in r[4]: w.writerow([r[2], r[0], r[3], ""])
+        if "no part" not in r[4]: w.writerow([r[2], r[0], r[3], r[6]])
 ext = {r[2] + r[3] for r in out if r[5] == "E"}
 print("lines", len(out), "parts", sum(r[1] for r in out), "est parts per board $%.2f" % tot, "extended line items", sum(1 for r in out if r[5] == "E"), "THT lines", sum(1 for r in out if r[5] == "H"), "unmatched", miss)

@@ -1049,7 +1049,7 @@
 		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
 		(uuid "24098f47-ed4a-5594-87ca-956d06738d40")
 		(property "Reference" "L1" (at 15.24 50.8 0) (effects (font (size 1.27 1.27))))
-		(property "Value" "4.7u 3A" (at 15.24 53.34 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "4.7u Isat>=2A" (at 15.24 53.34 0) (effects (font (size 1.27 1.27))))
 		(property "Footprint" "Inductor_SMD:L_Bourns-SRN4018" (at 15.24 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
 		(property "Datasheet" "" (at 15.24 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
 		(pin "1" (uuid "47d99315-8c29-5c69-a872-03eefeb39bf0"))
