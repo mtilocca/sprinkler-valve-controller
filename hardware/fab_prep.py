@@ -93,10 +93,10 @@ def padxy(ref, num):
     return q.x / 1e6, q.y / 1e6
 
 
-labels = [("J1", 1, "12V+"), ("J1", 2, "GND"),
+labels = [("J1", 1, "IN +"), ("J1", 2, "IN -"),
           ("J4", 1, "V1+"), ("J4", 2, "V1-"), ("J5", 1, "V2+"), ("J5", 2, "V2-"),
           ("J6", 1, "V3+"), ("J6", 2, "V3-"), ("J7", 1, "V4+"), ("J7", 2, "V4-"),
-          ("J8", 1, "A"), ("J8", 2, "B"), ("J8", 3, "GND"),
+          ("J8", 1, "A +"), ("J8", 2, "B -"), ("J8", 3, "GND"),
           ("J2", 1, "GND"), ("J2", 2, "TX"), ("J2", 3, "RX"), ("J2", 4, "3V3"),
           ("D10", 1, "OK"), ("D11", 1, "USR"), ("D12", 1, "COM"), ("D13", 1, "ERR"),
           ("SW1", 1, "RESET"), ("SW2", 1, "BOOT"), ("JP1", 1, "TERM"), ("JP2", 1, "BIAS A"), ("JP3", 1, "BIAS B"),
@@ -118,11 +118,20 @@ for ref, n, txt in labels:
         failed += 1; print("no room for", txt)
 print("labels placed", done, "failed", failed)
 
+# group names next to the terminals (bottom silkscreen, between the pads)
+for ref, txt in (("J1", "12V INPUT"), ("J4", "VALVE 1"), ("J5", "VALVE 2"), ("J6", "VALVE 3"), ("J7", "VALVE 4"), ("J8", "RS485")):
+    f = b.FindFootprintByReference(ref)
+    pads = [p.GetPosition() for p in f.Pads() if p.GetNumber()]
+    mx = sum(p.x for p in pads) / len(pads) / 1e6
+    my = sum(p.y for p in pads) / len(pads) / 1e6
+    r = place_label(txt, mx, my, False, 1.0)
+    print(txt, "->", r)
+
 # board name / revision / JLC order-number placeholder
-for txt, size, top in (("VALVE-CTRL Rev A", 1.2, True), ("12V 4-VALVE ESP32-S3", 1.0, True)):
+for txt, size, top in (("Eden Rock Custom Controller", 1.6, False), ("Eden Rock", 1.2, True), ("VALVE-CTRL Rev A", 1.2, True), ("12V 4-VALVE ESP32-S3", 1.0, True)):
     ob = obstacles(top)
     placed = None
-    for (x, y) in [(x, y) for y in range(24, 56, 3) for x in range(14, 60, 4)]:
+    for (x, y) in [(x, y) for y in range(6, 56, 3) for x in range(10, 62, 3)]:
         t = add_text(txt, x, y, top, size)
         r = rect_of(t.GetBoundingBox(), 0.0)
         if board_ok(r) and not any(hit(r, o) for o in ob):
