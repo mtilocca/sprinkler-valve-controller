@@ -319,11 +319,11 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "Valve",
+        "name": "Rail",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.6,
+        "track_width": 0.4,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -338,11 +338,11 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "Rail",
+        "name": "Valve",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.4,
+        "track_width": 0.6,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -430,8 +430,8 @@
     "legacy_lib_list": [],
     "top_level_sheets": [
       {
-        "filename": "sprinkler_mppt.kicad_sch",
-        "name": "sprinkler_mppt",
+        "filename": "valve_controller.kicad_sch",
+        "name": "valve_controller",
         "uuid": "00000000-0000-0000-0000-000000000000"
       }
     ]

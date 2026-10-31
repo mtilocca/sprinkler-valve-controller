@@ -1,12 +1,12 @@
-ERC WARNING: Insufficient drive current on net ISO_GND for pin POWER-IN pin 9/GNDB of CA-IS3092W/U5.
-ERC WARNING: Insufficient drive current on net ISO_GND for pin POWER-IN pin 15/GNDB of CA-IS3092W/U5.
-ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 1/GND of ESP32-S3-WROOM-1/U3.
-ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 8/GNDA of CA-IS3092W/U5.
+ERC WARNING: Insufficient drive current on net V12 for pin POWER-IN pin 3/IN of AP63205WU/U1.
 ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 2/GND of AP7361C-33E/U2.
+ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 8/GNDA of CA-IS3092W/U5.
 ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 4/GND of AP63205WU/U1.
 ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 2/GNDA of CA-IS3092W/U5.
-ERC WARNING: Insufficient drive current on net V12 for pin POWER-IN pin 3/IN of AP63205WU/U1.
+ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 1/GND of ESP32-S3-WROOM-1/U3.
 ERC WARNING: Insufficient drive current on net 5V for pin POWER-IN pin 1/VI of AP7361C-33E/U2.
+ERC WARNING: Insufficient drive current on net ISO_GND for pin POWER-IN pin 15/GNDB of CA-IS3092W/U5.
+ERC WARNING: Insufficient drive current on net ISO_GND for pin POWER-IN pin 9/GNDB of CA-IS3092W/U5.
 ERC INFO: 9 warnings found while running ERC.
 ERC INFO: 0 errors found while running ERC.
 

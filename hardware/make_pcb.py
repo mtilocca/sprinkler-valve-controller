@@ -2,11 +2,11 @@
 make_pcb.py -- import the schematic netlist into a new KiCad PCB (what File > Import > Netlist does).
 
 Run with KiCad's own Python so `pcbnew` is available:
-  flatpak run --command=python3 org.kicad.KiCad make_pcb.py sprinkler_mppt_kicad.net sprinkler_mppt.kicad_pcb
+  flatpak run --command=python3 org.kicad.KiCad make_pcb.py valve_controller_kicad.net valve_controller.kicad_pcb
 
 The netlist must be the one exported by KiCad from the schematic (kicad-cli sch export netlist),
 so every footprint keeps the link to its schematic symbol ("Update PCB from Schematic" keeps working).
-Footprints are placed in a staging area to the right of a 90 x 70 mm board outline, one column per block.
+Footprints are placed in a staging area to the right of a 70 x 60 mm board outline, one column per block.
 """
 import os
 import re
@@ -20,7 +20,7 @@ from net2sch import child, parse  # noqa: E402
 
 FP_ROOT = "/app/extensions/Library/footprints"
 MM = pcbnew.FromMM
-BOARD_W, BOARD_H = 90.0, 70.0
+BOARD_W, BOARD_H = float(os.environ.get("BOARD_W", 70)), float(os.environ.get("BOARD_H", 60))
 
 
 def sheet_of(c):
@@ -32,7 +32,7 @@ def sheet_of(c):
 def main(netfile, out):
     tree = parse(open(netfile, encoding="utf-8").read())
     board = pcbnew.BOARD()
-    board.SetCopperLayerCount(4)
+    board.SetCopperLayerCount(2)
 
     # board outline
     pts = [(0, 0), (BOARD_W, 0), (BOARD_W, BOARD_H), (0, BOARD_H), (0, 0)]

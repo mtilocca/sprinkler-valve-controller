@@ -39,4 +39,4 @@ PDF: [hardware/valve_controller_schematic.pdf](hardware/valve_controller_schemat
 | `valves` | 4 × AO3400A drivers with flyback diodes, screw terminals, bulk capacitor |
 | `rs485` | CA-IS3092W, TVS, termination and bias jumpers, terminal |
 | `leds` | 4 LEDs and resistors |
-| `test_points` | V12, 5V, 3V3, GND, ISO_GND |
+| `test_points` | V12, 5V, 3V3, GND |

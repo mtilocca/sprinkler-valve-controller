@@ -339,7 +339,7 @@ for led_net, (colour, rv) in zip(LEDN, (("green", "620"), ("yellow", "620"), ("b
 # 8. Test points
 # --------------------------------------------------------------------------------------
 section("test_points")
-for n in (V12, V5, V3, GND, ISO_GND):
+for n in (V12, V5, V3, GND):
     tp = Part("Connector", "TestPoint", value="TP", footprint=fp("TestPoint:TestPoint_Pad_D1.5mm"))
     n += tp[1]
 

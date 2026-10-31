@@ -1,13 +1,15 @@
 """
-place_pcb.py -- place all footprints on a fresh board outline (floorplan in ../docs/07-floorplan.md).
+place_pcb.py -- place all footprints of the valve controller on a 70 x 60 mm, 2-layer, one-sided board.
 
 Run with KiCad's Python:
-  flatpak run --command=python3 org.kicad.KiCad place_pcb.py sprinkler_mppt.kicad_pcb sprinkler_mppt_kicad.net
+  flatpak run --command=python3 org.kicad.KiCad place_pcb.py valve_controller.kicad_pcb valve_controller_kicad.net
 
-Big parts (connectors, ICs, FETs, inductors, bulk caps) have fixed positions in ANCHORS.
-Everything else (resistors, small caps, diodes, fuses, test points) is placed next to the pad it
-connects to, nearest free spot, no overlaps. Connectors on a board edge are rotated so their
-natural "front" (side where the courtyard extends past the pads) faces that edge.
+Layout (origin top-left, y down):
+  bottom edge : RS485 terminal, 4 valve terminals, 12 V input terminal (wires enter from the bottom)
+  top edge    : USB-C (left), ESP32-S3 module with the antenna on the edge, LEDs and debug header on the right
+  left-bottom : isolated RS485 section (bus side below the chip centre line)
+  centre      : 5 V buck + 3V3 LDO; right: input protection
+Every other part is placed next to the pad it connects to (nearest free spot, no overlaps).
 """
 import gc
 import math
@@ -23,60 +25,44 @@ from net2sch import child, parse  # noqa: E402
 
 MM, TOMM = pcbnew.FromMM, pcbnew.ToMM
 FP_ROOT = "/app/extensions/Library/footprints"
-BW, BH = float(os.environ.get("BOARD_W", 100)), float(os.environ.get("BOARD_H", 100))
+BW, BH = float(os.environ.get("BOARD_W", 70)), float(os.environ.get("BOARD_H", 60))
 _keep = []            # removed items must outlive Python GC (KiCad scripting crashes otherwise)
-POWER_SHEETS = {"mppt_buck", "pv_input", "battery_input"}     # stay on the top side with the power stage
 GAP = 0.15            # extra clearance between courtyards
 EDGE_GAP = 0.3
-WIRE_ENTRY_OPPOSITE = {"J1", "J2", "J6", "J7", "J8", "J9"}   # J10 (RS485) already comes out right
 SIDES = ["top", "left", "bottom", "right"]    # 90 deg CCW steps in KiCad rotation
+SCREW = {"J1", "J4", "J5", "J6", "J7"}        # 5.08 mm terminals: wire entry opposite the overhang side
 
-# (x, y, rotation) or (along-edge position, edge) -- coordinates in mm, origin top-left of the board
+# refs of this design (see valve_controller_kicad.net)
+ESP, USB, DBG, RS_T, VIN_T = "U3", "J3", "J2", "J8", "J1"
+CHIP = "U5"
+VALVE_J = {1: "J4", 2: "J5", 3: "J6", 4: "J7"}
+BUS_NETS = ("ISO_GND", "ISO_3V3", "RS485_A", "RS485_B", "TERM_MID", "BIAS_A", "BIAS_B")
+
+# fixed positions: (x, y, rotation) or (edge, position along the edge)
 ANCHORS = {
-    # --- top edge
-    "U11": ("top", 50),            # ESP32 module, antenna end flush with the top edge
-    "J5": ("top", 14),             # USB-C
-    "J11": ("top", 86),            # DS18B20 probe connector
-    # --- right edge: four valve terminals, then the battery
-    "J6": ("right", 22), "J7": ("right", 34), "J8": ("right", 46), "J9": ("right", 58),
-    "J2": ("right", 80),
-    # --- left edge: RS485 and panel input
-    "J10": ("left", 46),
-    "J1": ("left", 82),
-    # --- control area (below the antenna keep-out)
-    "U12": (14, 20, 0),            # USB ESD
-    "SW1": (22, 21.5, 0), "SW2": (22, 29.5, 0),
-    "J3": (34, 24, 0),             # spare header (vertical)
-    "J4": (66, 30, 0),             # debug header
-    "D13": (70, 12, 0), "D14": (70, 16, 0), "D15": (70, 20, 0), "D16": (70, 24, 0),
-    # --- RS485 (isolated)
-    "U13": (26, 52, 180),     # bus-side pins (Y/Z/A/B, GND2) face the RS485 terminal on the left edge
-    # --- aux power
-    "U8": (46, 42, 0), "L2": (56, 42, 0), "U9": (40, 52, 0), "U10": (64, 52, 0),
-    # --- gate logic and driver
-    "U5": (52, 60, 0), "U6": (56, 60, 0), "U7": (60, 60, 0),
-    # --- sensing and valves
-    "U2": (34, 76, 0), "U3": (76, 68, 0),
-    "Q5": (80, 24, 0), "Q6": (80, 34, 0), "Q7": (80, 44, 0), "Q8": (80, 54, 0),
-    "F3": (70, 40, 0), "C38": (68, 61, 0),
-    # --- PV input, ideal diode, buck, battery
-    "U1": (22, 72, 0), "Q1": (24, 88, 0),
-    "C10": (46, 90, 0), "C11": (46, 76, 0),
-    "Q3": (56, 90, 0), "Q4": (56, 78, 0), "U4": (64, 70, 0),
-    "L1": (72, 90, 0), "C18": (86, 92, 0),
-    "Q2": (88, 69, 0),
+    USB: ("top", 14.5),
+    ESP: ("top", 40.0),
+    VIN_T: ("bottom", 6.6),
+    "J4": ("bottom", 18.05), "J5": ("bottom", 29.5), "J6": ("bottom", 40.95), "J7": ("bottom", 52.4),
+    RS_T: ("right", 53.7),                      # RS485 terminal on the right edge, bottom corner
+    DBG: (64.5, 13.5, 0),
+    "SW1": (21.5, 13.5, 0), "SW2": (21.5, 21.5, 0),
+    "U4": (8.0, 14.5, 0),                       # USB ESD
+    "D10": (57.5, 8.5, 0), "D11": (57.5, 12.0, 0), "D12": (57.5, 15.5, 0), "D13": (57.5, 19.0, 0),
+    CHIP: (59.0, 35.3, 0),                      # logic pins (1-8) face left, bus pins (9-16) face the right edge
+    "U1": (30.0, 32.0, 0), "L1": (36.5, 32.0, 0), "U2": (46.5, 32.0, 0),
+    "F1": (6.5, 44.0, 0), "D2": (6.5, 38.5, 0), "Q1": (14.0, 38.5, 0), "C15": (22.0, 36.8, 0),
 }
-# RS485 isolation: bus-side parts live left of the isolator centre line (x < 26), everything else stays out of it
-BUS_NETS = ("ISO_GND", "ISO_5V", "RS485_A", "RS485_B", "TERM_MID", "BIAS_A", "BIAS_B")
-BUS_REGION = (0.5, 33.5, 26.0, 62.0)
-SHUNT_POS = {"PV": (34, 86), "BAT": (80, 79)}
+HOLES = [(3.5, 3.5), (3.5, 24.0), (BW - 3.5, 24.0)]
+ZONE_HINT = {"rs": (64, 42), "usb_c": (12, 14), "esp": (40, 28), "leds": (57, 12), "aux_power": (45, 33),
+             "valves": (35, 45), "power_in": (10, 41), "test_points": (30, 38)}
 
 
 def crt_rect(fp):
     x0 = y0 = 1e18
     x1 = y1 = -1e18
     found = False
-    module = fp.GetReference() == "U11"          # its courtyard includes the antenna keep-out: use the body
+    module = fp.GetReference() == "U3"          # its courtyard includes the antenna keep-out: use the body
     for it in fp.GraphicalItems():
         if it.GetLayer() in ((pcbnew.F_Fab, pcbnew.B_Fab) if module else (pcbnew.F_CrtYd, pcbnew.B_CrtYd)):
             bb = it.GetBoundingBox()
@@ -148,23 +134,25 @@ class Occ:
 def main(pcb, netfile):
     board = pcbnew.LoadBoard(pcb)
     tree = parse(open(netfile, encoding="utf-8").read())
-    sheet, value = {}, {}
+    sheet, value, net_nodes = {}, {}, defaultdict(list)
     for c in child(tree, "components")[1:]:
         ref = str(child(c, "ref")[1])
         sp = child(c, "sheetpath")
         sheet[ref] = re.sub(r"_?\d+$", "", str(child(sp, "names")[1]).strip("/"))
         value[ref] = str(child(c, "value")[1])
+    for n in child(tree, "nets")[1:]:
+        for nd in n[1:]:
+            if isinstance(nd, list) and nd[0] == "node":
+                net_nodes[str(child(n, "name")[1]).split("/")[-1]].append((str(child(nd, "ref")[1]), str(child(nd, "pin")[1])))
 
-    # ---- board outline and mounting holes
     gc.disable()
-    board.SetCopperLayerCount(4)
+    board.SetCopperLayerCount(2)
     board.GetDesignSettings().m_MinThroughDrill = MM(0.2)       # ESP32 thermal vias are 0.2 mm
     for z in list(board.Zones()):
-        if z.GetIsRuleArea() and ("fasteda" in z.GetZoneName().lower() or "antenna" in z.GetZoneName().lower() or "isolation" in z.GetZoneName().lower()):
+        if z.GetIsRuleArea():
             _keep.append(z)
             board.Remove(z)
-    # every pad with the same number (thermal-via pads) must carry the same net
-    for fp0 in board.GetFootprints():
+    for fp0 in board.GetFootprints():                           # all pads with one number carry one net
         by_num = {}
         for p in fp0.Pads():
             if p.GetNetCode() > 0:
@@ -190,66 +178,55 @@ def main(pcb, netfile):
         board.Add(seg)
 
     fps = {f.GetReference(): f for f in board.GetFootprints()}
-    occ = {"F": Occ(), "B": Occ()}
-    placed = {}
-    problems = []
+    occ = Occ()
+    placed, problems = {}, []
 
-    for n, (hx, hy) in enumerate([(3.5, 3.5), (BW - 3.5, 3.5), (3.5, BH - 3.5), (BW - 3.5, BH - 3.5)], 1):
+    for n, (hx, hy) in enumerate(HOLES, 1):
         h = pcbnew.FootprintLoad(os.path.join(FP_ROOT, "MountingHole.pretty"), "MountingHole_3.2mm_M3")
         h.SetReference(f"H{n}")
         h.SetValue("M3")
         board.Add(h)
         put(h, hx, hy, 0)
-        for o in occ.values():
-            o.add((hx - 3.5, hy - 3.5, hx + 3.5, hy + 3.5), f"H{n}")
+        occ.add((hx - 3.2, hy - 3.2, hx + 3.2, hy + 3.2), f"H{n}")
 
-    # shunts are the 2512 resistors: find them by value
-    shunts = [r for r in fps if value.get(r, "").startswith("5m")]
+    # each valve column: FET and flyback diode sit above their terminal
     anchors = dict(ANCHORS)
-    anchors.pop("R2", None)
-    for r in shunts:
-        # panel shunt lives in the pv_input sheet, battery shunt in battery_input
-        key = "PV" if sheet[r] == "pv_input" else "BAT"
-        anchors[r] = (*SHUNT_POS[key], 0)
-
-    # ---- anchors
-    def sides(fp):
-        if fp.HasThroughHolePads():
-            return ("F", "B")
-        return ("B",) if fp.GetLayer() == pcbnew.B_Cu else ("F",)
-
-    def hit_any(fp, r):
-        for sd in sides(fp):
-            h = occ[sd].hit(r)
-            if h:
-                return h
-        return None
-
-    def add_occ(fp, r, ref):
-        for sd in sides(fp):
-            occ[sd].add(r, ref)
+    for i, jref in VALVE_J.items():
+        ret = net_nodes[f"VALVE{i}_RET"]
+        q = next(r for r, p in ret if r.startswith("Q"))
+        d = next(r for r, p in ret if r.startswith("D"))
+        anchors[q] = ("col", jref, 0.0, 46.9)
+        anchors[d] = ("col", jref, 0.0, 43.15)
 
     def settle(ref, fp):
         r = crt_rect(fp)
-        hit = hit_any(fp, r)
+        hit = occ.hit(r)
         if hit:
             problems.append(f"{ref} overlaps {hit}")
         if r[0] < -0.5 or r[1] < -0.5 or r[2] > BW + 0.5 or r[3] > BH + 0.5:
             problems.append(f"{ref} sticks out of the board: {tuple(round(v, 1) for v in r)}")
-        add_occ(fp, r, ref)
+        occ.add(r, ref)
         placed[ref] = fp
 
     esp_rect = None
-    for ref, spec in anchors.items():
+    order = [r for r in anchors if not (isinstance(anchors[r][0], str) and anchors[r][0] == "col")] + \
+            [r for r in anchors if isinstance(anchors[r][0], str) and anchors[r][0] == "col"]
+    for ref in order:
+        spec = anchors[ref]
         fp = fps.get(ref)
         if fp is None:
             problems.append(f"anchor {ref} not on board")
             continue
-        if isinstance(spec[0], str):
+        if spec[0] == "col":
+            _, jref, dx, y = spec
+            jc = placed[jref]
+            jr = crt_rect(jc)
+            put(fp, (jr[0] + jr[2]) / 2 + dx, y, 0)
+        elif isinstance(spec[0], str):
             edge, along = spec
             face = natural_face(fp)
             k = (SIDES.index(edge) - SIDES.index(face)) % 4
-            if ref in WIRE_ENTRY_OPPOSITE:      # screw terminals: the wire entry is opposite the 'overhang' side
+            if ref in SCREW:
                 k = (k + 2) % 4
             fp.SetOrientationDegrees(90 * k)
             r = crt_rect(fp)
@@ -260,14 +237,25 @@ def main(pcb, netfile):
         else:
             x, y, rot = spec
             put(fp, x, y, rot)
-        if ref == "U11":
+        if ref == ESP:
             esp_rect = crt_rect(fp)
         settle(ref, fp)
-    if esp_rect:      # antenna keep-out of the module footprint: 48 mm wide, from the antenna end to 6 mm into the body
+
+    # RS485 isolation: the chip centre line (vertical) separates logic (left) from bus (right)
+    cc = fps[CHIP].GetPosition()
+    xc, yc = TOMM(cc.x), TOMM(cc.y)
+    bus_pads = [p for p in fps[CHIP].Pads() if p.GetNetname().split("/")[-1] in BUS_NETS]
+    logic_pads = [p for p in fps[CHIP].Pads() if p.GetNetname().split("/")[-1] not in BUS_NETS and p.GetNetCode() > 0]
+    bx = sum(TOMM(p.GetPosition().x) for p in bus_pads) / max(len(bus_pads), 1)
+    lx = sum(TOMM(p.GetPosition().x) for p in logic_pads) / max(len(logic_pads), 1)
+    if not bx > xc > lx:
+        problems.append(f"U5 orientation: bus pads at x={bx:.1f}, logic pads at x={lx:.1f}, centre x={xc:.1f} (bus side must be on the right)")
+    BUS_REGION = (xc + 0.6, 27.6, BW - 0.3, BH - 0.3)
+
+    if esp_rect:     # antenna keep-out: module width plus 5 mm each side, 6.5 mm deep from the antenna end
         cxm = (esp_rect[0] + esp_rect[2]) / 2
-        ko = (max(cxm - 24, 0), 0, min(cxm + 24, BW), esp_rect[1] + 0.7 + 6.2)
-        for o in occ.values():
-            o.add(ko, "ANTENNA_KEEPOUT")
+        ko = (max(cxm - 14, 0), 0, min(cxm + 14, BW), esp_rect[1] + 0.7 + 6.5)
+        occ.add(ko, "ANTENNA_KEEPOUT")
         z = pcbnew.ZONE(board)
         z.SetIsRuleArea(True)
         z.SetZoneName("Antenna keepout (ESP32-S3 module)")
@@ -283,46 +271,23 @@ def main(pcb, netfile):
             outline.Append(MM(px), MM(py))
         board.Add(z)
 
-    # ---- passives and everything else
-    pad_info = {}
-    for ref, fp in fps.items():
-        pad_info[ref] = [(p.GetNumber(), re.sub(r"^.*/", "", p.GetNetname())) for p in fp.Pads()]
+    # ---- passives and everything else, next to the pad they connect to
+    pad_info = {ref: [(p.GetNumber(), re.sub(r"^.*/", "", p.GetNetname())) for p in fp.Pads()] for ref, fp in fps.items()}
 
     def pad_pos(ref, net):
-        fp = fps[ref]
-        out = []
-        for p in fp.Pads():
-            if re.sub(r"^.*/", "", p.GetNetname()) == net:
-                c = p.GetPosition()
-                out.append((TOMM(c.x), TOMM(c.y)))
-        return out
+        return [(TOMM(p.GetPosition().x), TOMM(p.GetPosition().y)) for p in fps[ref].Pads()
+                if re.sub(r"^.*/", "", p.GetNetname()) == net]
 
     offsets = sorted(((dx * 0.5, dy * 0.5) for dx in range(-60, 61) for dy in range(-60, 61)),
                      key=lambda o: o[0] ** 2 + o[1] ** 2)
     skip_nets = {"GND", "ISO_GND", ""}
-    zone = {"rs": (24, 38), "usb_c": (14, 14), "esp": (50, 18), "leds_temp": (72, 12), "aux_power": (50, 45),
-            "valves": (80, 30), "pv_input": (30, 66), "battery_input": (80, 62), "mppt_buck": (58, 66),
-            "test_points": (50, 76)}
-
-    todo = [r for r in sorted(fps, key=lambda r: (sheet.get(r, ""), re.match(r"[A-Z]+", r).group(0),
-                                                  int(re.search(r"\d+", r).group(0))))
+    todo = [r for r in sorted(fps, key=lambda r: (sheet.get(r, ""), re.match(r"[A-Z]+", r).group(0), int(re.search(r"\d+", r).group(0))))
             if r not in placed and not r.startswith("H")]
-    FLIP = getattr(pcbnew, "FLIP_DIRECTION_LEFT_RIGHT", True)
-
-    def want_bottom(ref, fp):
-        if not re.match(r"(R|C|TP)\d", ref) or sheet.get(ref) in POWER_SHEETS or fp.HasThroughHolePads():
-            return False
-        fp.SetOrientationDegrees(0)
-        r = crt_rect(fp)
-        return max(r[2] - r[0], r[3] - r[1]) < 4.2        # 0603 / 0805 sized parts only
-
     for ref in todo:
         fp = fps[ref]
-        if want_bottom(ref, fp) and fp.GetLayer() != pcbnew.B_Cu:
-            fp.Flip(fp.GetPosition(), FLIP)
         nets = [n for _, n in pad_info[ref]]
         is_bus = any(n in BUS_NETS for n in nets)
-        best = None            # (priority, pins on net, anchor ref, net)
+        best = None
         for net in dict.fromkeys(nets):
             if net in skip_nets:
                 continue
@@ -332,11 +297,11 @@ def main(pcb, netfile):
                     pri = (0 if sheet.get(aref) == sheet.get(ref) else 1, cnt)
                     if best is None or pri < best[0]:
                         best = (pri, aref, net)
+        hint = ZONE_HINT.get(sheet[ref], (35, 35))
         if best:
-            tx, ty = min(pad_pos(best[1], best[2]), key=lambda p: (p[0] - zone.get(sheet[ref], (50, 40))[0]) ** 2 +
-                         (p[1] - zone.get(sheet[ref], (50, 40))[1]) ** 2)
+            tx, ty = min(pad_pos(best[1], best[2]), key=lambda p: (p[0] - hint[0]) ** 2 + (p[1] - hint[1]) ** 2)
         else:
-            tx, ty = zone.get(sheet[ref], (50, 40))
+            tx, ty = hint
         done = False
         for dx, dy in offsets:
             for rot in (0, 90):
@@ -352,10 +317,10 @@ def main(pcb, netfile):
                         continue
                 elif overlap(rect, BUS_REGION):
                     continue
-                if hit_any(fp, rect):
+                if occ.hit(rect):
                     continue
                 put(fp, cx, cy, rot)
-                add_occ(fp, crt_rect(fp), ref)
+                occ.add(crt_rect(fp), ref)
                 placed[ref] = fp
                 done = True
                 break
@@ -364,47 +329,52 @@ def main(pcb, netfile):
         if not done:
             problems.append(f"{ref} ({value.get(ref, '')}) could not be placed: board too small")
 
+    # RS485 isolation: no copper pour and no tracks across the chip body between the two pin rows
+    zi = pcbnew.ZONE(board)
+    zi.SetIsRuleArea(True)
+    zi.SetZoneName("RS485 isolation barrier: no copper under the chip between logic and bus pins")
+    zi.SetDoNotAllowZoneFills(True)
+    zi.SetDoNotAllowTracks(True)
+    zi.SetDoNotAllowVias(True)
+    zi.SetDoNotAllowPads(False)
+    zi.SetDoNotAllowFootprints(False)
+    zi.SetLayerSet(pcbnew.LSET.AllCuMask())
+    zo = zi.Outline()
+    zo.NewOutline()
+    by0, by1 = yc - 6.5, yc + 6.5
+    for px, py in ((xc - 1.6, by0), (xc + 1.6, by0), (xc + 1.6, by1), (xc - 1.6, by1)):
+        zo.Append(MM(px), MM(py))
+    board.Add(zi)
 
-    # ---- RS485 isolation: no inner-layer plane under the bus side (J10, U13 bus pins, termination, TVS)
-    xs, ys = [], []
-    for ref0, fp0 in fps.items():
-        for p in fp0.Pads():
-            if p.GetNetname().split("/")[-1] in BUS_NETS:
-                c = p.GetPosition()
-                xs.append(TOMM(c.x))
-                ys.append(TOMM(c.y))
-    if xs:
-        u13c = fps["U13"].GetPosition()
-        iso = (max(min(xs) - 2.0, 0.0), min(ys) - 2.0, TOMM(u13c.x), max(ys) + 2.0)    # logic side starts at the chip centre line
-        zi = pcbnew.ZONE(board)
-        zi.SetIsRuleArea(True)
-        zi.SetZoneName("RS485 isolation: no plane under the bus side")
-        zi.SetDoNotAllowZoneFills(True)
-        zi.SetDoNotAllowTracks(False)
-        zi.SetDoNotAllowVias(False)
-        zi.SetDoNotAllowPads(False)
-        zi.SetDoNotAllowFootprints(False)
-        ls = pcbnew.LSET()
-        ls.AddLayer(pcbnew.In1_Cu)
-        ls.AddLayer(pcbnew.In2_Cu)
-        zi.SetLayerSet(ls)
-        zo = zi.Outline()
-        zo.NewOutline()
-        for px, py in ((iso[0], iso[1]), (iso[2], iso[1]), (iso[2], iso[3]), (iso[0], iso[3])):
-            zo.Append(MM(px), MM(py))
-        board.Add(zi)
-        print(f"isolation void on In1/In2: x {iso[0]:.1f}-{iso[2]:.1f}, y {iso[1]:.1f}-{iso[3]:.1f} mm")
+    # the module's library courtyard and keep-out include the whole antenna area (48 x 41 mm): the courtyard becomes the body plus 0.7 mm
+    if ESP in fps:
+        u3 = fps[ESP]
+        for z0 in list(u3.Zones()):          # library keep-out is 48 mm wide; the board gets its own, 28 mm wide
+            _keep.append(z0)
+            u3.Remove(z0)
+        for g in list(u3.GraphicalItems()):
+            if g.GetLayer() == pcbnew.F_CrtYd:
+                _keep.append(g)
+                u3.Remove(g)
+        fb = [g.GetBoundingBox() for g in u3.GraphicalItems() if g.GetLayer() == pcbnew.F_Fab]
+        if fb:
+            x0 = min(b.GetX() for b in fb) - MM(0.7)
+            y0 = min(b.GetY() for b in fb) - MM(0.7)
+            x1 = max(b.GetRight() for b in fb) + MM(0.7)
+            y1 = max(b.GetBottom() for b in fb) + MM(0.7)
+            rc = pcbnew.PCB_SHAPE(u3)
+            rc.SetShape(pcbnew.SHAPE_T_RECT)
+            rc.SetStart(pcbnew.VECTOR2I(x0, y0))
+            rc.SetEnd(pcbnew.VECTOR2I(x1, y1))
+            rc.SetLayer(pcbnew.F_CrtYd)
+            rc.SetWidth(MM(0.05))
+            u3.Add(rc)
 
     board.BuildListOfNets()
     pcbnew.ZONE_FILLER(board).Fill(board.Zones())
     pcbnew.SaveBoard(pcb, board)
-    nb = sum(1 for f in fps.values() if f.GetLayer() == pcbnew.B_Cu)
-    print(f"board {BW:g} x {BH:g} mm, 4 copper layers; placed {len(placed)} of {len(fps)} footprints "
-          f"({len(fps) - nb} top, {nb} bottom) + 4 mounting holes")
-    for ref in ("J10", "U13", "JP1", "JP2", "JP3", "D12"):
-        c = fps[ref].GetPosition()
-        print(f"  {ref} {value.get(ref, '')[:22]} at x={TOMM(c.x):.1f} y={TOMM(c.y):.1f} mm, "
-              f"{'bottom' if fps[ref].GetLayer() == pcbnew.B_Cu else 'top'}")
+    print(f"board {BW:g} x {BH:g} mm, 2 copper layers; placed {len(placed)} of {len(fps)} footprints + {len(HOLES)} mounting holes")
+    print(f"RS485 chip centre line x={xc:.1f} mm; bus region x {BUS_REGION[0]:.1f}-{BUS_REGION[2]:.1f}, y {BUS_REGION[1]:.1f}-{BUS_REGION[3]:.1f}")
     for p in problems:
         print("PROBLEM:", p)
 
