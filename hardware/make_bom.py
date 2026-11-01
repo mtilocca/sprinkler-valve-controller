@@ -98,7 +98,10 @@ with open("fab/BOM_valve_controller.csv", "w", newline="") as f:
     w.writerow([]); w.writerow(["", "", "", "", "TOTAL parts per board (rough estimate, not a quote)", "", "", "", f"{tot:.2f}"])
 with open("fab/BOM_JLCPCB_import.csv", "w", newline="") as f:
     w = csv.writer(f); w.writerow(["Comment", "Designator", "Footprint", "LCSC Part #"])
+    tht = {"J1", "J2", "J4", "J5", "J6", "J7", "J8"}          # hand-soldered through-hole parts
     for r in out:
-        if "no part" not in r[4]: w.writerow([r[2], r[0], r[3], r[6]])
+        if "no part" in r[4] or set(r[0].split(",")) <= tht:
+            continue
+        w.writerow([r[2], r[0], r[3], r[6]])
 ext = {r[2] + r[3] for r in out if r[5] == "E"}
 print("lines", len(out), "parts", sum(r[1] for r in out), "est parts per board $%.2f" % tot, "extended line items", sum(1 for r in out if r[5] == "E"), "THT lines", sum(1 for r in out if r[5] == "H"), "unmatched", miss)

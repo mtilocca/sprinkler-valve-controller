@@ -37,8 +37,7 @@ R3,1,22k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
 R8,1,1M,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
 "R9,R11,R13,R15",4,100,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
 R17,1,120,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
-"R18,R19,R23",3,680,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
-"R20,R21",2,620,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
+"R18,R19,R20,R21,R23",5,680,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
 R22,1,200,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
 SW1,1,RESET,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C221880,0.120,0.12,C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871
 SW2,1,BOOT,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C221880,0.120,0.12,C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871

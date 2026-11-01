@@ -328,7 +328,7 @@ ISO_GND += j_485[3]
 # 7. LEDs
 # --------------------------------------------------------------------------------------
 section("leds")
-for led_net, (colour, rv) in zip(LEDN, (("green", "620"), ("yellow", "620"), ("blue", "200"), ("red", "680"))):
+for led_net, (colour, rv) in zip(LEDN, (("green", "680"), ("yellow", "680"), ("blue", "200"), ("red", "680"))):
     led = Part("Device", "LED", value=colour, footprint=fp(LED0603))
     mid = Net(led_net.name + "_A")
     res_between(led_net, mid, rv)

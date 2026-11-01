@@ -11900,7 +11900,7 @@
 				)
 			)
 		)
-		(property "Value" "620"
+		(property "Value" "680"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -17679,7 +17679,7 @@
 				)
 			)
 		)
-		(property "Value" "620"
+		(property "Value" "680"
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)

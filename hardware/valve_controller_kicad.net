@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/baloo/sprinkler-valve-controller/hardware/valve_controller.kicad_sch")
-		(date "2026-10-31T22:45:43")
+		(date "2026-11-01T10:42:54")
 		(tool "Eeschema 10.0.7")
 		(sheet
 			(number "1")
@@ -4778,7 +4778,7 @@
 		)
 		(comp
 			(ref "R20")
-			(value "620")
+			(value "680")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(fields
 				(field
@@ -4832,7 +4832,7 @@
 		)
 		(comp
 			(ref "R21")
-			(value "620")
+			(value "680")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(fields
 				(field
