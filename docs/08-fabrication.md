@@ -56,3 +56,7 @@ Solder the terminals and header by hand (parts list in docs/09-shopping-list.md)
 - ERC: 0 violations. DRC: 0 errors, 0 unconnected, schematic parity clean (warnings only for test points, jumpers and mounting holes).
 - Outline from the Gerber file: 70.0 x 60.0 mm. Drill file: all plated holes at least 0.3 mm.
 - Every part in the CPL is in the BOM; the only BOM lines not in the CPL are the hand-soldered terminals and header.
+
+## CPL correction for U3 (2026-11-01)
+
+In JLCPCB's 3D preview the ESP32 module sat about 4 mm too high (antenna past the board edge, castellations not on the pads). JLCPCB's model origin differs from the KiCad footprint origin, so U3's Y in `CPL_valve_controller.csv` was changed from -13.5 mm to -17.5 mm. The board itself is unchanged. Re-check the preview after uploading the new CPL.
