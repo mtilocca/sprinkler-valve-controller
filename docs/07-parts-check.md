@@ -14,9 +14,21 @@ Web check of the risky parts. Stock and price come from search snapshots and cha
 | USBLC6-2P6 | C2827693 (TECH PUBLIC clone) is on JLCPCB; the ST original is C15999 | Clone is fine for ESD |
 | SMBJ15A | Many clones (C2961881 RUILON, others); some listings are SMBG or bidirectional | C2961881, check it is unidirectional SMB |
 | SM712 | Several makers (LGE C5247923, JingYang C5364052). SM712 clamps about 19 V at surge; the CA-IS3092W bus pins are rated -8 to +13 V (DC), so keep an eye on it in testing | C5247923 |
-| 100 µF 25 V electrolytic | Suncon 25CE100LX C569574 (2000 h); cheaper 25CE100AX C179802 had low stock | C569574 |
+| 100 µF 25 V electrolytic | Suncon 25CE100LX C569574 (2000 h); cheaper 25CE100AX C179802 had low stock | C72478 (C569574 was out of stock on 2026-11-01) |
 | Tact switches | C&K PTS645SM43SMTR92 LFS C221880 on JLCPCB; the SK43 version is LCSC C221871 | C221880 |
 | USB-C HRO TYPE-C-31-M-12 | LCSC C165948; JLCPCB may use another number | Confirm in the JLCPCB library |
 | Resistors, 0603 caps, SS34, B5819W, zener, LEDs, AO3400A | Common basic parts | Pick the basic parts in JLCPCB's BOM tool |
 
 Sources: LCSC and JLCPCB part pages found by web search (not an official API).
+
+## Stock replacements (2026-11-01, live JLCPCB stock check)
+
+| Ref | Old | New | Why |
+|-----|-----|-----|-----|
+| C15 | C569574 (stock 0) | C72478 100 µF 35 V 6.3x7.7 (25 V option C72477) | in stock, 513k |
+| D2 | C2961881 (stock 0) | C188412 SMBJ15A unidirectional SMB | in stock, 77k |
+| D1 | unmatched | C19077410 BZT52C12 (preferred) | in stock, 430k |
+| C8 | none | C11366 AVX TAJA226K010RNJ 22 µF 10 V tantalum | in stock, 434k; 10 V is fine on 3.3 V |
+| D3, D4 | none | C64885 B5819W (preferred, no extended fee) | in stock, 727k |
+
+Gerber zip renamed to Rev B (same board files, new BOM).

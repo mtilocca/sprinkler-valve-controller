@@ -66,7 +66,7 @@ Open `hardware/valve_controller.kicad_pcb` (or the project `hardware/valve_contr
 | Assembly | One side (top), SMT by JLCPCB; screw terminals and the debug header soldered by hand |
 | Checks | ERC 0 violations; DRC 0 errors, 0 unconnected |
 
-Files in `hardware/fab/`: `gerbers_valve_controller_RevA.zip` (and `gerber/`), `BOM_valve_controller.csv` (draft with suggested parts and rough prices), `BOM_JLCPCB_import.csv` (LCSC numbers to fill), `CPL_valve_controller.csv` (SMD positions, top side).
+Files in `hardware/fab/`: `gerbers_valve_controller_RevB.zip` (and `gerber/`), `BOM_valve_controller.csv` (draft with suggested parts and rough prices), `BOM_JLCPCB_import.csv` (LCSC numbers to fill), `CPL_valve_controller.csv` (SMD positions, top side).
 
 ## Costs
 

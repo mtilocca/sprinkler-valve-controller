@@ -3,13 +3,13 @@ Designators,Qty,Value,Footprint,Suggested part (VERIFY),"JLC class guess (B basi
 C2,1,10u 25V,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.12,
 "C5,C6",2,22u 10V,C_1206_3216Metric,Samsung CL31A226MPHNNNE (X5R 10V); datasheet table uses 2 x 22 uF,E,,0.150,0.30,
 "C7,C9,C14,C17,C19",5,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.60,
-C8,1,22u 6.3V tantalum,CP_EIA-3216-18_Kemet-A,"22 uF 6.3 V tantalum, 3216 (A case), e.g. Kemet T491A226M006AT / AVX TAJA226K006R",E,,0.200,0.20,
+C8,1,22u 6.3V tantalum,CP_EIA-3216-18_Kemet-A,"22 uF 6.3 V tantalum, 3216 (A case), e.g. Kemet T491A226M006AT / AVX TAJA226K006R",E,C11366,0.200,0.20,AVX TAJA226K010RNJ 22uF 10V 3216-18 (10 V rating is fine for the 3.3 V rail)
 C12,1,1u,C_0603_1608Metric,Samsung CL10A105KA8NNNC (X5R 25V),B,,0.010,0.01,
 C13,1,4.7n,C_0603_1608Metric,Samsung CL10B472KB8NNNC,B,,0.005,0.01,
-C15,1,100u 25V,CP_Elec_6.3x7.7,Nichicon UWT1E101MCL1GS or similar 6.3x7.7 SMD electrolytic 25V,E,C569574,0.250,0.25,"Suncon 25CE100LX 6.3x7.7, 2000 h; cheaper C179802 (stock was 59)"
-D1,1,BZT52C12 12V,D_SOD-123,"BZT52C12 12V zener, SOD-123",B,,0.030,0.03,
-D2,1,SMBJ15A,D_SMB,Littelfuse SMBJ15A,E,C2961881,0.200,0.20,"RUILON SMBJ15A (unidirectional, SMB); many clones, check polarity type"
-"D3,D4",2,B5819W,D_SOD-123,"B5819W (1A 40V Schottky, SOD-123)",B,,0.030,0.06,
+C15,1,100u 25V,CP_Elec_6.3x7.7,Nichicon UWT1E101MCL1GS or similar 6.3x7.7 SMD electrolytic 25V,E,C72478,0.250,0.25,ROQANG RVT1V101M0607 100uF 35V 6.3x7.7 (old C569574 out of stock; 25V option C72477)
+D1,1,BZT52C12 12V,D_SOD-123,"BZT52C12 12V zener, SOD-123",B,C19077410,0.030,0.03,"BZT52C12 12V zener, preferred part"
+D2,1,SMBJ15A,D_SMB,Littelfuse SMBJ15A,E,C188412,0.200,0.20,"SMBJ15A unidirectional SMB, stock 77k (old C2961881 out of stock)"
+"D3,D4",2,B5819W,D_SOD-123,"B5819W (1A 40V Schottky, SOD-123)",B,C64885,0.030,0.06,"B5819W Schottky, preferred part (no extended fee); basic alternative C8598"
 "D5,D6,D7,D8",4,SS34,D_SMA,"SS34 (3A 40V Schottky, SMA)",B,,0.060,0.24,
 D9,1,SM712,SOT-23,Semtech SM712.TCT,E,C5247923,0.300,0.30,LGE SM712; alternative C5364052
 D10,1,green,LED_0603_1608Metric,"generic 0603 LED, green",B,,0.030,0.03,

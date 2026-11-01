@@ -6,7 +6,7 @@ Everything for the order is in `hardware/fab/`.
 
 | File | Use |
 |------|-----|
-| `gerbers_valve_controller_RevA.zip` | Upload as the PCB Gerber file (also unpacked in `gerber/`): F.Cu, B.Cu, masks, silkscreen, F.Paste, Edge.Cuts, PTH and NPTH drill |
+| `gerbers_valve_controller_RevB.zip` | Upload as the PCB Gerber file (also unpacked in `gerber/`): F.Cu, B.Cu, masks, silkscreen, F.Paste, Edge.Cuts, PTH and NPTH drill |
 | `BOM_JLCPCB_import.csv` | Upload as the BOM for assembly: 38 lines, surface-mount parts only (you solder the terminals and header). Ordinary resistors and capacitors have no LCSC number: JLCPCB's matching picks the basic parts |
 | `CPL_valve_controller.csv` | Upload as the pick-and-place file: 70 SMD parts, top side |
 | `BOM_valve_controller.csv` | Full draft BOM with suggested parts, rough prices and notes (for you, not for upload) |
