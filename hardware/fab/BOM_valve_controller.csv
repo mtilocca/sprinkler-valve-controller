@@ -2,7 +2,8 @@ Designators,Qty,Value,Footprint,Suggested part (VERIFY),"JLC class guess (B basi
 "C1,C3,C4,C10,C11,C16,C18",7,100n,C_0603_1608Metric,Samsung CL10B104KB8NNNC (X7R 50V),B,,0.004,0.03,
 C2,1,10u 25V,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.12,
 "C5,C6",2,22u 10V,C_1206_3216Metric,Samsung CL31A226MPHNNNE (X5R 10V); datasheet table uses 2 x 22 uF,E,,0.150,0.30,
-"C7,C8,C9,C14,C17,C19",6,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.72,
+"C7,C9,C14,C17,C19",5,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.60,
+C8,1,22u 6.3V tantalum,CP_EIA-3216-18_Kemet-A,"22 uF 6.3 V tantalum, 3216 (A case), e.g. Kemet T491A226M006AT / AVX TAJA226K006R",E,,0.200,0.20,
 C12,1,1u,C_0603_1608Metric,Samsung CL10A105KA8NNNC (X5R 25V),B,,0.010,0.01,
 C13,1,4.7n,C_0603_1608Metric,Samsung CL10B472KB8NNNC,B,,0.005,0.01,
 C15,1,100u 25V,CP_Elec_6.3x7.7,Nichicon UWT1E101MCL1GS or similar 6.3x7.7 SMD electrolytic 25V,E,C569574,0.250,0.25,"Suncon 25CE100LX 6.3x7.7, 2000 h; cheaper C179802 (stock was 59)"
@@ -43,9 +44,9 @@ SW1,1,RESET,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C
 SW2,1,BOOT,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C221880,0.120,0.12,C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871
 "TP1,TP2,TP3,TP4",4,TP,TestPoint_Pad_D1.5mm,"test pad (copper only, no part)",-,,0.000,0.00,
 U1,1,AP63205WU-7 (5V 2A buck),TSOT-23-6,Diodes AP63205WU-7,E,C2071056,0.450,0.45,
-U2,1,AP7361C-33E,SOT-223-3_TabPin2,Diodes AP7361C-33E-13,E,C500795,0.450,0.45,stock was low in one snapshot (about 115): check before ordering
+U2,1,AMS1117-3.3,SOT-223-3_TabPin2,"AMS1117-3.3 (1A LDO, SOT-223; JLCPCB basic part)",B,C6186,0.050,0.05,"AMS1117-3.3; confirm the C number and stock in the JLCPCB search (alternatives C22459274, LD1117-3.3 C347229)"
 U3,1,ESP32-S3-WROOM-1-N8,ESP32-S3-WROOM-1,Espressif ESP32-S3-WROOM-1-N8,E,C2913198,4.200,4.20,
 U4,1,USBLC6-2P6,SOT-666,ST USBLC6-2P6,E,C2827693,0.300,0.30,TECH PUBLIC clone; ST original is C15999
 U5,1,CA-IS3092W,SOIC-16W_7.5x10.3mm_P1.27mm,Chipanalog CA-IS3092W (LCSC C2890051),E,C2890051,2.000,2.00,
 
-,,,,"TOTAL parts per board (rough estimate, not a quote)",,,,13.90
+,,,,"TOTAL parts per board (rough estimate, not a quote)",,,,13.58

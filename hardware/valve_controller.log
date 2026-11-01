@@ -3,182 +3,182 @@ WARNING: KICAD7_SYMBOL_DIR environment variable is missing, so the default KiCad
 WARNING: KICAD6_SYMBOL_DIR environment variable is missing, so the default KiCad symbol libraries won't be searched. @ [/home/baloo/sprinkler-valve-controller/hardware/<frozen importlib._bootstrap_external>:995=>/home/baloo/sprinkler-valve-controller/hardware/<frozen importlib._bootstrap>:488]
 WARNING: KICAD9_SYMBOL_DIR environment variable is missing, so the default KiCad symbol libraries won't be searched. @ [/home/baloo/sprinkler-valve-controller/hardware/<frozen importlib._bootstrap_external>:995=>/home/baloo/sprinkler-valve-controller/hardware/<frozen importlib._bootstrap>:488]
 WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:113.
-WARNING: Random tag 5ijgszwBaB generated for Screw_Terminal_01x02.
+WARNING: Random tag STF68dvOWf generated for Screw_Terminal_01x02.
 WARNING: Missing tag on Polyfuse instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:119.
-WARNING: Random tag utZzXEwZPX generated for Polyfuse.
+WARNING: Random tag 7oCOs4KBxJ generated for Polyfuse.
 WARNING: Missing tag on Q_PMOS_SOT23 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:125.
-WARNING: Random tag LVjqYxneeQ generated for Q_PMOS_SOT23.
+WARNING: Random tag SaCxPLcyx_ generated for Q_PMOS_SOT23.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag joorFo0hcw generated for R.
+WARNING: Random tag GBwZC2mZfW generated for R.
 WARNING: Missing tag on D_Zener instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:130.
-WARNING: Random tag U5egdbWMoE generated for D_Zener.
+WARNING: Random tag S_ABNW8str generated for D_Zener.
 WARNING: Missing tag on D_TVS instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:135.
-WARNING: Random tag b5fVutEfHt generated for D_TVS.
+WARNING: Random tag 6i4X0rHlS3 generated for D_TVS.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag 4LMNDFR3xS generated for R.
+WARNING: Random tag xCxhRbnzJq generated for R.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag 9Qvs1WHIPe generated for R.
+WARNING: Random tag y7EHYpnmuO generated for R.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag SaFI5hEn6X generated for C.
+WARNING: Random tag lPIMwvbsP7 generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag TVWNCPR812 generated for C.
+WARNING: Random tag 9eesEZONR9 generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag mEKARtPP05 generated for C.
+WARNING: Random tag ucBLo_6fMJ generated for C.
 WARNING: Missing tag on AP63205WU instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:151.
-WARNING: Random tag GgVlgx3l87 generated for AP63205WU.
+WARNING: Random tag LxqQzkSgjI generated for AP63205WU.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag wTYRBjkhQN generated for C.
+WARNING: Random tag 7HXMnG2TaS generated for C.
 WARNING: Missing tag on L instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:159.
-WARNING: Random tag P6DueGkNjF generated for L.
+WARNING: Random tag 5zAwuvnuTa generated for L.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag c1aMOZpiIV generated for C.
+WARNING: Random tag n0fV1OvlkL generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag 8TUnGiYB3N generated for C.
+WARNING: Random tag MJGiW65GUu generated for C.
 WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:164.
-WARNING: Random tag 1JlQXBvO3s generated for D_Schottky.
+WARNING: Random tag cITfp8aJ7u generated for D_Schottky.
 WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:167.
-WARNING: Random tag uPsiNHgd1J generated for D_Schottky.
+WARNING: Random tag wJzbgdHuQd generated for D_Schottky.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag 7XOGBybXc_ generated for C.
-WARNING: Missing tag on AP7361C-33E instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:172.
-WARNING: Random tag Nz02ZSzkQz generated for AP7361C-33E.
+WARNING: Random tag yQmGj_sK_3 generated for C.
+WARNING: Missing tag on AMS1117-3.3 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:173.
+WARNING: Random tag q9yfLUjntJ generated for AMS1117-3.3.
+WARNING: Missing tag on C_Polarized instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:178.
+WARNING: Random tag 8bRUCzHSag generated for C_Polarized.
+WARNING: Missing tag on ESP32-S3-WROOM-1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:186.
+WARNING: Random tag HJHicYQ5Bz generated for ESP32-S3-WROOM-1.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag mqi9i4FfG8 generated for C.
-WARNING: Missing tag on ESP32-S3-WROOM-1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:182.
-WARNING: Random tag pbZ5NNflP6 generated for ESP32-S3-WROOM-1.
+WARNING: Random tag d8pnzQeS6r generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag Z62GydGxM2 generated for C.
+WARNING: Random tag PknJ3Vvcrb generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag AETMf80Gqv generated for C.
+WARNING: Random tag nBMvwvhcZm generated for C.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag bjXlre3N6h generated for R.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag qylwDmpAq3 generated for C.
+WARNING: Random tag MsPwSIJhZ9 generated for C.
+WARNING: Missing tag on SW_Push instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:197.
+WARNING: Random tag 4JMtX7tEQA generated for SW_Push.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag qEcOhIpZ2R generated for R.
+WARNING: Random tag W4CJ_7JyW4 generated for R.
+WARNING: Missing tag on SW_Push instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:202.
+WARNING: Random tag NdPKqGkUOL generated for SW_Push.
+WARNING: Missing tag on Conn_01x04 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:223.
+WARNING: Random tag Usb5CqlpgC generated for Conn_01x04.
+WARNING: Missing tag on USB_C_Receptacle_USB2.0_16P instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:234.
+WARNING: Random tag jL00uU17lZ generated for USB_C_Receptacle_USB2.0_16P.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag p4Wghg8cus generated for R.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag 3UFyKsdwju generated for R.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag ef2T68nZYy generated for R.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag ydhEzK24mX generated for C.
-WARNING: Missing tag on SW_Push instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:193.
-WARNING: Random tag myJ2zDHc8f generated for SW_Push.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag Xkbjn3UdO4 generated for R.
-WARNING: Missing tag on SW_Push instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:198.
-WARNING: Random tag tOs2KqN1Rp generated for SW_Push.
-WARNING: Missing tag on Conn_01x04 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:219.
-WARNING: Random tag 0Nms4vy3b0 generated for Conn_01x04.
-WARNING: Missing tag on USB_C_Receptacle_USB2.0_16P instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:230.
-WARNING: Random tag S1Gd9V5jTF generated for USB_C_Receptacle_USB2.0_16P.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag EctLxdq3hS generated for R.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag zW3K1H__lG generated for R.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag 5KTlefAMnQ generated for R.
+WARNING: Random tag Jh3s9JPprB generated for C.
+WARNING: Missing tag on USBLC6-2P6 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:248.
+WARNING: Random tag qnkpnsmw6l generated for USBLC6-2P6.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag AIcUrcXsuY generated for C.
-WARNING: Missing tag on USBLC6-2P6 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:244.
-WARNING: Random tag WVlrg2WlYh generated for USBLC6-2P6.
+WARNING: Random tag HwPLtsF8nq generated for C.
+WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:262.
+WARNING: Random tag zxaUEU3hiL generated for AO3400A.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag 6VS495DbWU generated for R.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag D_j88WSIBX generated for R.
+WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:270.
+WARNING: Random tag cFqF4jchcM generated for D_Schottky.
+WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:273.
+WARNING: Random tag XD97d6naAj generated for Screw_Terminal_01x02.
+WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:262.
+WARNING: Random tag 0bFvFke8pR generated for AO3400A.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag 73cyDy5Jsp generated for R.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag 4UVz7izv6d generated for R.
+WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:270.
+WARNING: Random tag hOuHzkSlw6 generated for D_Schottky.
+WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:273.
+WARNING: Random tag OfuTHkKXL0 generated for Screw_Terminal_01x02.
+WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:262.
+WARNING: Random tag e9Q0Nyqw7X generated for AO3400A.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag 3sC5Wu7LWS generated for R.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag aQNlT6f4FQ generated for R.
+WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:270.
+WARNING: Random tag qr94rSHVgH generated for D_Schottky.
+WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:273.
+WARNING: Random tag RfviBlxm1L generated for Screw_Terminal_01x02.
+WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:262.
+WARNING: Random tag KNY6LjRe_4 generated for AO3400A.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag 3X8UTzW1Cz generated for R.
+WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
+WARNING: Random tag AQZBEsinX6 generated for R.
+WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:270.
+WARNING: Random tag yV1iWWwxfr generated for D_Schottky.
+WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:273.
+WARNING: Random tag yjoIoTTkCR generated for Screw_Terminal_01x02.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag bw_nnKygzx generated for C.
-WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:258.
-WARNING: Random tag E1yifUvUMV generated for AO3400A.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag j5eqiIm2V1 generated for R.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag 4zTwHQKpDb generated for R.
-WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:266.
-WARNING: Random tag g71_Q8ZMkZ generated for D_Schottky.
-WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:269.
-WARNING: Random tag A8Xs45GOhO generated for Screw_Terminal_01x02.
-WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:258.
-WARNING: Random tag OJkyi6Pohs generated for AO3400A.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag H3LYQ9OyRf generated for R.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag VSONu_I1Jo generated for R.
-WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:266.
-WARNING: Random tag 6XTy11eXcP generated for D_Schottky.
-WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:269.
-WARNING: Random tag cpAdNCub97 generated for Screw_Terminal_01x02.
-WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:258.
-WARNING: Random tag RhJGfJ2Qm_ generated for AO3400A.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag B5gmB7Lp2z generated for R.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag 048sgsnfJr generated for R.
-WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:266.
-WARNING: Random tag RwvUyS9u_0 generated for D_Schottky.
-WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:269.
-WARNING: Random tag HYbFh0K5c5 generated for Screw_Terminal_01x02.
-WARNING: Missing tag on AO3400A instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:258.
-WARNING: Random tag xVMasHqs_h generated for AO3400A.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag X8sRoziMdF generated for R.
-WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag V6DDu9xA3G generated for R.
-WARNING: Missing tag on D_Schottky instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:266.
-WARNING: Random tag 6TB6IGMlKC generated for D_Schottky.
-WARNING: Missing tag on Screw_Terminal_01x02 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:269.
-WARNING: Random tag tGojnKsRqE generated for Screw_Terminal_01x02.
+WARNING: Random tag ZzzQhwIBy0 generated for C.
+WARNING: Missing tag on CA-IS3092W instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:283.
+WARNING: Random tag NXLPcZD2Ea generated for CA-IS3092W.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag PQHQqFx6SW generated for C.
-WARNING: Missing tag on CA-IS3092W instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:279.
-WARNING: Random tag S19cKR36PA generated for CA-IS3092W.
+WARNING: Random tag sCzV0xwyyU generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag mbEoCWVJH1 generated for C.
+WARNING: Random tag mJcxviGzXi generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag vEdUHYvzZL generated for C.
+WARNING: Random tag TOTukWhiew generated for C.
 WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag dff4r8UoIc generated for C.
-WARNING: Missing tag on C instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:67.
-WARNING: Random tag Sl0274rBuF generated for C.
-WARNING: Missing tag on SM712_SOT23 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:297.
-WARNING: Random tag WKBJPIGuAC generated for SM712_SOT23.
-WARNING: Missing tag on SolderJumper_2_Open instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:303.
-WARNING: Random tag d6k1Idy10g generated for SolderJumper_2_Open.
+WARNING: Random tag XQJvOmNje5 generated for C.
+WARNING: Missing tag on SM712_SOT23 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:301.
+WARNING: Random tag ZvqbS2mwMG generated for SM712_SOT23.
+WARNING: Missing tag on SolderJumper_2_Open instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:307.
+WARNING: Random tag v1zAR2RRxp generated for SolderJumper_2_Open.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag _HuQ17K5yC generated for R.
-WARNING: Missing tag on SolderJumper_2_Open instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:309.
-WARNING: Random tag O4oiBcPL54 generated for SolderJumper_2_Open.
-WARNING: Missing tag on SolderJumper_2_Open instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:311.
-WARNING: Random tag yMBJRwy2BS generated for SolderJumper_2_Open.
+WARNING: Random tag eCuC02Nti9 generated for R.
+WARNING: Missing tag on SolderJumper_2_Open instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:313.
+WARNING: Random tag hd46ND1f37 generated for SolderJumper_2_Open.
+WARNING: Missing tag on SolderJumper_2_Open instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:315.
+WARNING: Random tag LEfYwxIUWS generated for SolderJumper_2_Open.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag Opi6CUt2HX generated for R.
+WARNING: Random tag _UaxCQOAxa generated for R.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag rS3O9XYz1S generated for R.
-WARNING: Missing tag on Conn_01x03 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:321.
-WARNING: Random tag wJ6XWmSXyv generated for Conn_01x03.
-WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:332.
-WARNING: Random tag UANjYTkWXj generated for LED.
+WARNING: Random tag AvTmJqxzVc generated for R.
+WARNING: Missing tag on Conn_01x03 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:325.
+WARNING: Random tag UIvzaD9OX4 generated for Conn_01x03.
+WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:336.
+WARNING: Random tag gw14VRhlmP generated for LED.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag VfERfAm34P generated for R.
-WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:332.
-WARNING: Random tag Rxuo1FopCb generated for LED.
+WARNING: Random tag Z16Y5te306 generated for R.
+WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:336.
+WARNING: Random tag 51RidqYgSy generated for LED.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag Jy0kjWs_lx generated for R.
-WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:332.
-WARNING: Random tag jkWn0CHgTz generated for LED.
+WARNING: Random tag GRguhb67gB generated for R.
+WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:336.
+WARNING: Random tag j5h4bAt8Is generated for LED.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag VIHVIB8f7v generated for R.
-WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:332.
-WARNING: Random tag xTMN15e7pz generated for LED.
+WARNING: Random tag uYIgxmBn8D generated for R.
+WARNING: Missing tag on LED instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:336.
+WARNING: Random tag ihngA573Zh generated for LED.
 WARNING: Missing tag on R instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:63.
-WARNING: Random tag Rw9_miTvED generated for R.
-WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:343.
-WARNING: Random tag JNrTCQVnyO generated for TestPoint.
-WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:343.
-WARNING: Random tag kLF0NKPMVc generated for TestPoint.
-WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:343.
-WARNING: Random tag bd7qkU8A9Y generated for TestPoint.
-WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:343.
-WARNING: Random tag lsaprRxnzN generated for TestPoint.
+WARNING: Random tag N_A5UIkAwe generated for R.
+WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:347.
+WARNING: Random tag c_dvnJ2U4b generated for TestPoint.
+WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:347.
+WARNING: Random tag VON4LjxBDv generated for TestPoint.
+WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:347.
+WARNING: Random tag 6IyVNMcNIR generated for TestPoint.
+WARNING: Missing tag on TestPoint instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:347.
+WARNING: Random tag hCMU9xcLnb generated for TestPoint.
 WARNING: Missing tag on rs485_1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
-WARNING: Missing tag on esp32_1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
-WARNING: Missing tag on power_in1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
-WARNING: Missing tag on aux_power1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
-WARNING: Missing tag on leds1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
-WARNING: Missing tag on test_points1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
-WARNING: Missing tag on  instantiated at /home/baloo/sprinkler-valve-controller/hardware/<frozen importlib._bootstrap>:488.
 WARNING: Missing tag on usb_c1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
+WARNING: Missing tag on esp32_1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
+WARNING: Missing tag on leds1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
+WARNING: Missing tag on power_in1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
 WARNING: Missing tag on valves1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
+WARNING: Missing tag on test_points1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
+WARNING: Missing tag on aux_power1 instantiated at /home/baloo/sprinkler-valve-controller/hardware/valve_controller.py:34.
+WARNING: Missing tag on  instantiated at /home/baloo/sprinkler-valve-controller/hardware/<frozen importlib._bootstrap>:488.
 INFO: 177 warnings found while generating netlist.
 INFO: 0 errors found while generating netlist.
 

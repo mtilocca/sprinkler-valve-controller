@@ -8,13 +8,13 @@ Schematic: generated from `hardware/valve_controller.py`, PDF in `hardware/valve
 12 V in ─ PTC 3 A ─ P-FET (reverse polarity) ─ V12 ─┬─ TVS SMBJ15A
                                                     ├─ 4 valve drivers (low-side N-FET + flyback diode)
                                                     ├─ monitor divider 100k/22k -> ESP32 ADC
-                                                    └─ 5 V buck AP63205 ─┬─ diode ─ 5V ─ AP7361C ─ 3V3 ─ ESP32, RS485 logic side
+                                                    └─ 5 V buck AP63205 ─┬─ diode ─ 5V ─ AMS1117-3.3 ─ 3V3 ─ ESP32, RS485 logic side
 USB VBUS ─ diode ──────────────────────────────────────────────────────┘
 ```
 
 - **Input:** screw terminal, resettable fuse (3 A hold; the hold current drops when hot, so keep the board out of direct sun), P-FET AO3407A with a 12 V zener from source to gate (keeps Vgs in range), TVS after the FET so a reversed supply is blocked by the FET and not shorted by the TVS.
 - **5 V buck:** AP63205WU-7, 3.8–32 V in, fixed 5 V, 2 A, 1.1 MHz; 4.7 µH (Isat of at least 2 A is enough: the 5 V rail carries under 1 A, peak about 1 A), 10 µF in, 2 × 22 µF out (datasheet table 3). FB goes straight to the output.
-- **3V3:** AP7361C-33E LDO from the 5 V rail (buck output or USB through Schottky diodes). Input must stay below 6 V (it does: about 4.6 V).
+- **3V3:** AMS1117-3.3 LDO (SOT-223, 1 A, dropout about 1.1 V) from the 5 V rail (buck output or USB through Schottky diodes, about 4.7 V, so about 0.3 V of margin at full load). It was chosen because the AP7361C was out of stock; the AMS1117 needs an output capacitor with some resistance, so the output has a 22 µF tantalum (C8) plus 100 nF ceramics. Typical dissipation is about 0.2 W (0.15 A at 1.4 V drop), up to about 0.7 W in Wi-Fi bursts.
 - **USB only:** the ESP32 runs, valves stay off (the valve rail is the protected 12 V input).
 
 ## 2.2 Valve outputs (×4)
@@ -81,4 +81,4 @@ Valves default to OFF because of the pull-downs. The firmware limits on-time and
 
 ## 2.7 Datasheet checks
 
-`valve_controller.py` asserts the pin numbers that the footprints depend on (AP63205, CA-IS3092W, the P-FET symbol, AP7361C). A wrong pin map stops the build.
+`valve_controller.py` asserts the pin numbers that the footprints depend on (AP63205, CA-IS3092W, the P-FET symbol, AMS1117). A wrong pin map stops the build.

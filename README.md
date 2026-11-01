@@ -36,7 +36,7 @@ PDF: [hardware/valve_controller_schematic.pdf](hardware/valve_controller_schemat
 | Sheet | Content |
 |-------|---------|
 | `power_in` | 12 V terminal, fuse, reverse-polarity P-FET, TVS, 12 V monitor divider |
-| `aux_power` | AP63205 5 V buck, USB 5 V OR, AP7361C 3.3 V LDO |
+| `aux_power` | AP63205 5 V buck, USB 5 V OR, AMS1117-3.3 LDO (22 µF tantalum output) |
 | `esp32` | ESP32-S3 module, BOOT and RESET, debug header |
 | `usb_c` | USB-C connector, CC resistors, ESD protection |
 | `valves` | 4 × AO3400A drivers with flyback diodes, screw terminals, bulk capacitor |

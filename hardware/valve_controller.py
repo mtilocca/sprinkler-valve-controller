@@ -169,11 +169,15 @@ VBUS += d_usb["A"]
 V5 += d_usb["K"]
 cap_between(V5, GND, "10u", C1206)
 
-u3 = Part("Regulator_Linear", "AP7361C-33E", value="AP7361C-33E")
+# AMS1117-3.3 (SOT-223: 1 GND, 2 VOUT and tab, 3 VIN): in stock everywhere, basic JLCPCB part
+u3 = Part("Regulator_Linear", "AMS1117-3.3", value="AMS1117-3.3")
 V5 += u3["VI"]
 V3 += u3["VO"]
 GND += u3["GND"]
-cap_between(V3, GND, "10u", C1206)
+# AMS1117 wants an output capacitor with some ESR: 22 uF tantalum (3216 case, same size as the 1206 ceramic it replaces)
+c_tant = Part("Device", "C_Polarized", value="22u 6.3V tantalum", footprint=fp("Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A"))
+V3 += c_tant[1]
+GND += c_tant[2]
 
 # --------------------------------------------------------------------------------------
 # 3. ESP32-S3 module
@@ -359,8 +363,8 @@ CHECKS = [
             "GNDB": ["15", "9"], "SEL": ["10"], "A": ["12"], "B": ["13"], "VISO": ["16"]}),
     # P-FET symbol in valve_custom: SOT-23 AO3407A, 1 gate, 2 source, 3 drain
     (q_rp, {"G": ["1"], "S": ["2"], "D": ["3"]}),
-    # AP7361C-33E, SOT-223: 1 IN, 2 GND (tab), 3 OUT
-    (u3, {"VI": ["1"], "GND": ["2"], "VO": ["3"]}),
+    # AMS1117-3.3, SOT-223: 1 GND, 2 VOUT (tab), 3 VIN
+    (u3, {"GND": ["1"], "VO": ["2"], "VI": ["3"]}),
 ]
 for part, want in CHECKS:
     for name, nums in want.items():

@@ -41,10 +41,13 @@ valve_controller = SchLib(tool=SKIDL).add_parts(*[
         Part(**{ 'name':'D_Schottky', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'D_Schottky'}), 'ref_prefix':'D', 'fplist':[''], 'footprint':'Diode_SMD:D_SOD-123', 'keywords':'diode Schottky', 'description':'Schottky diode', 'datasheet':'', 'pins':[
             Pin(num='1',name='K',func=pin_types.PASSIVE,unit=1),
             Pin(num='2',name='A',func=pin_types.PASSIVE,unit=1)], 'unit_defs':[] }),
-        Part(**{ 'name':'AP7361C-33E', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'AP7361C-33E'}), 'ref_prefix':'U', 'fplist':['Package_TO_SOT_SMD:SOT-223-3_TabPin2', 'Package_TO_SOT_SMD:SOT-223-3_TabPin2'], 'footprint':'Package_TO_SOT_SMD:SOT-223-3_TabPin2', 'keywords':'linear regulator ldo fixed positive', 'description':'1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223', 'datasheet':'https://www.diodes.com/assets/Datasheets/AP7361C.pdf', 'pins':[
-            Pin(num='1',name='VI',func=pin_types.PWRIN,unit=1),
-            Pin(num='2',name='GND',func=pin_types.PWRIN,unit=1),
-            Pin(num='3',name='VO',func=pin_types.PWROUT,unit=1)], 'unit_defs':[] }),
+        Part(**{ 'name':'AMS1117-3.3', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'AMS1117-3.3'}), 'ref_prefix':'U', 'fplist':['Package_TO_SOT_SMD:SOT-223-3_TabPin2', 'Package_TO_SOT_SMD:SOT-223-3_TabPin2'], 'footprint':'Package_TO_SOT_SMD:SOT-223-3_TabPin2', 'keywords':'linear regulator ldo fixed positive', 'description':'1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223', 'datasheet':'http://www.advanced-monolithic.com/pdf/ds1117.pdf', 'pins':[
+            Pin(num='1',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='2',name='VO',func=pin_types.PWROUT,unit=1),
+            Pin(num='3',name='VI',func=pin_types.PWRIN,unit=1)], 'unit_defs':[] }),
+        Part(**{ 'name':'C_Polarized', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'C_Polarized'}), 'ref_prefix':'C', 'fplist':[''], 'footprint':'Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A', 'keywords':'cap capacitor', 'description':'Polarized capacitor', 'datasheet':'', 'pins':[
+            Pin(num='1',func=pin_types.PASSIVE,unit=1),
+            Pin(num='2',func=pin_types.PASSIVE,unit=1)], 'unit_defs':[] }),
         Part(**{ 'name':'ESP32-S3-WROOM-1', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'ESP32-S3-WROOM-1'}), 'ref_prefix':'U', 'fplist':['RF_Module:ESP32-S3-WROOM-1'], 'footprint':'RF_Module:ESP32-S3-WROOM-1', 'keywords':'RF Radio BT ESP ESP32-S3 Espressif onboard PCB antenna', 'description':'RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, onboard antenna, SMD', 'datasheet':'https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf', 'pins':[
             Pin(num='1',name='GND',func=pin_types.PWRIN,unit=1),
             Pin(num='2',name='3V3',func=pin_types.PWRIN,unit=1),

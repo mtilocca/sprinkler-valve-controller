@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/baloo/sprinkler-valve-controller/hardware/valve_controller.kicad_sch")
-		(date "2026-11-01T10:42:54")
+		(date "2026-11-01T10:59:37")
 		(tool "Eeschema 10.0.7")
 		(sheet
 			(number "1")
@@ -1245,11 +1245,11 @@
 		)
 		(comp
 			(ref "C8")
-			(value "10u")
-			(footprint "Capacitor_SMD:C_1206_3216Metric")
+			(value "22u 6.3V tantalum")
+			(footprint "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A")
 			(fields
 				(field
-					(name "Footprint") "Capacitor_SMD:C_1206_3216Metric")
+					(name "Footprint") "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A")
 				(field
 					(name "Datasheet")
 				)
@@ -1259,8 +1259,8 @@
 			)
 			(libsource
 				(lib "Device")
-				(part "C")
-				(description "Unpolarized capacitor")
+				(part "C_Polarized")
+				(description "Polarized capacitor")
 			)
 			(property
 				(name "Sheetname")
@@ -1276,7 +1276,7 @@
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "C_*")
+				(value "CP_*")
 			)
 			(sheetpath
 				(names "/aux_power/")
@@ -1527,7 +1527,7 @@
 		)
 		(comp
 			(ref "U2")
-			(value "AP7361C-33E")
+			(value "AMS1117-3.3")
 			(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
 			(fields
 				(field
@@ -1541,7 +1541,7 @@
 			)
 			(libsource
 				(lib "Regulator_Linear")
-				(part "AP7361C-33E")
+				(part "AMS1117-3.3")
 				(description "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223")
 			)
 			(property
@@ -1558,7 +1558,7 @@
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "SOT?223*")
+				(value "SOT?223*TabPin2*")
 			)
 			(sheetpath
 				(names "/aux_power/")
@@ -1570,13 +1570,13 @@
 					(name "A")
 					(pins
 						(pin
+							(num "3")
+						)
+						(pin
 							(num "1")
 						)
 						(pin
 							(num "2")
-						)
-						(pin
-							(num "3")
 						)
 					)
 				)
@@ -5492,6 +5492,40 @@
 		)
 		(libpart
 			(lib "Device")
+			(part "C_Polarized")
+			(description "Polarized capacitor")
+			(footprints
+				(fp "CP_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C_Polarized")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Polarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
 			(part "D_Schottky")
 			(description "Schottky diode")
 			(footprints
@@ -6100,39 +6134,39 @@
 		)
 		(libpart
 			(lib "Regulator_Linear")
-			(part "AP7361C-33E")
+			(part "AMS1117-3.3")
 			(description "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223")
-			(docs "https://www.diodes.com/assets/Datasheets/AP7361C.pdf")
+			(docs "http://www.advanced-monolithic.com/pdf/ds1117.pdf")
 			(footprints
-				(fp "SOT?223*")
+				(fp "SOT?223*TabPin2*")
 			)
 			(fields
 				(field
 					(name "Reference") "U")
 				(field
-					(name "Value") "AP7361C-33E")
+					(name "Value") "AMS1117-3.3")
 				(field
 					(name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
 				(field
-					(name "Datasheet") "https://www.diodes.com/assets/Datasheets/AP7361C.pdf")
+					(name "Datasheet") "http://www.advanced-monolithic.com/pdf/ds1117.pdf")
 				(field
 					(name "Description") "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "VI")
-					(type "power_in")
-				)
-				(pin
-					(num "2")
 					(name "GND")
 					(type "power_in")
 				)
 				(pin
-					(num "3")
+					(num "2")
 					(name "VO")
 					(type "power_out")
+				)
+				(pin
+					(num "3")
+					(name "VI")
+					(type "power_in")
 				)
 			)
 		)
@@ -7237,8 +7271,8 @@
 			)
 			(node
 				(ref "U2")
-				(pin "3")
-				(pinfunction "VO_3")
+				(pin "2")
+				(pinfunction "VO_2")
 				(pintype "power_out")
 			)
 			(node
@@ -7283,8 +7317,8 @@
 			)
 			(node
 				(ref "U2")
-				(pin "1")
-				(pinfunction "VI_1")
+				(pin "3")
+				(pinfunction "VI_3")
 				(pintype "power_in")
 			)
 		)
@@ -7533,8 +7567,8 @@
 			)
 			(node
 				(ref "U2")
-				(pin "2")
-				(pinfunction "GND_2")
+				(pin "1")
+				(pinfunction "GND_1")
 				(pintype "power_in")
 			)
 			(node

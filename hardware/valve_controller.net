@@ -2,7 +2,7 @@
   (version "D")
   (design
     (source "valve_controller.py")
-    (date "11/01/2026 10:42 AM")
+    (date "11/01/2026 10:59 AM")
     (tool "SKiDL (3.0.0)")
     (sheet
       (number 1)
@@ -43,228 +43,6 @@
           (value ""))))
     (sheet
       (number 2)
-      (name "/esp32_1/")
-      (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "valve_controller.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 3)
-      (name "/power_in1/")
-      (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "valve_controller.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 4)
-      (name "/aux_power1/")
-      (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "valve_controller.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 5)
-      (name "/leds1/")
-      (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "valve_controller.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 6)
-      (name "/test_points1/")
-      (tstamps "/cda1ba2c-eef9-5409-bd83-28590e5faa66/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "valve_controller.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 7)
-      (name "/")
-      (tstamps "/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "valve_controller.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 8)
       (name "/usb_c1/")
       (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/")
       (title_block
@@ -301,9 +79,231 @@
           (number "9")
           (value ""))))
     (sheet
-      (number 9)
+      (number 3)
+      (name "/esp32_1/")
+      (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "valve_controller.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 4)
+      (name "/leds1/")
+      (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "valve_controller.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 5)
+      (name "/power_in1/")
+      (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "valve_controller.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 6)
       (name "/valves1/")
       (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "valve_controller.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 7)
+      (name "/test_points1/")
+      (tstamps "/cda1ba2c-eef9-5409-bd83-28590e5faa66/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "valve_controller.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 8)
+      (name "/aux_power1/")
+      (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "valve_controller.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 9)
+      (name "/")
+      (tstamps "/")
       (title_block
         (title)
         (company)
@@ -351,7 +351,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "SaFI5hEn6X")
+          (name "SKiDL Tag") "lPIMwvbsP7")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -361,7 +361,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "21a5c369-76f7-5293-a2ca-4081d94a8649"))
+      (tstamps "8e040fa9-9e50-50a3-99d2-405b2e39b454"))
     (comp
       (ref "C10")
       (value "100n")
@@ -375,7 +375,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "AETMf80Gqv")
+          (name "SKiDL Tag") "PknJ3Vvcrb")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -385,7 +385,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "3c93d0f8-624c-568d-9407-55d773fcf4e0"))
+      (tstamps "93d7a4e2-41f7-5c5b-8ee9-82039a88f3af"))
     (comp
       (ref "C11")
       (value "100n")
@@ -399,7 +399,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "qylwDmpAq3")
+          (name "SKiDL Tag") "nBMvwvhcZm")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -409,7 +409,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "c1d71350-6cec-5b26-ba3c-3e3f284a9a4f"))
+      (tstamps "ca9d1479-44fb-5c8b-a97d-918c0d20a304"))
     (comp
       (ref "C12")
       (value "1u")
@@ -423,7 +423,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "ydhEzK24mX")
+          (name "SKiDL Tag") "MsPwSIJhZ9")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -433,7 +433,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "f79916f5-6787-5175-8081-eab1de88458e"))
+      (tstamps "a88a5597-2e3c-5e4c-8022-b1b99edf5077"))
     (comp
       (ref "C13")
       (value "4.7n")
@@ -447,7 +447,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "AIcUrcXsuY")
+          (name "SKiDL Tag") "Jh3s9JPprB")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -457,7 +457,7 @@
         (names "/usb_c1/")
         (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/"))
       (component_classes)
-      (tstamps "735d964a-6659-5d74-a848-d65a6bc2e05b"))
+      (tstamps "3c4e899a-7698-566f-8b93-9a91ad19540f"))
     (comp
       (ref "C14")
       (value "10u")
@@ -471,7 +471,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "bw_nnKygzx")
+          (name "SKiDL Tag") "HwPLtsF8nq")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -481,7 +481,7 @@
         (names "/usb_c1/")
         (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/"))
       (component_classes)
-      (tstamps "ed18b984-9f1c-5202-b363-100845376523"))
+      (tstamps "7a15d1a7-f683-58fe-8619-e8b8c87bd155"))
     (comp
       (ref "C15")
       (value "100u 25V")
@@ -495,7 +495,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "PQHQqFx6SW")
+          (name "SKiDL Tag") "ZzzQhwIBy0")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -505,7 +505,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "aa6a3193-7372-5b15-9eb5-c0a27fe98f63"))
+      (tstamps "80befa9f-33ba-5fb5-9f1a-bff276f00e88"))
     (comp
       (ref "C16")
       (value "100n")
@@ -519,7 +519,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "mbEoCWVJH1")
+          (name "SKiDL Tag") "sCzV0xwyyU")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -529,7 +529,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "28a9b538-66c8-51d1-b9f6-19de429e0498"))
+      (tstamps "b26bcefb-e810-5038-80e9-3146086bfa37"))
     (comp
       (ref "C17")
       (value "10u")
@@ -543,7 +543,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "vEdUHYvzZL")
+          (name "SKiDL Tag") "mJcxviGzXi")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -553,7 +553,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "cfaec239-88e9-5ded-9705-a92a58b8569c"))
+      (tstamps "da0f484a-ff5a-5d7e-b8e2-d811ef7d1f78"))
     (comp
       (ref "C18")
       (value "100n")
@@ -567,7 +567,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "dff4r8UoIc")
+          (name "SKiDL Tag") "TOTukWhiew")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -577,7 +577,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "9588d2b5-86d9-5675-a404-229b02f803c3"))
+      (tstamps "31df09b3-070e-5241-a318-127bf3c332bb"))
     (comp
       (ref "C19")
       (value "10u")
@@ -591,7 +591,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Sl0274rBuF")
+          (name "SKiDL Tag") "XQJvOmNje5")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -601,7 +601,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "87b522a0-c532-5d4b-830c-eefbb5bf4ea2"))
+      (tstamps "15f663ff-f250-596e-aebe-82b824af1f53"))
     (comp
       (ref "C2")
       (value "10u 25V")
@@ -615,7 +615,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "TVWNCPR812")
+          (name "SKiDL Tag") "9eesEZONR9")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -625,7 +625,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "a858f56f-2926-5b67-b361-6ce57b15347e"))
+      (tstamps "83eb247b-713f-5a83-bd59-9f0af07f81de"))
     (comp
       (ref "C3")
       (value "100n")
@@ -639,7 +639,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "mEKARtPP05")
+          (name "SKiDL Tag") "ucBLo_6fMJ")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -649,7 +649,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "b8f4685c-b6b5-5a68-91ff-c538c1468a14"))
+      (tstamps "e82784de-41bb-5f0a-b5ee-45160133bf24"))
     (comp
       (ref "C4")
       (value "100n")
@@ -663,7 +663,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "wTYRBjkhQN")
+          (name "SKiDL Tag") "7HXMnG2TaS")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -673,7 +673,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "8be7790b-e5a8-5891-8601-b6bbf9c85be8"))
+      (tstamps "cc6d45b3-7b43-5293-9251-bf9995607f07"))
     (comp
       (ref "C5")
       (value "22u 10V")
@@ -687,7 +687,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "c1aMOZpiIV")
+          (name "SKiDL Tag") "n0fV1OvlkL")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -697,7 +697,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "f5c6edbf-eab4-59b5-9e3c-96b19e14f711"))
+      (tstamps "06943691-fd80-5cb8-959b-1ca0a05f4fec"))
     (comp
       (ref "C6")
       (value "22u 10V")
@@ -711,7 +711,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "8TUnGiYB3N")
+          (name "SKiDL Tag") "MJGiW65GUu")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -721,7 +721,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "7b2fb6cd-4530-5ef5-ac7a-8375f2db5c25"))
+      (tstamps "90bd39d2-7ceb-5bfb-9c17-4ad4da237745"))
     (comp
       (ref "C7")
       (value "10u")
@@ -735,7 +735,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "7XOGBybXc_")
+          (name "SKiDL Tag") "yQmGj_sK_3")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -745,31 +745,31 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "a24fc050-012b-5ac8-83a8-80af9dd0a1fd"))
+      (tstamps "ecb4c202-8fc5-5f10-af11-4401e8ed0168"))
     (comp
       (ref "C8")
-      (value "10u")
-      (description "Unpolarized capacitor")
-      (footprint "Capacitor_SMD:C_1206_3216Metric")
+      (value "22u 6.3V tantalum")
+      (description "Polarized capacitor")
+      (footprint "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A")
       (fields
         (field
-          (name "Description") "Unpolarized capacitor")
+          (name "Description") "Polarized capacitor")
         (field
-          (name "Footprint") "Capacitor_SMD:C_1206_3216Metric")
+          (name "Footprint") "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "mqi9i4FfG8")
+          (name "SKiDL Tag") "8bRUCzHSag")
         (field
-          (name "SKiDL Line") "valve_controller.py:67"))
+          (name "SKiDL Line") "valve_controller.py:178"))
       (libsource
         (lib "Device")
-        (part "C"))
+        (part "C_Polarized"))
       (sheetpath
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "1f74034c-162a-597b-a2d3-6ad09901bb9d"))
+      (tstamps "d15053c9-eead-5d42-b5b9-cbf6b0859df1"))
     (comp
       (ref "C9")
       (value "10u")
@@ -783,7 +783,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Z62GydGxM2")
+          (name "SKiDL Tag") "d8pnzQeS6r")
         (field
           (name "SKiDL Line") "valve_controller.py:67"))
       (libsource
@@ -793,7 +793,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "4681b527-c4d6-5747-b11c-0531cdf930ed"))
+      (tstamps "63f8dcb6-168b-5a1a-b9aa-8cbe57d5de0e"))
     (comp
       (ref "D1")
       (value "BZT52C12 12V")
@@ -807,7 +807,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "U5egdbWMoE")
+          (name "SKiDL Tag") "S_ABNW8str")
         (field
           (name "SKiDL Line") "valve_controller.py:130"))
       (libsource
@@ -817,7 +817,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "9760c98a-122f-5fbc-ae40-b67065ad95fd"))
+      (tstamps "9649320f-246c-5e49-af2d-122eb12e7ca5"))
     (comp
       (ref "D10")
       (value "green")
@@ -831,9 +831,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "UANjYTkWXj")
+          (name "SKiDL Tag") "gw14VRhlmP")
         (field
-          (name "SKiDL Line") "valve_controller.py:332"))
+          (name "SKiDL Line") "valve_controller.py:336"))
       (libsource
         (lib "Device")
         (part "LED"))
@@ -841,7 +841,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "bab3dfcb-8590-5c99-a73e-597baa55fea8"))
+      (tstamps "5e45d441-3d8b-5a18-8bdd-d8312985b28a"))
     (comp
       (ref "D11")
       (value "yellow")
@@ -855,9 +855,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Rxuo1FopCb")
+          (name "SKiDL Tag") "51RidqYgSy")
         (field
-          (name "SKiDL Line") "valve_controller.py:332"))
+          (name "SKiDL Line") "valve_controller.py:336"))
       (libsource
         (lib "Device")
         (part "LED"))
@@ -865,7 +865,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "a45c80c0-694c-5435-a262-08cfc62d6d87"))
+      (tstamps "434c93e0-efd5-53ef-a4df-57a3b7d761c0"))
     (comp
       (ref "D12")
       (value "blue")
@@ -879,9 +879,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "jkWn0CHgTz")
+          (name "SKiDL Tag") "j5h4bAt8Is")
         (field
-          (name "SKiDL Line") "valve_controller.py:332"))
+          (name "SKiDL Line") "valve_controller.py:336"))
       (libsource
         (lib "Device")
         (part "LED"))
@@ -889,7 +889,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "f355692d-1d63-5b15-8bd5-fca07f77f1f2"))
+      (tstamps "9bdb45a8-ba7c-5055-8f70-b97f24941ed9"))
     (comp
       (ref "D13")
       (value "red")
@@ -903,9 +903,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "xTMN15e7pz")
+          (name "SKiDL Tag") "ihngA573Zh")
         (field
-          (name "SKiDL Line") "valve_controller.py:332"))
+          (name "SKiDL Line") "valve_controller.py:336"))
       (libsource
         (lib "Device")
         (part "LED"))
@@ -913,7 +913,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "377d3698-7176-5e9e-846b-556d1d7782e0"))
+      (tstamps "5f916753-5c16-5d8c-be1b-4915cd7e9c0e"))
     (comp
       (ref "D2")
       (value "SMBJ15A")
@@ -927,7 +927,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "b5fVutEfHt")
+          (name "SKiDL Tag") "6i4X0rHlS3")
         (field
           (name "SKiDL Line") "valve_controller.py:135"))
       (libsource
@@ -937,7 +937,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "9255536e-0f3a-51b1-ac24-1c98f6e220dc"))
+      (tstamps "4a259bcc-78a4-53ab-b63e-2cf62543d068"))
     (comp
       (ref "D3")
       (value "B5819W")
@@ -951,7 +951,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "1JlQXBvO3s")
+          (name "SKiDL Tag") "cITfp8aJ7u")
         (field
           (name "SKiDL Line") "valve_controller.py:164"))
       (libsource
@@ -961,7 +961,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "5dfeed86-66c1-5d1d-8fbb-289411b990d5"))
+      (tstamps "3d76707d-5b4e-5152-8004-067b7e366efb"))
     (comp
       (ref "D4")
       (value "B5819W")
@@ -975,7 +975,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "uPsiNHgd1J")
+          (name "SKiDL Tag") "wJzbgdHuQd")
         (field
           (name "SKiDL Line") "valve_controller.py:167"))
       (libsource
@@ -985,7 +985,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "d4981bc3-efc7-5362-ae66-e7a5695870cb"))
+      (tstamps "b38a9111-d502-5439-8488-eb7dc95056dc"))
     (comp
       (ref "D5")
       (value "SS34")
@@ -999,9 +999,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "g71_Q8ZMkZ")
+          (name "SKiDL Tag") "cFqF4jchcM")
         (field
-          (name "SKiDL Line") "valve_controller.py:266"))
+          (name "SKiDL Line") "valve_controller.py:270"))
       (libsource
         (lib "Device")
         (part "D_Schottky"))
@@ -1009,7 +1009,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "1d946348-29f8-58d1-8cfc-ac861e00d67e"))
+      (tstamps "e08a6340-30a6-5a95-899a-3145c87f8731"))
     (comp
       (ref "D6")
       (value "SS34")
@@ -1023,9 +1023,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "6XTy11eXcP")
+          (name "SKiDL Tag") "hOuHzkSlw6")
         (field
-          (name "SKiDL Line") "valve_controller.py:266"))
+          (name "SKiDL Line") "valve_controller.py:270"))
       (libsource
         (lib "Device")
         (part "D_Schottky"))
@@ -1033,7 +1033,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "0a80828b-0953-5891-9d7a-bd3baabe3e9f"))
+      (tstamps "de7f36e7-fae5-57df-ae44-a20f970b5cc7"))
     (comp
       (ref "D7")
       (value "SS34")
@@ -1047,9 +1047,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "RwvUyS9u_0")
+          (name "SKiDL Tag") "qr94rSHVgH")
         (field
-          (name "SKiDL Line") "valve_controller.py:266"))
+          (name "SKiDL Line") "valve_controller.py:270"))
       (libsource
         (lib "Device")
         (part "D_Schottky"))
@@ -1057,7 +1057,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "e5961317-6d53-527a-b131-f22cd6bfdd9e"))
+      (tstamps "e119072b-a765-5714-8b8a-c919f6baf8ef"))
     (comp
       (ref "D8")
       (value "SS34")
@@ -1071,9 +1071,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "6TB6IGMlKC")
+          (name "SKiDL Tag") "yV1iWWwxfr")
         (field
-          (name "SKiDL Line") "valve_controller.py:266"))
+          (name "SKiDL Line") "valve_controller.py:270"))
       (libsource
         (lib "Device")
         (part "D_Schottky"))
@@ -1081,7 +1081,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "ecad1701-2702-5c6c-8d1f-d56bf9f77841"))
+      (tstamps "1dc536be-fe8d-59ea-aa38-ccfbfe488f3d"))
     (comp
       (ref "D9")
       (value "SM712")
@@ -1095,9 +1095,9 @@
         (field
           (name "Datasheet") "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf")
         (field
-          (name "SKiDL Tag") "WKBJPIGuAC")
+          (name "SKiDL Tag") "ZvqbS2mwMG")
         (field
-          (name "SKiDL Line") "valve_controller.py:297"))
+          (name "SKiDL Line") "valve_controller.py:301"))
       (libsource
         (lib "Diode")
         (part "SM712_SOT23"))
@@ -1105,7 +1105,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "4775c258-99e0-574e-a366-3777212f9025"))
+      (tstamps "18cfacee-c055-5c78-89d1-8f652d03ca55"))
     (comp
       (ref "F1")
       (value "PTC 3A 16V")
@@ -1119,7 +1119,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "utZzXEwZPX")
+          (name "SKiDL Tag") "7oCOs4KBxJ")
         (field
           (name "SKiDL Line") "valve_controller.py:119"))
       (libsource
@@ -1129,7 +1129,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "0b802838-40df-5691-911d-88b1f5dd65fa"))
+      (tstamps "10c2e918-c9f9-57a1-842b-e1ce07cd0d85"))
     (comp
       (ref "J1")
       (value "J_12V IN")
@@ -1143,7 +1143,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "5ijgszwBaB")
+          (name "SKiDL Tag") "STF68dvOWf")
         (field
           (name "SKiDL Line") "valve_controller.py:113"))
       (libsource
@@ -1153,7 +1153,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "87c6e4b8-b83a-5414-8840-698a193852a7"))
+      (tstamps "daee2fbf-17a0-5968-99ca-6cdd2529ddcf"))
     (comp
       (ref "J2")
       (value "J_DBG (GND, TX, RX, 3V3)")
@@ -1167,9 +1167,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "0Nms4vy3b0")
+          (name "SKiDL Tag") "Usb5CqlpgC")
         (field
-          (name "SKiDL Line") "valve_controller.py:219"))
+          (name "SKiDL Line") "valve_controller.py:223"))
       (libsource
         (lib "Connector_Generic")
         (part "Conn_01x04"))
@@ -1177,7 +1177,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "afa67e9d-401a-5a4f-82d0-f45bb9d67deb"))
+      (tstamps "51e6340a-68ff-5864-ad26-862782325f51"))
     (comp
       (ref "J3")
       (value "J_USB")
@@ -1191,9 +1191,9 @@
         (field
           (name "Datasheet") "https://www.usb.org/sites/default/files/documents/usb_type-c.zip")
         (field
-          (name "SKiDL Tag") "S1Gd9V5jTF")
+          (name "SKiDL Tag") "jL00uU17lZ")
         (field
-          (name "SKiDL Line") "valve_controller.py:230"))
+          (name "SKiDL Line") "valve_controller.py:234"))
       (libsource
         (lib "Connector")
         (part "USB_C_Receptacle_USB2.0_16P"))
@@ -1201,7 +1201,7 @@
         (names "/usb_c1/")
         (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/"))
       (component_classes)
-      (tstamps "c2b00779-f158-5b92-9d5b-4e38e5f83e84"))
+      (tstamps "ebe701b3-6382-5f90-816c-c8ca2d032784"))
     (comp
       (ref "J4")
       (value "J_VALVE1")
@@ -1215,9 +1215,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "A8Xs45GOhO")
+          (name "SKiDL Tag") "XD97d6naAj")
         (field
-          (name "SKiDL Line") "valve_controller.py:269"))
+          (name "SKiDL Line") "valve_controller.py:273"))
       (libsource
         (lib "Connector")
         (part "Screw_Terminal_01x02"))
@@ -1225,7 +1225,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "8983a846-4f86-5265-89b6-82fd3937666f"))
+      (tstamps "a6cfccd5-76d4-5dd1-a28c-ef882f15b181"))
     (comp
       (ref "J5")
       (value "J_VALVE2")
@@ -1239,9 +1239,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "cpAdNCub97")
+          (name "SKiDL Tag") "OfuTHkKXL0")
         (field
-          (name "SKiDL Line") "valve_controller.py:269"))
+          (name "SKiDL Line") "valve_controller.py:273"))
       (libsource
         (lib "Connector")
         (part "Screw_Terminal_01x02"))
@@ -1249,7 +1249,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "09f1677c-c017-53f0-acd8-27e3136cf23d"))
+      (tstamps "9d8a828d-ccbd-57ef-aa18-299abe37ed88"))
     (comp
       (ref "J6")
       (value "J_VALVE3")
@@ -1263,9 +1263,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "HYbFh0K5c5")
+          (name "SKiDL Tag") "RfviBlxm1L")
         (field
-          (name "SKiDL Line") "valve_controller.py:269"))
+          (name "SKiDL Line") "valve_controller.py:273"))
       (libsource
         (lib "Connector")
         (part "Screw_Terminal_01x02"))
@@ -1273,7 +1273,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "f683e81b-2b41-552d-a564-39904878d286"))
+      (tstamps "1ab44b2d-2336-50f7-b10b-74be18830ce0"))
     (comp
       (ref "J7")
       (value "J_VALVE4")
@@ -1287,9 +1287,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "tGojnKsRqE")
+          (name "SKiDL Tag") "yjoIoTTkCR")
         (field
-          (name "SKiDL Line") "valve_controller.py:269"))
+          (name "SKiDL Line") "valve_controller.py:273"))
       (libsource
         (lib "Connector")
         (part "Screw_Terminal_01x02"))
@@ -1297,7 +1297,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "e1b436ae-efdd-5ddc-8b81-cfb33c704f62"))
+      (tstamps "b4e3a25f-c4f7-533b-abea-fdf589157c1d"))
     (comp
       (ref "J8")
       (value "J_485 (A, B, GND)")
@@ -1311,9 +1311,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "wJ6XWmSXyv")
+          (name "SKiDL Tag") "UIvzaD9OX4")
         (field
-          (name "SKiDL Line") "valve_controller.py:321"))
+          (name "SKiDL Line") "valve_controller.py:325"))
       (libsource
         (lib "Connector_Generic")
         (part "Conn_01x03"))
@@ -1321,7 +1321,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "6103e85b-2bd1-5f8c-890e-91930486ef2d"))
+      (tstamps "be023d63-63da-5146-bc37-ccbb03bc751f"))
     (comp
       (ref "JP1")
       (value "JP_TERM")
@@ -1335,9 +1335,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "d6k1Idy10g")
+          (name "SKiDL Tag") "v1zAR2RRxp")
         (field
-          (name "SKiDL Line") "valve_controller.py:303"))
+          (name "SKiDL Line") "valve_controller.py:307"))
       (libsource
         (lib "Jumper")
         (part "SolderJumper_2_Open"))
@@ -1345,7 +1345,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "a4fe76fb-9323-5384-bf6e-509bc968e3f2"))
+      (tstamps "fcada5c5-fc4e-5a96-9e3c-6101a6405d48"))
     (comp
       (ref "JP2")
       (value "JP_BIAS_A")
@@ -1359,9 +1359,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "O4oiBcPL54")
+          (name "SKiDL Tag") "hd46ND1f37")
         (field
-          (name "SKiDL Line") "valve_controller.py:309"))
+          (name "SKiDL Line") "valve_controller.py:313"))
       (libsource
         (lib "Jumper")
         (part "SolderJumper_2_Open"))
@@ -1369,7 +1369,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "c9246886-9062-5eeb-b7c3-28f3eaccd0c3"))
+      (tstamps "1e075d01-0d04-5130-855c-56425ba4f36f"))
     (comp
       (ref "JP3")
       (value "JP_BIAS_B")
@@ -1383,9 +1383,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "yMBJRwy2BS")
+          (name "SKiDL Tag") "LEfYwxIUWS")
         (field
-          (name "SKiDL Line") "valve_controller.py:311"))
+          (name "SKiDL Line") "valve_controller.py:315"))
       (libsource
         (lib "Jumper")
         (part "SolderJumper_2_Open"))
@@ -1393,7 +1393,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "7cde5006-3897-59ed-9159-42c2909fb5d6"))
+      (tstamps "1db6cdf0-0baf-5d56-bb99-0362484df129"))
     (comp
       (ref "L1")
       (value "4.7u Isat>=2A")
@@ -1407,7 +1407,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "P6DueGkNjF")
+          (name "SKiDL Tag") "5zAwuvnuTa")
         (field
           (name "SKiDL Line") "valve_controller.py:159"))
       (libsource
@@ -1417,7 +1417,7 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "d76722e8-5fac-5d12-a59e-6a105be4e550"))
+      (tstamps "030ccbf6-4580-55a0-913c-0ecb8d7d9bab"))
     (comp
       (ref "Q1")
       (value "AO3407A")
@@ -1431,7 +1431,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "LVjqYxneeQ")
+          (name "SKiDL Tag") "SaCxPLcyx_")
         (field
           (name "SKiDL Line") "valve_controller.py:125"))
       (libsource
@@ -1441,7 +1441,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "34804bbf-5615-518d-a50d-f8732f535345"))
+      (tstamps "02231af4-5c5d-58ae-9ffc-e57a8bd423d3"))
     (comp
       (ref "Q2")
       (value "AO3400A")
@@ -1455,9 +1455,9 @@
         (field
           (name "Datasheet") "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf")
         (field
-          (name "SKiDL Tag") "E1yifUvUMV")
+          (name "SKiDL Tag") "zxaUEU3hiL")
         (field
-          (name "SKiDL Line") "valve_controller.py:258"))
+          (name "SKiDL Line") "valve_controller.py:262"))
       (libsource
         (lib "Transistor_FET")
         (part "AO3400A"))
@@ -1465,7 +1465,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "3191b172-7e3c-50c2-aafb-f7cd59fbfb29"))
+      (tstamps "480622c5-8cd4-503b-8650-f65380d05110"))
     (comp
       (ref "Q3")
       (value "AO3400A")
@@ -1479,9 +1479,9 @@
         (field
           (name "Datasheet") "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf")
         (field
-          (name "SKiDL Tag") "OJkyi6Pohs")
+          (name "SKiDL Tag") "0bFvFke8pR")
         (field
-          (name "SKiDL Line") "valve_controller.py:258"))
+          (name "SKiDL Line") "valve_controller.py:262"))
       (libsource
         (lib "Transistor_FET")
         (part "AO3400A"))
@@ -1489,7 +1489,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "1bbe134d-67bc-585b-adec-b60d3e3e905c"))
+      (tstamps "792a152e-24bf-5915-9935-cad26420c35b"))
     (comp
       (ref "Q4")
       (value "AO3400A")
@@ -1503,9 +1503,9 @@
         (field
           (name "Datasheet") "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf")
         (field
-          (name "SKiDL Tag") "RhJGfJ2Qm_")
+          (name "SKiDL Tag") "e9Q0Nyqw7X")
         (field
-          (name "SKiDL Line") "valve_controller.py:258"))
+          (name "SKiDL Line") "valve_controller.py:262"))
       (libsource
         (lib "Transistor_FET")
         (part "AO3400A"))
@@ -1513,7 +1513,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "c2df0892-8eac-5a17-b082-9271932f1f4a"))
+      (tstamps "d54e9836-6cc3-5082-9b74-3e08abd947ce"))
     (comp
       (ref "Q5")
       (value "AO3400A")
@@ -1527,9 +1527,9 @@
         (field
           (name "Datasheet") "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf")
         (field
-          (name "SKiDL Tag") "xVMasHqs_h")
+          (name "SKiDL Tag") "KNY6LjRe_4")
         (field
-          (name "SKiDL Line") "valve_controller.py:258"))
+          (name "SKiDL Line") "valve_controller.py:262"))
       (libsource
         (lib "Transistor_FET")
         (part "AO3400A"))
@@ -1537,7 +1537,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "8b6bf399-18d1-5440-bccb-c99133feecba"))
+      (tstamps "aeff68ba-3d9e-5e2f-a00a-f9a352764de4"))
     (comp
       (ref "R1")
       (value "10k")
@@ -1551,7 +1551,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "joorFo0hcw")
+          (name "SKiDL Tag") "GBwZC2mZfW")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1561,7 +1561,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "ca2c3464-4ec3-5794-b452-3fedfc2a3862"))
+      (tstamps "7ee96a51-ede5-5b69-982a-c67f1febc7f3"))
     (comp
       (ref "R10")
       (value "100k")
@@ -1575,7 +1575,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "4zTwHQKpDb")
+          (name "SKiDL Tag") "D_j88WSIBX")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1585,7 +1585,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "06d3f474-59df-5ec1-819a-cdfa13a324ef"))
+      (tstamps "82081a4c-8f51-5fd7-bfe8-b6ea38f53478"))
     (comp
       (ref "R11")
       (value "100")
@@ -1599,7 +1599,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "H3LYQ9OyRf")
+          (name "SKiDL Tag") "73cyDy5Jsp")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1609,7 +1609,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "aee80dd7-3531-5dfb-b87f-fa61b6d1a80c"))
+      (tstamps "42692a54-d9fa-5b37-9044-da9d19623a8f"))
     (comp
       (ref "R12")
       (value "100k")
@@ -1623,7 +1623,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "VSONu_I1Jo")
+          (name "SKiDL Tag") "4UVz7izv6d")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1633,7 +1633,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "79441d8d-2c48-5fcb-a12f-3ee20849569a"))
+      (tstamps "1438a917-ebd4-59a8-bd7a-1b7ae13c04ec"))
     (comp
       (ref "R13")
       (value "100")
@@ -1647,7 +1647,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "B5gmB7Lp2z")
+          (name "SKiDL Tag") "3sC5Wu7LWS")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1657,7 +1657,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "5753333f-390e-55f8-8d22-c9fa09904510"))
+      (tstamps "cdf513c5-b593-5622-9a3f-038da67cf3ad"))
     (comp
       (ref "R14")
       (value "100k")
@@ -1671,7 +1671,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "048sgsnfJr")
+          (name "SKiDL Tag") "aQNlT6f4FQ")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1681,7 +1681,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "62ed28a7-5a2e-519a-9bd3-2a16562f4257"))
+      (tstamps "48a833d7-3da7-5f26-b3a6-900570928fe8"))
     (comp
       (ref "R15")
       (value "100")
@@ -1695,7 +1695,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "X8sRoziMdF")
+          (name "SKiDL Tag") "3X8UTzW1Cz")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1705,7 +1705,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "b09fa4b0-d150-5625-83c2-80bcbd03fe73"))
+      (tstamps "21f7c6d2-e92d-5c5e-a3e7-e4e779c85610"))
     (comp
       (ref "R16")
       (value "100k")
@@ -1719,7 +1719,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "V6DDu9xA3G")
+          (name "SKiDL Tag") "AQZBEsinX6")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1729,7 +1729,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "fa328c52-df24-5ea2-ac14-11072bc6d257"))
+      (tstamps "24a2541c-09d2-520f-ab1a-fa6961ae88ca"))
     (comp
       (ref "R17")
       (value "120")
@@ -1743,7 +1743,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "_HuQ17K5yC")
+          (name "SKiDL Tag") "eCuC02Nti9")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1753,7 +1753,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "a423b5f2-f33c-574c-8c1b-4c42ec35d4e1"))
+      (tstamps "64e46082-409b-5347-96d8-d93d733aa8eb"))
     (comp
       (ref "R18")
       (value "680")
@@ -1767,7 +1767,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Opi6CUt2HX")
+          (name "SKiDL Tag") "_UaxCQOAxa")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1777,7 +1777,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "38198271-ecb9-5a70-be61-343ec8d31091"))
+      (tstamps "d4e1ac60-0b73-56ac-874d-aa7d927c5fb1"))
     (comp
       (ref "R19")
       (value "680")
@@ -1791,7 +1791,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "rS3O9XYz1S")
+          (name "SKiDL Tag") "AvTmJqxzVc")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1801,7 +1801,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "482fd8e6-dcb0-58df-8085-199f19c55e3f"))
+      (tstamps "47e3eb3a-9769-599d-bf94-cc915e8734aa"))
     (comp
       (ref "R2")
       (value "100k")
@@ -1815,7 +1815,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "4LMNDFR3xS")
+          (name "SKiDL Tag") "xCxhRbnzJq")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1825,7 +1825,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "e0590554-56a0-51dc-a3c8-d99c751fbd5e"))
+      (tstamps "74d2476e-7294-53b9-a5db-5442b6b1780a"))
     (comp
       (ref "R20")
       (value "680")
@@ -1839,7 +1839,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "VfERfAm34P")
+          (name "SKiDL Tag") "Z16Y5te306")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1849,7 +1849,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "83bda95f-3f79-5554-82e6-de6f990799fa"))
+      (tstamps "aaf0242e-9856-512a-a6ea-c26c90bc4343"))
     (comp
       (ref "R21")
       (value "680")
@@ -1863,7 +1863,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Jy0kjWs_lx")
+          (name "SKiDL Tag") "GRguhb67gB")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1873,7 +1873,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "b943c1a0-e5ea-5df5-ac97-2be07f7e069e"))
+      (tstamps "d6369a89-6ee9-52ae-817a-f21c5a18feda"))
     (comp
       (ref "R22")
       (value "200")
@@ -1887,7 +1887,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "VIHVIB8f7v")
+          (name "SKiDL Tag") "uYIgxmBn8D")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1897,7 +1897,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "954d67d2-34c7-5422-945f-20ae7dcad3f1"))
+      (tstamps "043f4430-a4df-55f6-9ba0-25a9ef930dbc"))
     (comp
       (ref "R23")
       (value "680")
@@ -1911,7 +1911,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Rw9_miTvED")
+          (name "SKiDL Tag") "N_A5UIkAwe")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1921,7 +1921,7 @@
         (names "/leds1/")
         (tstamps "/3e2c2b1f-a158-5b79-bce3-00636753c235/"))
       (component_classes)
-      (tstamps "2bdd195a-e2ed-5610-9048-605aaa767401"))
+      (tstamps "df02f547-1fc3-51fc-9817-8c392e375762"))
     (comp
       (ref "R3")
       (value "22k")
@@ -1935,7 +1935,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "9Qvs1WHIPe")
+          (name "SKiDL Tag") "y7EHYpnmuO")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1945,7 +1945,7 @@
         (names "/power_in1/")
         (tstamps "/adfe4e64-6e98-5bb0-8a13-339e06c044b9/"))
       (component_classes)
-      (tstamps "9562536b-024c-5fc9-a4ce-c9c0538c7cad"))
+      (tstamps "243358a7-426f-50af-9742-7d4894cf0063"))
     (comp
       (ref "R4")
       (value "10k")
@@ -1959,7 +1959,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "qEcOhIpZ2R")
+          (name "SKiDL Tag") "bjXlre3N6h")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1969,7 +1969,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "0e4b1797-f360-5f92-a6e2-9ccde2b12ec4"))
+      (tstamps "ccac2023-50f3-5079-964e-44c11cadc01f"))
     (comp
       (ref "R5")
       (value "10k")
@@ -1983,7 +1983,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Xkbjn3UdO4")
+          (name "SKiDL Tag") "W4CJ_7JyW4")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -1993,7 +1993,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "75bed3af-124c-5173-9480-8b6531b97fa0"))
+      (tstamps "c14f6e5f-d3a1-51d7-aed8-8dbe7d350a9c"))
     (comp
       (ref "R6")
       (value "5.1k")
@@ -2007,7 +2007,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "EctLxdq3hS")
+          (name "SKiDL Tag") "p4Wghg8cus")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -2017,7 +2017,7 @@
         (names "/usb_c1/")
         (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/"))
       (component_classes)
-      (tstamps "a226ae18-a6b9-55bb-b34f-13acf11b3c8e"))
+      (tstamps "1d1d02d3-5026-5652-97ed-d832473f9a8b"))
     (comp
       (ref "R7")
       (value "5.1k")
@@ -2031,7 +2031,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "zW3K1H__lG")
+          (name "SKiDL Tag") "3UFyKsdwju")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -2041,7 +2041,7 @@
         (names "/usb_c1/")
         (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/"))
       (component_classes)
-      (tstamps "b15d2c2a-4e00-5729-93ef-d785dd62f648"))
+      (tstamps "03ea91a3-dbe6-5e11-b22a-c47c2ae8f6df"))
     (comp
       (ref "R8")
       (value "1M")
@@ -2055,7 +2055,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "5KTlefAMnQ")
+          (name "SKiDL Tag") "ef2T68nZYy")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -2065,7 +2065,7 @@
         (names "/usb_c1/")
         (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/"))
       (component_classes)
-      (tstamps "79a4d9d3-7c34-53f8-8a3f-94f5298203bd"))
+      (tstamps "24e4a5ee-bd08-5171-bbf4-3bd2f81ebf5d"))
     (comp
       (ref "R9")
       (value "100")
@@ -2079,7 +2079,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "j5eqiIm2V1")
+          (name "SKiDL Tag") "6VS495DbWU")
         (field
           (name "SKiDL Line") "valve_controller.py:63"))
       (libsource
@@ -2089,7 +2089,7 @@
         (names "/valves1/")
         (tstamps "/25b9e783-0c20-5671-ae24-15a487789ad8/"))
       (component_classes)
-      (tstamps "86b56d5a-e624-5342-ae8d-273a3e1bf495"))
+      (tstamps "8a14057a-1086-5db8-9791-c9365c7ec26d"))
     (comp
       (ref "SW1")
       (value "RESET")
@@ -2103,9 +2103,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "myJ2zDHc8f")
+          (name "SKiDL Tag") "4JMtX7tEQA")
         (field
-          (name "SKiDL Line") "valve_controller.py:193"))
+          (name "SKiDL Line") "valve_controller.py:197"))
       (libsource
         (lib "Switch")
         (part "SW_Push"))
@@ -2113,7 +2113,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "7f4802bf-e837-504f-9c39-c27a0b97d380"))
+      (tstamps "27d13646-b6a6-5a93-9ca3-88755e90cab9"))
     (comp
       (ref "SW2")
       (value "BOOT")
@@ -2127,9 +2127,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "tOs2KqN1Rp")
+          (name "SKiDL Tag") "NdPKqGkUOL")
         (field
-          (name "SKiDL Line") "valve_controller.py:198"))
+          (name "SKiDL Line") "valve_controller.py:202"))
       (libsource
         (lib "Switch")
         (part "SW_Push"))
@@ -2137,7 +2137,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "bc75f234-2cac-5fbf-88f5-3bc1cd8af89c"))
+      (tstamps "a22e54d0-5555-5681-b55a-ce9a1c08b58b"))
     (comp
       (ref "TP1")
       (value "TP")
@@ -2151,9 +2151,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "JNrTCQVnyO")
+          (name "SKiDL Tag") "c_dvnJ2U4b")
         (field
-          (name "SKiDL Line") "valve_controller.py:343"))
+          (name "SKiDL Line") "valve_controller.py:347"))
       (libsource
         (lib "Connector")
         (part "TestPoint"))
@@ -2161,7 +2161,7 @@
         (names "/test_points1/")
         (tstamps "/cda1ba2c-eef9-5409-bd83-28590e5faa66/"))
       (component_classes)
-      (tstamps "558fb1ad-d81c-51c3-be9d-35431edee40c"))
+      (tstamps "4d019ca5-d3cb-5f63-a688-20affc704b86"))
     (comp
       (ref "TP2")
       (value "TP")
@@ -2175,9 +2175,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "kLF0NKPMVc")
+          (name "SKiDL Tag") "VON4LjxBDv")
         (field
-          (name "SKiDL Line") "valve_controller.py:343"))
+          (name "SKiDL Line") "valve_controller.py:347"))
       (libsource
         (lib "Connector")
         (part "TestPoint"))
@@ -2185,7 +2185,7 @@
         (names "/test_points1/")
         (tstamps "/cda1ba2c-eef9-5409-bd83-28590e5faa66/"))
       (component_classes)
-      (tstamps "520445c5-ca42-589e-acda-07eb840910ea"))
+      (tstamps "a9e2f05e-398a-593b-a2eb-3aa9b0caa766"))
     (comp
       (ref "TP3")
       (value "TP")
@@ -2199,9 +2199,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "bd7qkU8A9Y")
+          (name "SKiDL Tag") "6IyVNMcNIR")
         (field
-          (name "SKiDL Line") "valve_controller.py:343"))
+          (name "SKiDL Line") "valve_controller.py:347"))
       (libsource
         (lib "Connector")
         (part "TestPoint"))
@@ -2209,7 +2209,7 @@
         (names "/test_points1/")
         (tstamps "/cda1ba2c-eef9-5409-bd83-28590e5faa66/"))
       (component_classes)
-      (tstamps "ce6a9b14-8950-5b4e-a880-9f166ae4eacd"))
+      (tstamps "176c2827-7b17-51aa-9a6e-7d2504dedbda"))
     (comp
       (ref "TP4")
       (value "TP")
@@ -2223,9 +2223,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "lsaprRxnzN")
+          (name "SKiDL Tag") "hCMU9xcLnb")
         (field
-          (name "SKiDL Line") "valve_controller.py:343"))
+          (name "SKiDL Line") "valve_controller.py:347"))
       (libsource
         (lib "Connector")
         (part "TestPoint"))
@@ -2233,7 +2233,7 @@
         (names "/test_points1/")
         (tstamps "/cda1ba2c-eef9-5409-bd83-28590e5faa66/"))
       (component_classes)
-      (tstamps "af020458-795f-5545-82ec-131514da26e1"))
+      (tstamps "22bcf067-f9c8-5a30-90b4-8195ae9daf94"))
     (comp
       (ref "U1")
       (value "AP63205WU-7 (5V 2A buck)")
@@ -2247,7 +2247,7 @@
         (field
           (name "Datasheet") "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf")
         (field
-          (name "SKiDL Tag") "GgVlgx3l87")
+          (name "SKiDL Tag") "LxqQzkSgjI")
         (field
           (name "SKiDL Line") "valve_controller.py:151"))
       (libsource
@@ -2257,10 +2257,10 @@
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "ec1202b8-a76f-5f0a-9e6e-a6ede32385a2"))
+      (tstamps "39884219-de60-5bb4-8a61-f5ce06f911f1"))
     (comp
       (ref "U2")
-      (value "AP7361C-33E")
+      (value "AMS1117-3.3")
       (description "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223")
       (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
       (fields
@@ -2269,19 +2269,19 @@
         (field
           (name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
         (field
-          (name "Datasheet") "https://www.diodes.com/assets/Datasheets/AP7361C.pdf")
+          (name "Datasheet") "http://www.advanced-monolithic.com/pdf/ds1117.pdf")
         (field
-          (name "SKiDL Tag") "Nz02ZSzkQz")
+          (name "SKiDL Tag") "q9yfLUjntJ")
         (field
-          (name "SKiDL Line") "valve_controller.py:172"))
+          (name "SKiDL Line") "valve_controller.py:173"))
       (libsource
         (lib "Regulator_Linear")
-        (part "AP7361C-33E"))
+        (part "AMS1117-3.3"))
       (sheetpath
         (names "/aux_power1/")
         (tstamps "/ad6b0cf0-0822-56a4-842e-2b8e281f7c1d/"))
       (component_classes)
-      (tstamps "eb41527b-fe33-516c-afc4-ccc129c8b2b2"))
+      (tstamps "fa1f71cc-06c9-5417-8b8b-b25cefc296ad"))
     (comp
       (ref "U3")
       (value "ESP32-S3-WROOM-1-N8")
@@ -2295,9 +2295,9 @@
         (field
           (name "Datasheet") "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf")
         (field
-          (name "SKiDL Tag") "pbZ5NNflP6")
+          (name "SKiDL Tag") "HJHicYQ5Bz")
         (field
-          (name "SKiDL Line") "valve_controller.py:182"))
+          (name "SKiDL Line") "valve_controller.py:186"))
       (libsource
         (lib "RF_Module")
         (part "ESP32-S3-WROOM-1"))
@@ -2305,7 +2305,7 @@
         (names "/esp32_1/")
         (tstamps "/68f313c4-9e6d-523f-a9cf-078c1758c079/"))
       (component_classes)
-      (tstamps "981e07fa-eba8-5ad1-80e8-86f7fbf4bc1f"))
+      (tstamps "680d8c79-e315-50a9-999d-0938d8c4889a"))
     (comp
       (ref "U4")
       (value "USBLC6-2P6")
@@ -2319,9 +2319,9 @@
         (field
           (name "Datasheet") "https://www.st.com/resource/en/datasheet/usblc6-2.pdf")
         (field
-          (name "SKiDL Tag") "WVlrg2WlYh")
+          (name "SKiDL Tag") "qnkpnsmw6l")
         (field
-          (name "SKiDL Line") "valve_controller.py:244"))
+          (name "SKiDL Line") "valve_controller.py:248"))
       (libsource
         (lib "Power_Protection")
         (part "USBLC6-2P6"))
@@ -2329,7 +2329,7 @@
         (names "/usb_c1/")
         (tstamps "/2a765778-5eaa-5c71-ac5b-293479e09f74/"))
       (component_classes)
-      (tstamps "f37dc0c3-7405-5157-b5d6-f0fb6df00ab5"))
+      (tstamps "1017b163-1e5b-5698-be86-f4cfd1d7c732"))
     (comp
       (ref "U5")
       (value "CA-IS3092W")
@@ -2343,9 +2343,9 @@
         (field
           (name "Datasheet") "https://www.lcsc.com/product-detail/C2890051.html")
         (field
-          (name "SKiDL Tag") "S19cKR36PA")
+          (name "SKiDL Tag") "NXLPcZD2Ea")
         (field
-          (name "SKiDL Line") "valve_controller.py:279"))
+          (name "SKiDL Line") "valve_controller.py:283"))
       (libsource
         (lib "valve_custom")
         (part "CA-IS3092W"))
@@ -2353,7 +2353,7 @@
         (names "/rs485_1/")
         (tstamps "/1155a834-bb3e-515e-ba7d-0b6ea10a03d3/"))
       (component_classes)
-      (tstamps "ba5870c3-6949-5898-8528-f22a675ed028")))
+      (tstamps "a93eb9a1-a9ca-5eb9-b2fb-bd09bbc16e98")))
   (nets
     (net
       (code 1)
@@ -2401,7 +2401,7 @@
         (pintype "PASSIVE"))
       (node
         (ref "U2")
-        (pin "3")
+        (pin "2")
         (pintype "POWER-OUT"))
       (node
         (ref "U3")
@@ -2433,7 +2433,7 @@
         (pintype "PASSIVE"))
       (node
         (ref "U2")
-        (pin "1")
+        (pin "3")
         (pintype "POWER-IN")))
     (net
       (code 3)
@@ -2713,7 +2713,7 @@
         (pintype "POWER-IN"))
       (node
         (ref "U2")
-        (pin "2")
+        (pin "1")
         (pintype "POWER-IN"))
       (node
         (ref "U3")

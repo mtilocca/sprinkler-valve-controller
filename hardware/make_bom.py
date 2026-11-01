@@ -49,7 +49,8 @@ M = [
  ("RESET", "SW_SPST", "C&K PTS645SK43SMTR92 LFS tactile switch", 0.12, "E"), ("BOOT", "SW_SPST", "C&K PTS645SK43SMTR92 LFS tactile switch", 0.12, "E"),
  ("TP", "TestPoint", "test pad (copper only, no part)", 0.0, "-"),
  ("AP63205WU", "TSOT-23-6", "Diodes AP63205WU-7", 0.45, "E"),
- ("AP7361C", "SOT-223", "Diodes AP7361C-33E-13", 0.45, "E"),
+ ("AMS1117-3.3", "SOT-223", "AMS1117-3.3 (1A LDO, SOT-223; JLCPCB basic part)", 0.05, "B"),
+ ("22u 6.3V tantalum", "CP_EIA-3216", "22 uF 6.3 V tantalum, 3216 (A case), e.g. Kemet T491A226M006AT / AVX TAJA226K006R", 0.20, "E"),
  ("ESP32-S3-WROOM-1-N8", "ESP32-S3-WROOM-1", "Espressif ESP32-S3-WROOM-1-N8", 4.20, "E"),
  ("USBLC6-2P6", "SOT-666", "ST USBLC6-2P6", 0.30, "E"),
  ("CA-IS3092W", "SOIC-16W", "Chipanalog CA-IS3092W (LCSC C2890051)", 2.00, "E"),
@@ -57,7 +58,7 @@ M = [
 LCSC = {   # (value prefix, footprint fragment) -> (LCSC number, note)
  ("CA-IS3092W", "SOIC-16W"): ("C2890051", ""),
  ("AP63205WU", "TSOT-23-6"): ("C2071056", ""),
- ("AP7361C", "SOT-223"): ("C500795", "stock was low in one snapshot (about 115): check before ordering"),
+ ("AMS1117-3.3", "SOT-223"): ("C6186", "AMS1117-3.3; confirm the C number and stock in the JLCPCB search (alternatives C22459274, LD1117-3.3 C347229)"),
  ("ESP32-S3-WROOM-1-N8", "ESP32-S3-WROOM-1"): ("C2913198", ""),
  ("USBLC6-2P6", "SOT-666"): ("C2827693", "TECH PUBLIC clone; ST original is C15999"),
  ("AO3407A", "SOT-23"): ("C347478", "UMW clone, extended; other AO3407A clones exist"),
@@ -102,8 +103,9 @@ with open("fab/BOM_valve_controller.csv", "w", newline="") as f:
     w.writerow([]); w.writerow(["", "", "", "", "TOTAL parts per board (rough estimate, not a quote)", "", "", "", f"{tot:.2f}"])
 with open("fab/BOM_JLCPCB_import.csv", "w", newline="") as f:
     w = csv.writer(f); w.writerow(["Comment", "Designator", "Footprint", "LCSC Part #"])
-    for r in out:                                             # through-hole parts included: JLCPCB solders them (Standard PCBA)
-        if "no part" in r[4]:
+    tht = {"J1", "J2", "J4", "J5", "J6", "J7", "J8"}          # soldered by hand (not in the JLCPCB BOM)
+    for r in out:
+        if "no part" in r[4] or set(r[0].split(",")) <= tht:
             continue
         w.writerow([r[2], r[0], r[3], r[6]])
 ext = {r[2] + r[3] for r in out if r[5] == "E"}

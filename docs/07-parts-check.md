@@ -7,7 +7,7 @@ Web check of the risky parts. Stock and price come from search snapshots and cha
 | PTC fuse 3 A, 1812, 16 V | Exists from several makers (TECHFUSE mSMD300-16V C6851473, about 885 in stock; RUILON C702820; prosemi C21261157). The Bourns MF-MSMF300 16 V version was not found on LCSC | TECHFUSE C6851473. The 3 A hold current still drops when hot |
 | Inductor 4.7 µH 4x4 mm | SRN4018 is only rated 1.9 A, not 3 A. The 5 V rail carries under 1 A (peak about 1 A with ripple), so 2 A is enough. Label corrected from "4.7u 3A" to "4.7u Isat>=2A" | FNR4018S4R7MT, C167806 (1.8 A, Isat 2.2 A, shielded) |
 | P-FET AO3407A | Only extended parts (several clones) | UMW C347478. Pinout G-S-D = pads 1-2-3, as in the symbol |
-| 3.3 V LDO AP7361C-33E-13 | C500795; one snapshot showed only about 115 in stock. Datasheet pinout and 6 V input limit checked | Check stock; if short, a different LDO needs a footprint and pin change |
+| 3.3 V LDO | AP7361C was out of stock at JLCPCB (1 piece) and scarce elsewhere; no pin-compatible part found | Changed to AMS1117-3.3 (SOT-223, C6186, basic part) with a 22 µF tantalum output capacitor (C8): three pads rewired, 5 V in, 3V3 out on pin 2 and the tab, GND on pin 1 |
 | ESP32-S3-WROOM-1-N8 | C2913198, extended, thousands in stock | OK |
 | CA-IS3092W | C2890051. Pinout, 3.3 V logic and supply range checked against the datasheet | OK, check stock |
 | AP63205WU-7 | C2071056, thousands in stock. Pinout and component values checked against the datasheet | OK |

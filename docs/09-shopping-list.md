@@ -1,6 +1,6 @@
 # 9. Parts to buy yourself
 
-If the order uses Standard assembly with the through-hole parts in the BOM (see docs/08-fabrication.md), JLCPCB solders the terminals and header and you only need the "Other things you need" list below. The table is for the case where you solder them yourself.
+JLCPCB places only the surface-mount parts (see docs/08-fabrication.md). These through-hole parts are soldered by hand: 17 pins per board.
 
 The JLCPCB BOM covers only the surface-mount parts. These through-hole parts are soldered by hand. LCSC numbers come from a web search on 2026-11-01: check the footprint, wire-entry direction and stock on the LCSC page before ordering.
 

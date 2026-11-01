@@ -163,6 +163,185 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C_Polarized"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286)
+						(xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794)
+						(xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "C_Polarized_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:D_Schottky"
 			(pin_numbers
 				(hide yes)
@@ -516,10 +695,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Linear:AP7361C-33E"
-			(pin_names
-				(offset 0.254)
-			)
+		(symbol "Regulator_Linear:AMS1117-3.3"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -535,7 +711,7 @@
 					)
 				)
 			)
-			(property "Value" "AP7361C-33E"
+			(property "Value" "AMS1117-3.3"
 				(at 0 3.175 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -547,19 +723,18 @@
 				)
 			)
 			(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
-				(at 0 5.715 0)
+				(at 0 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
 				)
 			)
-			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP7361C.pdf"
-				(at 0 -1.27 0)
+			(property "Datasheet" "http://www.advanced-monolithic.com/pdf/ds1117.pdf"
+				(at 2.54 -6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -591,7 +766,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SOT?223*"
+			(property "ki_fp_filters" "SOT?223*TabPin2*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -602,7 +777,7 @@
 					)
 				)
 			)
-			(symbol "AP7361C-33E_0_1"
+			(symbol "AMS1117-3.3_0_1"
 				(rectangle
 					(start -5.08 -5.08)
 					(end 5.08 1.905)
@@ -615,11 +790,11 @@
 					)
 				)
 			)
-			(symbol "AP7361C-33E_1_1"
+			(symbol "AMS1117-3.3_1_1"
 				(pin power_in line
-					(at -7.62 0 0)
+					(at 0 -7.62 90)
 					(length 2.54)
-					(name "VI"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -634,10 +809,10 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 -7.62 90)
+				(pin power_out line
+					(at 7.62 0 180)
 					(length 2.54)
-					(name "GND"
+					(name "VO"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -652,10 +827,10 @@
 						)
 					)
 				)
-				(pin power_out line
-					(at 7.62 0 180)
+				(pin power_in line
+					(at -7.62 0 0)
 					(length 2.54)
-					(name "VO"
+					(name "VI"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1027,11 +1202,11 @@
 	(label "SW_5V" (at 41.91 26.67 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "365d5306-305f-5e93-baf5-2ec76e73fbd7"))
 	(wire (pts (xy 39.37 29.21) (xy 41.91 29.21)) (stroke (width 0) (type default)) (uuid "1a15f5c1-e370-5e78-b7f6-63db87e1f9dd"))
 	(label "BOOT_5V" (at 41.91 29.21 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "da158930-6946-52bc-9b1e-da4da204b072"))
-	(symbol (lib_id "Regulator_Linear:AP7361C-33E") (at 68.58 26.67 0) (unit 1)
+	(symbol (lib_id "Regulator_Linear:AMS1117-3.3") (at 68.58 26.67 0) (unit 1)
 		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
 		(uuid "b1e79908-0dc3-5d46-a239-788741353cd6")
 		(property "Reference" "U2" (at 68.58 16.51 0) (effects (font (size 1.27 1.27))))
-		(property "Value" "AP7361C-33E" (at 68.58 19.05 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "AMS1117-3.3" (at 68.58 19.05 0) (effects (font (size 1.27 1.27))))
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2" (at 68.58 26.67 0) (effects (font (size 1.27 1.27)) (hide yes)))
 		(property "Datasheet" "" (at 68.58 26.67 0) (effects (font (size 1.27 1.27)) (hide yes)))
 		(pin "1" (uuid "3fc8dcd1-76f6-505f-abce-414942344cc2"))
@@ -1039,12 +1214,12 @@
 		(pin "3" (uuid "ecb3af6a-dc32-5c4b-9faf-57cadb8aea47"))
 		(instances (project "valve_controller" (path "/7207cee3-9ed2-5610-8845-e155c20be2c5/24a7abaf-32c1-5e47-92bd-449ad5a0161d" (reference "U2") (unit 1))))
 	)
-	(wire (pts (xy 60.96 26.67) (xy 58.42 26.67)) (stroke (width 0) (type default)) (uuid "e3eb2bff-25ca-5e4f-a411-1dee253e5c57"))
-	(global_label "5V" (shape passive) (at 58.42 26.67 180) (effects (font (size 1.27 1.27)) (justify right)) (uuid "9e0a61c4-8cf0-5621-999b-d892eaff400a") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 58.42 26.67 0) (effects (font (size 1.27 1.27)) (hide yes))))
-	(wire (pts (xy 68.58 34.29) (xy 68.58 36.83)) (stroke (width 0) (type default)) (uuid "83579176-0481-57e3-bbd2-ec7710b00d8d"))
-	(global_label "GND" (shape passive) (at 68.58 36.83 270) (effects (font (size 1.27 1.27)) (justify right)) (uuid "dad4ddb8-695e-573f-a4ac-11d0f9e5bb94") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 68.58 36.83 0) (effects (font (size 1.27 1.27)) (hide yes))))
-	(wire (pts (xy 76.2 26.67) (xy 78.74 26.67)) (stroke (width 0) (type default)) (uuid "2c46680b-b9d6-5a5f-b2b2-dcca3026a5cf"))
-	(global_label "3V3" (shape passive) (at 78.74 26.67 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "c1d73fd5-a277-5f10-a19c-406438bfeadf") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 78.74 26.67 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 68.58 34.29) (xy 68.58 36.83)) (stroke (width 0) (type default)) (uuid "e3eb2bff-25ca-5e4f-a411-1dee253e5c57"))
+	(global_label "GND" (shape passive) (at 68.58 36.83 270) (effects (font (size 1.27 1.27)) (justify right)) (uuid "9e0a61c4-8cf0-5621-999b-d892eaff400a") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 68.58 36.83 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 76.2 26.67) (xy 78.74 26.67)) (stroke (width 0) (type default)) (uuid "83579176-0481-57e3-bbd2-ec7710b00d8d"))
+	(global_label "3V3" (shape passive) (at 78.74 26.67 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "dad4ddb8-695e-573f-a4ac-11d0f9e5bb94") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 78.74 26.67 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 60.96 26.67) (xy 58.42 26.67)) (stroke (width 0) (type default)) (uuid "2c46680b-b9d6-5a5f-b2b2-dcca3026a5cf"))
+	(global_label "5V" (shape passive) (at 58.42 26.67 180) (effects (font (size 1.27 1.27)) (justify right)) (uuid "c1d73fd5-a277-5f10-a19c-406438bfeadf") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 58.42 26.67 0) (effects (font (size 1.27 1.27)) (hide yes))))
 	(symbol (lib_id "Device:L") (at 15.24 69.85 0) (unit 1)
 		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
 		(uuid "24098f47-ed4a-5594-87ca-956d06738d40")
@@ -1180,12 +1355,12 @@
 	(global_label "5V" (shape passive) (at 81.28 123.19 90) (effects (font (size 1.27 1.27)) (justify left)) (uuid "43b744d3-7357-5a18-a3ba-62b7382023ca") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 81.28 123.19 0) (effects (font (size 1.27 1.27)) (hide yes))))
 	(wire (pts (xy 81.28 133.35) (xy 81.28 135.89)) (stroke (width 0) (type default)) (uuid "e8fa12dd-5882-5116-859d-7d7d2695a833"))
 	(global_label "GND" (shape passive) (at 81.28 135.89 270) (effects (font (size 1.27 1.27)) (justify right)) (uuid "29b68f9e-249b-56f8-bf7e-f723b91889a1") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 81.28 135.89 0) (effects (font (size 1.27 1.27)) (hide yes))))
-	(symbol (lib_id "Device:C") (at 93.98 130.81 0) (unit 1)
+	(symbol (lib_id "Device:C_Polarized") (at 93.98 130.81 0) (unit 1)
 		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
 		(uuid "ba6ab611-9af4-531d-8dbd-5dd08a7f4f9d")
 		(property "Reference" "C8" (at 93.98 114.3 0) (effects (font (size 1.27 1.27))))
-		(property "Value" "10u" (at 93.98 116.84 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (at 93.98 130.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Value" "22u 6.3V tantalum" (at 93.98 116.84 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A" (at 93.98 130.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
 		(property "Datasheet" "" (at 93.98 130.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
 		(pin "1" (uuid "41deee21-969c-5ec2-857e-eff219773740"))
 		(pin "2" (uuid "efd1bbea-c7f2-5bb1-9dda-e6f5506f0abe"))

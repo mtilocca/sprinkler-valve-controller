@@ -7,8 +7,8 @@ Everything for the order is in `hardware/fab/`.
 | File | Use |
 |------|-----|
 | `gerbers_valve_controller_RevA.zip` | Upload as the PCB Gerber file (also unpacked in `gerber/`): F.Cu, B.Cu, masks, silkscreen, F.Paste, Edge.Cuts, PTH and NPTH drill |
-| `BOM_JLCPCB_import.csv` | Upload as the BOM for assembly: 44 lines, surface-mount and through-hole parts (JLCPCB solders the terminals and header). Ordinary resistors and capacitors have no LCSC number: JLCPCB's matching picks the basic parts |
-| `CPL_valve_controller.csv` | Upload as the pick-and-place file: 77 parts (SMD and through-hole), top side |
+| `BOM_JLCPCB_import.csv` | Upload as the BOM for assembly: 38 lines, surface-mount parts only (you solder the terminals and header). Ordinary resistors and capacitors have no LCSC number: JLCPCB's matching picks the basic parts |
+| `CPL_valve_controller.csv` | Upload as the pick-and-place file: 70 SMD parts, top side |
 | `BOM_valve_controller.csv` | Full draft BOM with suggested parts, rough prices and notes (for you, not for upload) |
 | `assembly_top.pdf`, `assembly_bottom_labels.pdf` | Assembly drawings: where parts go; terminal labels on the bottom side |
 | `valve_controller_schematic.pdf` | Schematic |
@@ -33,23 +33,23 @@ Board rules used: tracks and gaps 0.2 mm, smallest drill 0.3 mm (the ESP32 pad v
 
 | Setting | Value |
 |---------|-------|
-| PCBA type | **Standard** (the ESP32 module is "Standard only"; Standard also allows JLCPCB to hand-solder the through-hole parts) |
+| PCBA type | **Standard** (the ESP32 module is "Standard only") |
 | Assembly side | Top only |
 | Quantity | 2 or 5 (minimum 2) |
 | Parts | Upload the BOM and CPL. Check every line in JLCPCB's part selection: stock and basic/extended class |
-| Through-hole | In the BOM and CPL: J1, J4-J7 (5.08 mm terminals), J8 (3.5 mm terminal), J2 (debug header) are soldered by JLCPCB (hand-soldering labor fee) |
+| Through-hole | Not in the BOM or CPL: you solder J1, J4-J7 (5.08 mm terminals), J8 (3.5 mm terminal) and J2 (debug header) yourself: 17 pins per board |
 | Solder jumpers | JP1-JP3 stay open (no part) |
 
 ## Check in JLCPCB's preview before paying
 
 1. **Part rotations.** JLCPCB's pick-and-place preview shows each part on the board; rotate or flip wrong ones there. The usual suspects are SOT-23 parts (Q1-Q5, D9), the SOT-223 LDO (U2), the SOIC-16 RS485 chip (U5), the TSOT-23-6 buck (U1), the SOT-666 ESD part (U4), the diodes (polarity!) and the ESP32 module (U3).
-2. **Stock.** The LDO (AP7361C) had low stock in one snapshot.
+2. **Stock.** Check C15 (100 µF electrolytic) and D2 (SMBJ15A): both were out of stock on the first match; pick in-stock alternatives (docs/07-parts-check.md). The tantalum C8 (22 µF 6.3 V, 3216) has no LCSC number in the BOM: pick one in the search.
 3. **Polarity parts.** Check the cathode side of D1-D8, the zener and the LEDs against `assembly_top.pdf`, and the + side of the electrolytic C15.
 4. **Antenna.** The ESP32 antenna end must face the board edge (top edge in the 3D view).
 
 ## After the boards arrive
 
-Follow `docs/06-bringup.md`. Nothing needs soldering by hand if the through-hole parts were in the order.
+Solder the terminals and header by hand (parts list in docs/09-shopping-list.md), then follow `docs/06-bringup.md`.
 
 ## Verified before export
 
