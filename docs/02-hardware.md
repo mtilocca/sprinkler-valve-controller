@@ -19,7 +19,21 @@ USB VBUS ─ diode ────────────────────�
 
 ## 2.2 Valve outputs (×4)
 
-Per valve: AO3400A low-side N-FET, 100 Ω gate resistor, 100 kΩ gate pull-down, SS34 flyback diode, 5.08 mm screw terminal (`+12V`, `-` return). Valves default to OFF because of the pull-downs. The firmware limits on-time and keeps at most 2 valves on.
+Per valve: AO3400A low-side N-FET, 100 Ω gate resistor, 100 kΩ gate pull-down, SS34 flyback diode, 5.08 mm screw terminal (`+12V`, `-` return). ### Current limits (what valves to buy)
+
+No relay is needed: each valve is switched by a logic-level MOSFET (AO3400A, about 40 mOhm at 3.3 V gate drive, 30 V) with a flyback diode, which suits 12 V **DC non-latching** solenoids. It does not drive AC (24 VAC) valves or latching valves (those need polarity reversal).
+
+| Limit | Value |
+|-------|-------|
+| Per valve (buy for this) | **1.0 A or less (12 W)**; typical irrigation solenoids draw 0.25-0.5 A |
+| Valves on at once | **2 at 1 A each**, or all 4 if each draws 0.5 A or less (raise the firmware limit); firmware default is 2 |
+| Whole board | PTC fuse 3 A hold at 25 C (about 2 A when hot); logic uses 0.3-0.6 A, so budget about 2 A for valves |
+| 12 V rail track | 1.0 mm, 1 oz: about 2.4 A at +10 C, 3.2 A at +20 C |
+| Valve return track | 0.6 mm, 1 oz, 13 mm long: about 1.7 A at +10 C, 2.2 A at +20 C (a single valve should stay under about 1.5 A) |
+| Per channel parts | MOSFET and SS34 diode handle 3 A or more; not the limit |
+| Supply | 12 V at 3 A or more (a 12 V 3 A adapter, or the battery / MPPT module output) |
+
+Valves default to OFF because of the pull-downs. The firmware limits on-time and keeps at most 2 valves on.
 
 ## 2.3 12 V monitor
 
