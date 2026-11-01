@@ -7904,7 +7904,7 @@
 			(uuid "3f35150a-4681-473f-b366-23acc9ad860e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_1812_4532Metric.step"
+		(model "${KIPRJMOD}/3d/Fuse_1812_4532Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
