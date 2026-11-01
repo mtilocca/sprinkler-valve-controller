@@ -60,3 +60,7 @@ Solder the terminals and header by hand (parts list in docs/09-shopping-list.md)
 ## CPL correction for U3 (2026-11-01)
 
 In JLCPCB's 3D preview the ESP32 module sat about 4 mm too high (antenna past the board edge, castellations not on the pads). JLCPCB's model origin differs from the KiCad footprint origin, so U3's Y in `CPL_valve_controller.csv` was changed from -13.5 mm to -17.5 mm. The board itself is unchanged. Re-check the preview after uploading the new CPL.
+
+## CPL rotations (2026-11-01)
+
+JLCPCB's models for U2 (SOT-223) and U5 (SOIC-16W) are rotated against the KiCad footprints: U2 set to 180 deg, U5 to 270 deg in the CPL. Verified only against the 3D preview; check pin 1 again after uploading.
