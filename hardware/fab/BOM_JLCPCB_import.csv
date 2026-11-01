@@ -16,7 +16,14 @@ yellow,D11,LED_0603_1608Metric,
 blue,D12,LED_0603_1608Metric,
 red,D13,LED_0603_1608Metric,
 PTC 3A 16V,F1,Fuse_1812_4532Metric,C6851473
+J_12V IN,J1,TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,C474952
+"J_DBG (GND, TX, RX, 3V3)",J2,PinHeader_1x04_P2.54mm_Vertical,C52016392
 J_USB,J3,USB_C_Receptacle_HRO_TYPE-C-31-M-12,C165948
+J_VALVE1,J4,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",C474952
+J_VALVE2,J5,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",C474952
+J_VALVE3,J6,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",C474952
+J_VALVE4,J7,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",C474952
+"J_485 (A, B, GND)",J8,"TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal",C474893
 4.7u Isat>=2A,L1,L_Bourns-SRN4018,C167806
 AO3407A,Q1,SOT-23,C347478
 AO3400A,"Q2,Q3,Q4,Q5",SOT-23,

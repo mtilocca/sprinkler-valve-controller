@@ -16,14 +16,14 @@ D11,1,yellow,LED_0603_1608Metric,"generic 0603 LED, yellow",B,,0.030,0.03,
 D12,1,blue,LED_0603_1608Metric,"generic 0603 LED, blue",B,,0.040,0.04,
 D13,1,red,LED_0603_1608Metric,"generic 0603 LED, red",B,,0.030,0.03,
 F1,1,PTC 3A 16V,Fuse_1812_4532Metric,"1812 PTC resettable fuse 3A hold, >=16V (e.g. Bourns MF-MSMF300 series; verify)",E,C6851473,0.300,0.30,"TECHFUSE mSMD300-16V, 3 A hold 5 A trip 16 V; alternatives C702820, C21261157"
-J1,1,J_12V IN,TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,"5.08 mm 2-pin screw terminal, horizontal (Phoenix MKDS 1,5/2-5.08 or equivalent)",H,,0.450,0.45,
-J2,1,"J_DBG (GND, TX, RX, 3V3)",PinHeader_1x04_P2.54mm_Vertical,1x4 pin header 2.54 mm,H,,0.060,0.06,
+J1,1,J_12V IN,TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,"5.08 mm 2-pin screw terminal, horizontal (Phoenix MKDS 1,5/2-5.08 or equivalent)",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
+J2,1,"J_DBG (GND, TX, RX, 3V3)",PinHeader_1x04_P2.54mm_Vertical,1x4 pin header 2.54 mm,H,C52016392,0.060,0.06,hanxia 1x4 pin header 2.54 mm
 J3,1,J_USB,USB_C_Receptacle_HRO_TYPE-C-31-M-12,HRO TYPE-C-31-M-12 (USB-C 16-pin receptacle),E,C165948,0.300,0.30,HRO TYPE-C-31-M-12; JLCPCB may list it under another number: check
-J4,1,J_VALVE1,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
-J5,1,J_VALVE2,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
-J6,1,J_VALVE3,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
-J7,1,J_VALVE4,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,,0.450,0.45,
-J8,1,"J_485 (A, B, GND)","TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal","3.5 mm 3-pin screw terminal, horizontal (Phoenix PT 1,5/3-3.5-H or equivalent)",H,,0.400,0.40,
+J4,1,J_VALVE1,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
+J5,1,J_VALVE2,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
+J6,1,J_VALVE3,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
+J7,1,J_VALVE4,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
+J8,1,"J_485 (A, B, GND)","TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal","3.5 mm 3-pin screw terminal, horizontal (Phoenix PT 1,5/3-3.5-H or equivalent)",H,C474893,0.400,0.40,Cixi Kefa KF350-3.5-3P: check the wire entry direction
 JP1,1,JP_TERM,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
 JP2,1,JP_BIAS_A,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
 JP3,1,JP_BIAS_B,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,

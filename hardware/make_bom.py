@@ -68,6 +68,10 @@ LCSC = {   # (value prefix, footprint fragment) -> (LCSC number, note)
  ("100u 25V", "CP_Elec"): ("C569574", "Suncon 25CE100LX 6.3x7.7, 2000 h; cheaper C179802 (stock was 59)"),
  ("RESET", "SW_SPST"): ("C221880", "C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871"),
  ("BOOT", "SW_SPST"): ("C221880", "C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871"),
+ ("J_12V IN", "MKDS-3-2-5.08"): ("C474952", "Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"),
+ ("J_VALVE", "MKDS-1,5-2-5.08"): ("C474952", "Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"),
+ ("J_485", "PT-1,5-3-3.5"): ("C474893", "Cixi Kefa KF350-3.5-3P: check the wire entry direction"),
+ ("J_DBG", "PinHeader_1x04"): ("C52016392", "hanxia 1x4 pin header 2.54 mm"),
  ("J_USB", "USB_C"): ("C165948", "HRO TYPE-C-31-M-12; JLCPCB may list it under another number: check"),
 }
 def lcsc(v, f):
@@ -98,9 +102,8 @@ with open("fab/BOM_valve_controller.csv", "w", newline="") as f:
     w.writerow([]); w.writerow(["", "", "", "", "TOTAL parts per board (rough estimate, not a quote)", "", "", "", f"{tot:.2f}"])
 with open("fab/BOM_JLCPCB_import.csv", "w", newline="") as f:
     w = csv.writer(f); w.writerow(["Comment", "Designator", "Footprint", "LCSC Part #"])
-    tht = {"J1", "J2", "J4", "J5", "J6", "J7", "J8"}          # hand-soldered through-hole parts
-    for r in out:
-        if "no part" in r[4] or set(r[0].split(",")) <= tht:
+    for r in out:                                             # through-hole parts included: JLCPCB solders them (Standard PCBA)
+        if "no part" in r[4]:
             continue
         w.writerow([r[2], r[0], r[3], r[6]])
 ext = {r[2] + r[3] for r in out if r[5] == "E"}

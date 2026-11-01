@@ -7,8 +7,8 @@ Everything for the order is in `hardware/fab/`.
 | File | Use |
 |------|-----|
 | `gerbers_valve_controller_RevA.zip` | Upload as the PCB Gerber file (also unpacked in `gerber/`): F.Cu, B.Cu, masks, silkscreen, F.Paste, Edge.Cuts, PTH and NPTH drill |
-| `BOM_JLCPCB_import.csv` | Upload as the BOM for assembly. Through-hole parts are not in it (hand-soldered). 14 lines have LCSC numbers; ordinary resistors and capacitors have none, pick the basic parts in JLCPCB's BOM tool |
-| `CPL_valve_controller.csv` | Upload as the pick-and-place file: 70 SMD parts, top side |
+| `BOM_JLCPCB_import.csv` | Upload as the BOM for assembly: 44 lines, surface-mount and through-hole parts (JLCPCB solders the terminals and header). Ordinary resistors and capacitors have no LCSC number: JLCPCB's matching picks the basic parts |
+| `CPL_valve_controller.csv` | Upload as the pick-and-place file: 77 parts (SMD and through-hole), top side |
 | `BOM_valve_controller.csv` | Full draft BOM with suggested parts, rough prices and notes (for you, not for upload) |
 | `assembly_top.pdf`, `assembly_bottom_labels.pdf` | Assembly drawings: where parts go; terminal labels on the bottom side |
 | `valve_controller_schematic.pdf` | Schematic |
@@ -33,10 +33,11 @@ Board rules used: tracks and gaps 0.2 mm, smallest drill 0.3 mm (the ESP32 pad v
 
 | Setting | Value |
 |---------|-------|
-| Assembly side | Top only (economic) |
+| PCBA type | **Standard** (the ESP32 module is "Standard only"; Standard also allows JLCPCB to hand-solder the through-hole parts) |
+| Assembly side | Top only |
 | Quantity | 2 or 5 (minimum 2) |
 | Parts | Upload the BOM and CPL. Check every line in JLCPCB's part selection: stock and basic/extended class |
-| Through-hole | Not assembled by JLCPCB: you solder J1, J4-J7 (5.08 mm terminals), J8 (3.5 mm terminal) and J2 (debug header) |
+| Through-hole | In the BOM and CPL: J1, J4-J7 (5.08 mm terminals), J8 (3.5 mm terminal), J2 (debug header) are soldered by JLCPCB (hand-soldering labor fee) |
 | Solder jumpers | JP1-JP3 stay open (no part) |
 
 ## Check in JLCPCB's preview before paying
@@ -48,7 +49,7 @@ Board rules used: tracks and gaps 0.2 mm, smallest drill 0.3 mm (the ESP32 pad v
 
 ## After the boards arrive
 
-Solder the terminals and header by hand, then follow `docs/06-bringup.md`.
+Follow `docs/06-bringup.md`. Nothing needs soldering by hand if the through-hole parts were in the order.
 
 ## Verified before export
 
