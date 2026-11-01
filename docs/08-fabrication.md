@@ -71,7 +71,7 @@ New requirement: a LoRa gateway for the sensors around the site (EU 868 MHz). Si
 
 - Radio: Ebyte E22-900M22S (SX1262, 868 MHz, 22 dBm), LCSC C411293, SPI plus BUSY, DIO1, NRST and RXEN (see 03-pinmap.md). TXEN and DIO2 are wired together on the module, so the SX1262 drives the RF switch.
 - Antenna: u.FL connector J9 (C88374) next to the module, a 2 mm trace from the module's ANT pad. You need a u.FL to SMA pigtail and an 868 MHz antenna. If the module has no signal on the ANT pad, plug the antenna into the module's own IPEX connector instead (the Ebyte datasheet lists both).
-- Board: 100 x 60 mm (was 70 x 60), new mounting hole H4, E22 module at the right edge, 3V3 decoupling C20-C22.
+- Board: 100 x 60 mm (was 70 x 60), new mounting hole H4 (bottom right), H3 moved from mid-board to the top right corner (96.5, 2.9), E22 module at the right edge, 3V3 decoupling C20-C22.
 - ESP32 pins used: GPIO2, 21, 35, 36, 37, 42, 47, 48.
 - CPL: U3 was shifted 4 mm in Y, U2 rotated 180 and U5 270 against JLCPCB's models (see above). U6 and J9 are as exported: check them in the preview.
 - Files regenerated with `python3 gen_fab.py RevC` (Gerbers, drill, CPL) and `make_bom.py` (BOM).
