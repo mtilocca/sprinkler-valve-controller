@@ -20054,6 +20054,42 @@
 		(layer "Edge.Cuts")
 		(uuid "fc15dc2d-f2d0-4657-8f36-39ef13de220e")
 	)
+	(gr_text "12V DC IN  15V MAX"
+		(at 75 50.5 0)
+		(layer "F.SilkS")
+		(uuid "09a1772d-a9a2-4b25-b6ce-bf2f2bd0a3e8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "VALVES 1A MAX EACH"
+		(at 75 52.7 0)
+		(layer "F.SilkS")
+		(uuid "60593eeb-e01a-4357-8663-bfee8871bff2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "RS485 ISOLATED"
+		(at 75 54.9 0)
+		(layer "F.SilkS")
+		(uuid "55a82731-f23c-49af-946e-dd4029e1461f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
 	(gr_text "BOOT"
 		(at 14.02 19.25 0)
 		(layer "F.SilkS")
@@ -20234,28 +20270,6 @@
 		(at 13 27 0)
 		(layer "F.SilkS")
 		(uuid "cf3eb547-2b6b-4610-a6f8-c68d7b36a42b")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "Villa La Gatta"
-		(at 84 53 0)
-		(layer "F.SilkS")
-		(uuid "c5506a68-0b66-48fb-a6c4-1810cbe006aa")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "Sensors & Control"
-		(at 84 56 0)
-		(layer "F.SilkS")
-		(uuid "8de50ff3-ae12-47b9-a48b-3344907a68e2")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -20510,6 +20524,30 @@
 		(effects
 			(font
 				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "Villa La Gatta"
+		(at 84 53 0)
+		(layer "B.SilkS")
+		(uuid "c5506a68-0b66-48fb-a6c4-1810cbe006aa")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "Sensors & Control"
+		(at 84 56 0)
+		(layer "B.SilkS")
+		(uuid "8de50ff3-ae12-47b9-a48b-3344907a68e2")
+		(effects
+			(font
+				(size 1.2 1.2)
 				(thickness 0.15)
 			)
 			(justify mirror)
