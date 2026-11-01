@@ -17,7 +17,7 @@ A small board that runs 4 sprinkler valves from a 12 V supply. Solar charging (P
 ## Assumptions
 
 1. The 12 V source never exceeds 15 V. An unregulated wall adapter that reads 15–18 V with no load is **not** supported; put a 12 V regulator in front.
-2. Valves: 12 VDC coils, 1 A or less each.
+2. Valves: 12 VDC coils, 1 A or less each. Reference valve: AliExpress 2-way normally-closed solenoid valve, 12 V DC, 6.5 W, 540 mA, 100% duty, IP65 coil, 6/8 mm push-in fittings (about 0.54 A each: 2 at once 1.1 A, 3 at once 1.6 A, 4 at once 2.2 A plus 0.4 A for the board). Check the hydraulic side separately: medium, pressure range and flow (these small direct-acting valves pass little water; they suit drip and misting lines, not large sprinkler zones).
 3. The PV/MPPT module handles charging, battery protection and temperature; this board does not.
 4. Time comes from Wi-Fi/NTP or the RS485 master (no RTC).
 5. Wi-Fi/BLE is used, so the ESP32 antenna needs a keep-out area at the board edge.
