@@ -20241,6 +20241,28 @@
 			)
 		)
 	)
+	(gr_text "Villa La Gatta"
+		(at 84 53 0)
+		(layer "F.SilkS")
+		(uuid "c5506a68-0b66-48fb-a6c4-1810cbe006aa")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "Sensors & Control"
+		(at 84 56 0)
+		(layer "F.SilkS")
+		(uuid "8de50ff3-ae12-47b9-a48b-3344907a68e2")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.15)
+			)
+		)
+	)
 	(gr_text "IN +"
 		(at 4.054999 56.675 0)
 		(layer "B.SilkS")
