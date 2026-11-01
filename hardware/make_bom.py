@@ -1,7 +1,25 @@
 """BOM draft with suggested parts and rough prices (run: python3 make_bom.py after exporting _bom_raw.csv with kicad-cli sch export bom).
 Prices are rough USD estimates from memory, NOT quotes; check each part in the JLCPCB parts library (LCSC number, basic/extended, stock)."""
 import csv
+import re
+
+
+def expand(refs):
+    """KiCad writes ranges like 'Q2-Q5'; JLCPCB needs every designator listed."""
+    out = []
+    for part in refs.split(","):
+        part = part.strip()
+        m = re.match(r"^([A-Za-z]+)(\d+)-([A-Za-z]*)(\d+)$", part)
+        if m:
+            out += [f"{m.group(1)}{i}" for i in range(int(m.group(2)), int(m.group(4)) + 1)]
+        elif part:
+            out.append(part)
+    return ",".join(out)
+
+
 rows = list(csv.DictReader(open("_bom_raw.csv")))
+for _r in rows:
+    _r["Refs"] = expand(_r["Refs"])
 # (value prefix, footprint fragment) -> (suggested part, est. unit USD, JLC class guess: B basic / E extended / H hand-solder through-hole)
 M = [
  ("100n", "C_0603", "Samsung CL10B104KB8NNNC (X7R 50V)", 0.004, "B"),
