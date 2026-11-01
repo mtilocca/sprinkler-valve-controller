@@ -33,6 +33,22 @@ No relay is needed: each valve is switched by a logic-level MOSFET (AO3400A, abo
 | Per channel parts | MOSFET and SS34 diode handle 3 A or more; not the limit |
 | Supply | 12 V at 3 A or more (a 12 V 3 A adapter, or the battery / MPPT module output) |
 
+### Largest single valve
+
+With only one valve on, the practical ceiling is about **2 A (24 W at 12 V, coil about 6 ohm)**; the hard edge is about 2.6 A.
+
+| Part in the path | Limit | Effect |
+|------------------|-------|--------|
+| Valve return track, 0.6 mm x 13 mm | about 2.2 A at +20 C, 2.7 A at +30 C | tightest copper limit |
+| PTC fuse, 3 A hold at 25 C | minus about 0.4 A for the logic = 2.6 A; about 1.7 A in a 60 C box | sets the hard edge |
+| 12 V rail track, 1.0 mm | about 3.2 A at +20 C | not the limit |
+| Reverse-polarity P-FET, valve MOSFET (AO3400A), SS34 diode, terminal | 3-5 A or more | not the limits |
+
+- A 2 A valve means only **one valve on at a time** (firmware limit 1), and a 12 V source of 3 A or more.
+- In a hot outdoor box use a higher-rated fuse for valves above about 1.7 A.
+- Going to 3 A needs a board change: wider valve return tracks and 12 V rail, a larger fuse and a larger input terminal.
+- For the reference valve (540 mA) none of this matters: it uses about a quarter of the ceiling.
+
 Valves default to OFF because of the pull-downs. The firmware limits on-time and keeps at most 2 valves on.
 
 ## 2.3 12 V monitor

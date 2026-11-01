@@ -16,6 +16,7 @@ GPIO1 reads the rail through a 100 kΩ / 22 kΩ divider (ratio 0.18, so 15 V rea
 
 ## Valves
 
+- Valves on at once: default 2 (valves of 1 A or less). With 540 mA valves up to 3 is fine and 4 works at room temperature; with a valve above 1 A use 1. The limit must follow the coil currents (see docs/02-hardware.md, current limits).
 - Always off at boot. A valve turns on only if the rail is above the low limit and fewer than 2 valves are on.
 - Maximum on-time per run (default 30 min); automatic off on timeout or loss of schedule.
 - The gates have pull-downs, so valves stay off while the ESP32 boots or resets.
