@@ -64,8 +64,13 @@ def rule_area(name, pts, layers=("F.Cu", "B.Cu"), tracks=True, vias=True):
 rule_area("RS485 isolation barrier: no copper under the chip between logic and bus pads",
           [(lx1 + 0.3, cy0 - 0.2), (bx0 - 0.3, cy0 - 0.2), (bx0 - 0.3, cy1 + 0.2), (lx1 + 0.3, cy1 + 0.2)])
 # bus side: no GND pour (ISO_GND stays separate); tracks and vias of the bus nets are allowed
-BUS_X1 = min(BW, 70.0) - 0.3      # the bus side ends at the old board edge (the LoRa strip to the right is plain GND)
-rule_area("RS485 bus side: no GND pour", [(bx0 - 0.3, cy0 - 3.0), (BUS_X1, cy0 - 3.0), (BUS_X1, BH - 0.3), (bx0 - 0.3, BH - 0.3)],
+# bus side: no GND pour (ISO_GND stays separate); tracks and vias of the bus nets are allowed.
+# L-shaped: it also covers the RS485 terminal J8 on the bottom edge (pads 62.8 / 66.3 / 69.8 mm, y 54.9)
+BUS_X1 = 72.2
+BUS_XL = 60.0       # left edge of the strip around J8
+BUS_YJ = 47.0       # the strip around J8 starts here
+rule_area("RS485 bus side: no GND pour",
+          [(bx0 - 0.3, cy0 - 3.0), (BUS_X1, cy0 - 3.0), (BUS_X1, BH - 0.3), (BUS_XL, BH - 0.3), (BUS_XL, BUS_YJ), (bx0 - 0.3, BUS_YJ)],
           tracks=False, vias=False)
 
 keepouts = []

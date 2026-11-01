@@ -76,3 +76,4 @@ New requirement: a LoRa gateway for the sensors around the site (EU 868 MHz). Si
 - CPL: U3 was shifted 4 mm in Y, U2 rotated 180 and U5 270 against JLCPCB's models (see above). U6 and J9 are as exported: check them in the preview.
 - Files regenerated with `python3 gen_fab.py RevC` (Gerbers, drill, CPL) and `make_bom.py` (BOM).
 - DRC: 0 errors, 0 unconnected, schematic parity clean. ERC: 0 violations.
+- J8 (RS485 terminal) rotated to face the bottom edge like the valve terminals; pads at x 62.8, 66.3 and 69.8 mm, y 54.9 mm (A, B, GND). The bus-side no-pour area is L-shaped around it. `move_j8.py` did the move. DRC 0 errors, 0 unconnected after the move.
