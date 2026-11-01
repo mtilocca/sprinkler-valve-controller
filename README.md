@@ -13,7 +13,8 @@ A small board that runs 4 sprinkler valves from a 12 V supply (battery, the PV/M
 - **12 V monitor** into the ESP32 ADC, so the firmware can stop the valves on a low battery
 - **Input protection:** resettable fuse, reverse-polarity P-FET, TVS
 
-Target board: 70 × 60 mm, 2 layers, all SMT parts on the top, only screw terminals and headers through-hole.
+Target board: 100 × 60 mm, 2 layers, all SMT parts on the top, only screw terminals and headers through-hole.
+Radio: Ebyte E22-900M22S (SX1262, EU 868 MHz) single-channel LoRa receiver with a u.FL antenna connector, see docs/08-fabrication.md (Rev C).
 
 ## Documents
 
@@ -56,7 +57,7 @@ Open `hardware/valve_controller.kicad_pcb` (or the project `hardware/valve_contr
 
 | Item | Value |
 |------|-------|
-| Size | 70 x 60 mm, 3 x M3 mounting holes |
+| Size | 100 x 60 mm, 4 x M3 mounting holes |
 | Layers | 2, GND pour on both layers with stitching vias |
 | Copper, finish | 1 oz, HASL lead-free (ENIG optional) |
 | Track and space | 0.2 / 0.2 mm; V12 rail 1.0 mm, valve returns 0.6 mm, 5 V rails 0.5 mm |
@@ -66,7 +67,7 @@ Open `hardware/valve_controller.kicad_pcb` (or the project `hardware/valve_contr
 | Assembly | One side (top), SMT by JLCPCB; screw terminals and the debug header soldered by hand |
 | Checks | ERC 0 violations; DRC 0 errors, 0 unconnected |
 
-Files in `hardware/fab/`: `gerbers_valve_controller_RevB.zip` (and `gerber/`), `BOM_valve_controller.csv` (draft with suggested parts and rough prices), `BOM_JLCPCB_import.csv` (LCSC numbers to fill), `CPL_valve_controller.csv` (SMD positions, top side).
+Files in `hardware/fab/`: `gerbers_valve_controller_RevC.zip` (and `gerber/`), `BOM_valve_controller.csv` (draft with suggested parts and rough prices), `BOM_JLCPCB_import.csv` (LCSC numbers to fill), `CPL_valve_controller.csv` (SMD positions, top side).
 
 ## Costs
 

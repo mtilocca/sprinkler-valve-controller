@@ -158,5 +158,31 @@ valve_controller = SchLib(tool=SKIDL).add_parts(*[
         Part(**{ 'name':'LED', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'LED'}), 'ref_prefix':'D', 'fplist':[''], 'footprint':'LED_SMD:LED_0603_1608Metric', 'keywords':'LED diode', 'description':'Light emitting diode', 'datasheet':'', 'pins':[
             Pin(num='1',name='K',func=pin_types.PASSIVE,unit=1),
             Pin(num='2',name='A',func=pin_types.PASSIVE,unit=1)], 'unit_defs':[] }),
+        Part(**{ 'name':'E22-900M22S', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'E22-900M22S'}), 'ref_prefix':'U', 'fplist':['valve_custom:E22-900M22S'], 'footprint':'valve_custom:E22-900M22S', 'keywords':'', 'description':'Ebyte E22-900M22S, SX1262 LoRa module, 850-930 MHz, 22 dBm, SPI', 'datasheet':'https://www.lcsc.com/product-detail/C411293.html', 'pins':[
+            Pin(num='9',name='VCC',func=pin_types.PWRIN,unit=1),
+            Pin(num='1',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='19',name='NSS',func=pin_types.INPUT,unit=1),
+            Pin(num='18',name='SCK',func=pin_types.INPUT,unit=1),
+            Pin(num='17',name='MOSI',func=pin_types.INPUT,unit=1),
+            Pin(num='16',name='MISO',func=pin_types.OUTPUT,unit=1),
+            Pin(num='15',name='NRST',func=pin_types.INPUT,unit=1),
+            Pin(num='14',name='BUSY',func=pin_types.OUTPUT,unit=1),
+            Pin(num='13',name='DIO1',func=pin_types.BIDIR,unit=1),
+            Pin(num='6',name='RXEN',func=pin_types.INPUT,unit=1),
+            Pin(num='7',name='TXEN',func=pin_types.INPUT,unit=1),
+            Pin(num='8',name='DIO2',func=pin_types.BIDIR,unit=1),
+            Pin(num='21',name='ANT',func=pin_types.PASSIVE,unit=1),
+            Pin(num='2',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='3',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='4',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='5',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='10',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='11',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='12',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='20',name='GND',func=pin_types.PWRIN,unit=1),
+            Pin(num='22',name='GND',func=pin_types.PWRIN,unit=1)], 'unit_defs':[] }),
+        Part(**{ 'name':'Conn_Coaxial', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'Conn_Coaxial'}), 'ref_prefix':'J', 'fplist':[''], 'footprint':'Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical', 'keywords':'BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF', 'description':'coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)', 'datasheet':'', 'pins':[
+            Pin(num='1',name='In',func=pin_types.PASSIVE,unit=1),
+            Pin(num='2',name='Ext',func=pin_types.PASSIVE,unit=1)], 'unit_defs':[] }),
         Part(**{ 'name':'TestPoint', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'TestPoint'}), 'ref_prefix':'TP', 'fplist':[''], 'footprint':'TestPoint:TestPoint_Pad_D1.5mm', 'keywords':'test point tp', 'description':'test point', 'datasheet':'', 'pins':[
             Pin(num='1',name='1',func=pin_types.PASSIVE,unit=1)], 'unit_defs':[] })])

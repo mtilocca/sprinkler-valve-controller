@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "valve_custom")(type "KiCad")(uri "${KIPRJMOD}/valve_custom.pretty")(options "")(descr "E22-900M22S LoRa module"))
+)

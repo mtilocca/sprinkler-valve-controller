@@ -1,8 +1,8 @@
 Designators,Qty,Value,Footprint,Suggested part (VERIFY),"JLC class guess (B basic, E extended, H through-hole)",LCSC part # (verify),Est. unit USD (rough),Est. line USD (rough),Note
-"C1,C3,C4,C10,C11,C16,C18",7,100n,C_0603_1608Metric,Samsung CL10B104KB8NNNC (X7R 50V),B,,0.004,0.03,
+"C1,C3,C4,C10,C11,C16,C18,C21,C22",9,100n,C_0603_1608Metric,Samsung CL10B104KB8NNNC (X7R 50V),B,,0.004,0.04,
 C2,1,10u 25V,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.12,
 "C5,C6",2,22u 10V,C_1206_3216Metric,Samsung CL31A226MPHNNNE (X5R 10V); datasheet table uses 2 x 22 uF,E,,0.150,0.30,
-"C7,C9,C14,C17,C19",5,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.60,
+"C7,C9,C14,C17,C19,C20",6,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.72,
 C8,1,22u 6.3V tantalum,CP_EIA-3216-18_Kemet-A,"22 uF 6.3 V tantalum, 3216 (A case), e.g. Kemet T491A226M006AT / AVX TAJA226K006R",E,C11366,0.200,0.20,AVX TAJA226K010RNJ 22uF 10V 3216-18 (10 V rating is fine for the 3.3 V rail)
 C12,1,1u,C_0603_1608Metric,Samsung CL10A105KA8NNNC (X5R 25V),B,,0.010,0.01,
 C13,1,4.7n,C_0603_1608Metric,Samsung CL10B472KB8NNNC,B,,0.005,0.01,
@@ -25,6 +25,7 @@ J5,1,J_VALVE2,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5
 J6,1,J_VALVE3,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
 J7,1,J_VALVE4,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","5.08 mm 2-pin screw terminal, horizontal",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
 J8,1,"J_485 (A, B, GND)","TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal","3.5 mm 3-pin screw terminal, horizontal (Phoenix PT 1,5/3-3.5-H or equivalent)",H,C474893,0.400,0.40,Cixi Kefa KF350-3.5-3P: check the wire entry direction
+J9,1,J_ANT (u.FL),U.FL_Hirose_U.FL-R-SMT-1_Vertical,U.FL / IPEX SMT receptacle (Hirose U.FL-R-SMT-1 footprint),E,C88374,0.110,0.11,"U.FL-R-SMT-1(80), stock 364k"
 JP1,1,JP_TERM,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
 JP2,1,JP_BIAS_A,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
 JP3,1,JP_BIAS_B,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
@@ -48,5 +49,6 @@ U2,1,AMS1117-3.3,SOT-223-3_TabPin2,"AMS1117-3.3 (1A LDO, SOT-223; JLCPCB basic p
 U3,1,ESP32-S3-WROOM-1-N8,ESP32-S3-WROOM-1,Espressif ESP32-S3-WROOM-1-N8,E,C2913198,4.200,4.20,
 U4,1,USBLC6-2P6,SOT-666,ST USBLC6-2P6,E,C2827693,0.300,0.30,TECH PUBLIC clone; ST original is C15999
 U5,1,CA-IS3092W,SOIC-16W_7.5x10.3mm_P1.27mm,Chipanalog CA-IS3092W (LCSC C2890051),E,C2890051,2.000,2.00,
+U6,1,E22-900M22S,E22-900M22S,"Ebyte E22-900M22S LoRa module (SX1262, 868 MHz, 22 dBm)",E,C411293,7.320,7.32,"Ebyte E22-900M22S, castellated SMD module, stock 127 on 2026-11-01; alternative DL-RFM95-868M C2844472 (SX1276, different pinout)"
 
-,,,,"TOTAL parts per board (rough estimate, not a quote)",,,,13.58
+,,,,"TOTAL parts per board (rough estimate, not a quote)",,,,21.14

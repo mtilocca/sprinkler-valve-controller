@@ -105,6 +105,8 @@ ISO_GND = Net("ISO_GND")
 ISO_3V3 = Net("ISO_3V3")
 RS_A, RS_B = Net("RS485_A"), Net("RS485_B")
 EN_N, BOOT_N = Net("EN"), Net("BOOT")
+LORA = {n: Net(f"LORA_{n}") for n in ("NSS", "SCK", "MOSI", "MISO", "NRST", "BUSY", "DIO1", "RXEN", "TXEN")}
+LORA_ANT = Net("LORA_ANT")
 
 # --------------------------------------------------------------------------------------
 # 1. 12 V input: fuse, reverse-polarity P-FET, TVS, monitor divider
@@ -216,8 +218,16 @@ for i, n in enumerate(LEDN):
     n += mcu[f"IO{38 + i}"]
 U0RX += mcu["RXD0"]
 U0TX += mcu["TXD0"]
-for name in ("IO2", "IO3", "IO8", "IO9", "IO10", "IO11", "IO12", "IO13", "IO14", "IO15", "IO21",
-             "IO35", "IO36", "IO37", "IO42", "IO45", "IO46", "IO47", "IO48"):
+# LoRa radio (E22-900M22S, SX1262) on SPI; GPIO35-37 are free because the N8 module has no PSRAM
+LORA["SCK"] += mcu["IO36"]
+LORA["MOSI"] += mcu["IO35"]
+LORA["MISO"] += mcu["IO37"]
+LORA["NSS"] += mcu["IO42"]
+LORA["BUSY"] += mcu["IO2"]
+LORA["DIO1"] += mcu["IO47"]
+LORA["NRST"] += mcu["IO48"]
+LORA["RXEN"] += mcu["IO21"]
+for name in ("IO3", "IO8", "IO9", "IO10", "IO11", "IO12", "IO13", "IO14", "IO15", "IO45", "IO46"):
     mcu[name] += NC  # noqa: F821  (NC is injected by SKiDL)
 
 j_dbg = Part("Connector_Generic", "Conn_01x04", value="J_DBG (GND, TX, RX, 3V3)",
@@ -340,7 +350,27 @@ for led_net, (colour, rv) in zip(LEDN, (("green", "680"), ("yellow", "680"), ("b
     GND += led["K"]
 
 # --------------------------------------------------------------------------------------
-# 8. Test points
+# 8. LoRa radio: Ebyte E22-900M22S (SX1262, 868 MHz EU band), single-channel gateway, u.FL antenna
+# --------------------------------------------------------------------------------------
+section("lora")
+u_lora = Part("valve_custom", "E22-900M22S", value="E22-900M22S", footprint="valve_custom:E22-900M22S")
+V3 += u_lora["VCC"]
+GND += u_lora["GND"]
+for pin in ("NSS", "SCK", "MOSI", "MISO", "NRST", "BUSY", "DIO1", "RXEN"):
+    LORA[pin] += u_lora[pin]
+# DIO2 drives the RF switch (TXEN) in hardware; the SX1262 is set to use DIO2 as RF-switch control
+LORA["TXEN"] += u_lora["TXEN"], u_lora["DIO2"]
+LORA_ANT += u_lora["ANT"]
+cap_between(V3, GND, "10u", C1206)
+cap_between(V3, GND, "100n")
+cap_between(V3, GND, "100n")
+j_ant = Part("Connector", "Conn_Coaxial", value="J_ANT (u.FL)",
+             footprint=fp("Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical"))
+LORA_ANT += j_ant[1]
+GND += j_ant[2]
+
+# --------------------------------------------------------------------------------------
+# 9. Test points
 # --------------------------------------------------------------------------------------
 section("test_points")
 for n in (V12, V5, V3, GND):
@@ -363,6 +393,10 @@ CHECKS = [
             "GNDB": ["15", "9"], "SEL": ["10"], "A": ["12"], "B": ["13"], "VISO": ["16"]}),
     # P-FET symbol in valve_custom: SOT-23 AO3407A, 1 gate, 2 source, 3 drain
     (q_rp, {"G": ["1"], "S": ["2"], "D": ["3"]}),
+    # Ebyte E22-900M22S datasheet: 6 RXEN, 7 TXEN, 8 DIO2, 9 VCC, 13 DIO1, 14 BUSY, 15 NRST, 16 MISO, 17 MOSI, 18 SCK, 19 NSS, 21 ANT
+    (u_lora, {"RXEN": ["6"], "TXEN": ["7"], "DIO2": ["8"], "VCC": ["9"], "DIO1": ["13"], "BUSY": ["14"], "NRST": ["15"],
+              "MISO": ["16"], "MOSI": ["17"], "SCK": ["18"], "NSS": ["19"], "ANT": ["21"],
+              "GND": ["1", "10", "11", "12", "2", "20", "22", "3", "4", "5"]}),
     # AMS1117-3.3, SOT-223: 1 GND, 2 VOUT (tab), 3 VIN
     (u3, {"GND": ["1"], "VO": ["2"], "VI": ["3"]}),
 ]

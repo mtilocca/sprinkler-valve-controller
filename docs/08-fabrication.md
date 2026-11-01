@@ -6,7 +6,7 @@ Everything for the order is in `hardware/fab/`.
 
 | File | Use |
 |------|-----|
-| `gerbers_valve_controller_RevB.zip` | Upload as the PCB Gerber file (also unpacked in `gerber/`): F.Cu, B.Cu, masks, silkscreen, F.Paste, Edge.Cuts, PTH and NPTH drill |
+| `gerbers_valve_controller_RevC.zip` | Upload as the PCB Gerber file (also unpacked in `gerber/`): F.Cu, B.Cu, masks, silkscreen, F.Paste, Edge.Cuts, PTH and NPTH drill |
 | `BOM_JLCPCB_import.csv` | Upload as the BOM for assembly: 38 lines, surface-mount parts only (you solder the terminals and header). Ordinary resistors and capacitors have no LCSC number: JLCPCB's matching picks the basic parts |
 | `CPL_valve_controller.csv` | Upload as the pick-and-place file: 70 SMD parts, top side |
 | `BOM_valve_controller.csv` | Full draft BOM with suggested parts, rough prices and notes (for you, not for upload) |
@@ -18,7 +18,7 @@ Everything for the order is in `hardware/fab/`.
 | Setting | Value |
 |---------|-------|
 | Base material, layers | FR-4, 2 layers |
-| Dimensions | 70 x 60 mm |
+| Dimensions | 100 x 60 mm |
 | PCB thickness | 1.6 mm |
 | Quantity | 5 (smallest panel; the cheapest) |
 | Surface finish | HASL lead-free (ENIG optional, small extra cost) |
@@ -64,3 +64,15 @@ In JLCPCB's 3D preview the ESP32 module sat about 4 mm too high (antenna past th
 ## CPL rotations (2026-11-01)
 
 JLCPCB's models for U2 (SOT-223) and U5 (SOIC-16W) are rotated against the KiCad footprints: U2 set to 180 deg, U5 to 270 deg in the CPL. Verified only against the 3D preview; check pin 1 again after uploading.
+
+## Rev C: LoRa radio (2026-11-02)
+
+New requirement: a LoRa gateway for the sensors around the site (EU 868 MHz). Single-channel only: JLCPCB does not stock SX1302/SX1303 concentrator chips, so this is a private single-channel receiver, not a standards-compliant multi-channel LoRaWAN gateway. Your own sensors must be set to the one channel and data rate that the radio listens on.
+
+- Radio: Ebyte E22-900M22S (SX1262, 868 MHz, 22 dBm), LCSC C411293, SPI plus BUSY, DIO1, NRST and RXEN (see 03-pinmap.md). TXEN and DIO2 are wired together on the module, so the SX1262 drives the RF switch.
+- Antenna: u.FL connector J9 (C88374) next to the module, a 2 mm trace from the module's ANT pad. You need a u.FL to SMA pigtail and an 868 MHz antenna. If the module has no signal on the ANT pad, plug the antenna into the module's own IPEX connector instead (the Ebyte datasheet lists both).
+- Board: 100 x 60 mm (was 70 x 60), new mounting hole H4, E22 module at the right edge, 3V3 decoupling C20-C22.
+- ESP32 pins used: GPIO2, 21, 35, 36, 37, 42, 47, 48.
+- CPL: U3 was shifted 4 mm in Y, U2 rotated 180 and U5 270 against JLCPCB's models (see above). U6 and J9 are as exported: check them in the preview.
+- Files regenerated with `python3 gen_fab.py RevC` (Gerbers, drill, CPL) and `make_bom.py` (BOM).
+- DRC: 0 errors, 0 unconnected, schematic parity clean. ERC: 0 violations.

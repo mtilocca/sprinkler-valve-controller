@@ -23,3 +23,10 @@ Buy 10% spares of the terminals. Check each terminal's pin spacing against the f
 | Optional: USB to UART adapter, 3.3 V logic | debug header J2 |
 | Optional: 12 V lamp or 20 ohm 10 W resistor | dummy load for the first valve test (docs/06-bringup.md) |
 | RS485: a USB-RS485 adapter for the loopback test | RS485 bring-up |
+
+## Added for the LoRa radio (Rev C)
+
+| Item | Qty | Notes |
+|------|-----|-------|
+| 868 MHz antenna with SMA, 2 dBi or better | 2 | e.g. Ebyte TX868-JK-20 (bendable) |
+| u.FL (IPEX) to SMA bulkhead pigtail, 10-15 cm | 2 | For the enclosure wall |

@@ -21,4 +21,4 @@ A small board that runs 4 sprinkler valves from a 12 V supply. Solar charging (P
 3. The PV/MPPT module handles charging, battery protection and temperature; this board does not.
 4. Time comes from Wi-Fi/NTP or the RS485 master (no RTC).
 5. Wi-Fi/BLE is used, so the ESP32 antenna needs a keep-out area at the board edge.
-6. Target board: 70 × 60 mm, 2 layers, all SMT parts on the top side (one-sided assembly).
+6. Target board: 100 × 60 mm (was 70 × 60 before the LoRa radio), 2 layers, all SMT parts on the top side (one-sided assembly).

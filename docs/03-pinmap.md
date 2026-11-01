@@ -14,6 +14,14 @@ Module: ESP32-S3-WROOM-1-N8 (no PSRAM). Avoid strapping pins GPIO3, 45, 46 and G
 | 19 | `USB_DN` | USB D− |
 | 20 | `USB_DP` | USB D+ |
 | 38–41 | `LED1`–`LED4` | Green, yellow, blue, red |
+| 2 | `LORA_BUSY` | E22 BUSY |
+| 21 | `LORA_RXEN` | E22 RF switch, receive enable (TXEN is wired to DIO2 on the module) |
+| 35 | `LORA_MOSI` | SPI MOSI to the E22 |
+| 36 | `LORA_SCK` | SPI clock |
+| 37 | `LORA_MISO` | SPI MISO |
+| 42 | `LORA_NSS` | SPI chip select |
+| 47 | `LORA_DIO1` | E22 DIO1 (interrupt) |
+| 48 | `LORA_NRST` | E22 reset |
 | 43 / 44 | `U0TXD` / `U0RXD` | Debug header |
 
-Unused and marked no-connect on the schematic: GPIO2, 3, 8–15, 21, 35–37, 42, 45–48.
+Unused and marked no-connect on the schematic: GPIO3, 8–15, 45, 46.

@@ -52,6 +52,8 @@ M = [
  ("AMS1117-3.3", "SOT-223", "AMS1117-3.3 (1A LDO, SOT-223; JLCPCB basic part)", 0.05, "B"),
  ("22u 6.3V tantalum", "CP_EIA-3216", "22 uF 6.3 V tantalum, 3216 (A case), e.g. Kemet T491A226M006AT / AVX TAJA226K006R", 0.20, "E"),
  ("ESP32-S3-WROOM-1-N8", "ESP32-S3-WROOM-1", "Espressif ESP32-S3-WROOM-1-N8", 4.20, "E"),
+ ("E22-900M22S", "E22-900M22S", "Ebyte E22-900M22S LoRa module (SX1262, 868 MHz, 22 dBm)", 7.32, "E"),
+ ("J_ANT", "U.FL", "U.FL / IPEX SMT receptacle (Hirose U.FL-R-SMT-1 footprint)", 0.11, "E"),
  ("USBLC6-2P6", "SOT-666", "ST USBLC6-2P6", 0.30, "E"),
  ("CA-IS3092W", "SOIC-16W", "Chipanalog CA-IS3092W (LCSC C2890051)", 2.00, "E"),
 ]
@@ -70,6 +72,8 @@ LCSC = {   # (value prefix, footprint fragment) -> (LCSC number, note)
  ("BZT52C12", "SOD-123"): ("C19077410", "BZT52C12 12V zener, preferred part"),
  ("B5819W", "SOD-123"): ("C64885", "B5819W Schottky, preferred part (no extended fee); basic alternative C8598"),
  ("22u 6.3V tantalum", "CP_EIA-3216"): ("C11366", "AVX TAJA226K010RNJ 22uF 10V 3216-18 (10 V rating is fine for the 3.3 V rail)"),
+ ("E22-900M22S", "E22-900M22S"): ("C411293", "Ebyte E22-900M22S, castellated SMD module, stock 127 on 2026-11-01; alternative DL-RFM95-868M C2844472 (SX1276, different pinout)"),
+ ("J_ANT", "U.FL"): ("C88374", "U.FL-R-SMT-1(80), stock 364k"),
  ("RESET", "SW_SPST"): ("C221880", "C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871"),
  ("BOOT", "SW_SPST"): ("C221880", "C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871"),
  ("J_12V IN", "MKDS-3-2-5.08"): ("C474952", "Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"),

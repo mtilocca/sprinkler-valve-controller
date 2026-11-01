@@ -17,6 +17,7 @@ MARGIN = float(os.environ.get('MINI_MARGIN', 0.15))
 NG = int(100 / RES) + 1
 LAYERS = (pcbnew.F_Cu,) if os.environ.get('MINI_LAYERS') == 'F' else (pcbnew.F_Cu, pcbnew.B_Cu)
 CLR = 0.2
+FCOST = float(os.environ.get('MINI_FCOST', 1.0))      # >1: prefer B.Cu (keeps the F.Cu GND pour in one piece)
 VIA_D, VIA_DR = 0.8, 0.4
 
 
@@ -152,7 +153,7 @@ def dijkstra(occ, src, dst, occv=None):
             if 0 <= ni < NG and 0 <= nj < NG:
                 n = (L, ni, nj)
                 if n in dst or not occ[L][ni, nj]:
-                    nxt.append((n, c))
+                    nxt.append((n, c * (FCOST if L == pcbnew.F_Cu else 1.0)))
         o = pcbnew.B_Cu if L == pcbnew.F_Cu else pcbnew.F_Cu
         if o in occ and not occv[L][i, j] and not occv[o][i, j]:
             nxt.append(((o, i, j), 8))
