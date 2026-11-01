@@ -77,3 +77,9 @@ New requirement: a LoRa gateway for the sensors around the site (EU 868 MHz). Si
 - Files regenerated with `python3 gen_fab.py RevC` (Gerbers, drill, CPL) and `make_bom.py` (BOM).
 - DRC: 0 errors, 0 unconnected, schematic parity clean. ERC: 0 violations.
 - J8 (RS485 terminal) rotated to face the bottom edge like the valve terminals; pads at x 62.8, 66.3 and 69.8 mm, y 54.9 mm (A, B, GND). The bus-side no-pour area is L-shaped around it. `move_j8.py` did the move. DRC 0 errors, 0 unconnected after the move.
+
+## Pre-order review, 2026-11-02
+
+- Found and fixed: the first LoRa routing ran the SPI lines and the 3V3 feed under the E22 module body (the Ebyte datasheet says to keep traces out from under the module). All eight signals and the 3V3 branch were re-routed around it; the only copper left under the body is GND and the TXEN/DIO2 tie at the pad edge. DRC 0 errors, 0 unconnected, parity clean.
+- Checked from the netlist: P-FET reverse-polarity wiring (drain = input, source = load, 12 V zener gate to source, 10 k gate to GND), TVS and zener polarity, 5 V OR-ing diodes, 12 V monitor divider (max 2.7 V at 15 V), ESP32 strapping pins left alone, no floating nets other than the deliberate NC pins.
+- Watch at bring-up: (1) on USB power only the 3V3 LDO input is about 4.6 V (5 V minus the Schottky), only about 0.2 V above the AMS1117 dropout at 0.6 A, so a LoRa transmit burst can sag 3V3; (2) the AMS1117 tab has no big copper area, fine for about 0.3 W average; (3) firmware must set DIO2 as RF switch control, RXEN high in receive, DIO3 for the module's TCXO (1.8 V).
