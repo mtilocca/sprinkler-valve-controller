@@ -1,6 +1,6 @@
 # Sprinkler Valve Controller — ESP32-S3, 12 V in, 4 valves, isolated RS485
 
-**Status:** Rev A draft: schematic ERC clean, board routed and DRC clean (0 errors, 0 unconnected), fab files generated. Not ordered yet. This project is the simplified successor of the MPPT board (`../sprinkler-mppt-pcb`): PV and MPPT moved to a separate module.
+**Status:** Rev C (adds LoRa): schematic ERC clean, board routed and DRC clean (0 errors, 0 unconnected), fab files generated. Order in progress. This project is the simplified successor of the MPPT board (`../sprinkler-mppt-pcb`): PV and MPPT moved to a separate module.
 
 ## What it is
 
@@ -8,13 +8,15 @@ A small board that runs 4 sprinkler valves from a 12 V supply (battery, the PV/M
 
 - **ESP32-S3-WROOM-1-N8**, firmware on Zephyr RTOS
 - **4 valve outputs** (12 V, up to 1 A each, at most 2 on at once)
+- **LoRa EU868** (Ebyte E22-900M22S, SX1262), single-channel gateway for your own sensors
+- **WiFi and Bluetooth LE** from the ESP32-S3 module
 - **Isolated RS485** (CA-IS3092W) for Modbus RTU
 - **USB-C** for flashing, BOOT and RESET buttons, debug header, 4 LEDs
 - **12 V monitor** into the ESP32 ADC, so the firmware can stop the valves on a low battery
 - **Input protection:** resettable fuse, reverse-polarity P-FET, TVS
 
 Target board: 100 × 60 mm, 2 layers, all SMT parts on the top, only screw terminals and headers through-hole.
-Radio: Ebyte E22-900M22S (SX1262, EU 868 MHz) single-channel LoRa receiver with a u.FL antenna connector, see docs/08-fabrication.md (Rev C).
+Radio: Ebyte E22-900M22S (SX1262, EU 868 MHz) single-channel LoRa gateway radio with a u.FL antenna connector, see docs/08-fabrication.md (Rev C).
 
 ## Documents
 
@@ -28,6 +30,7 @@ Radio: Ebyte E22-900M22S (SX1262, EU 868 MHz) single-channel LoRa receiver with 
 | [docs/07-parts-check.md](docs/07-parts-check.md) | Web check of the risky parts, LCSC numbers, risks |
 | [docs/08-fabrication.md](docs/08-fabrication.md) | JLCPCB order settings, files, checks |
 | [docs/09-shopping-list.md](docs/09-shopping-list.md) | Hand-soldered parts and other things to buy |
+| [docs/10-board-layout.md](docs/10-board-layout.md) | Board layout, capabilities, layout rules, bring-up notes |
 | [hardware/README.md](hardware/README.md) | How the schematic and board are generated |
 
 ## Schematic
@@ -40,6 +43,7 @@ PDF: [hardware/valve_controller_schematic.pdf](hardware/valve_controller_schemat
 | `aux_power` | AP63205 5 V buck, USB 5 V OR, AMS1117-3.3 LDO (22 µF tantalum output) |
 | `esp32` | ESP32-S3 module, BOOT and RESET, debug header |
 | `usb_c` | USB-C connector, CC resistors, ESD protection |
+| `lora` | E22-900M22S LoRa module, decoupling, u.FL antenna connector |
 | `valves` | 4 × AO3400A drivers with flyback diodes, screw terminals, bulk capacitor |
 | `rs485` | CA-IS3092W, TVS, termination and bias jumpers, terminal |
 | `leds` | 4 LEDs and resistors |
@@ -49,9 +53,8 @@ PDF: [hardware/valve_controller_schematic.pdf](hardware/valve_controller_schemat
 
 Open `hardware/valve_controller.kicad_pcb` (or the project `hardware/valve_controller.kicad_pro`) in KiCad 10.
 
-![3D view, top](docs/images/board-3d-top-routed.png)
+![3D view, top (Rev C)](docs/images/board-3d-top-revc.png)
 
-![3D view, bottom](docs/images/board-3d-bottom-routed.png)
 
 ## Fabrication specs
 
