@@ -1,21 +1,21 @@
 Designators,Qty,Value,Footprint,Suggested part (VERIFY),"JLC class guess (B basic, E extended, H through-hole)",LCSC part # (verify),Est. unit USD (rough),Est. line USD (rough),Note
-"C1,C3,C4,C10,C11,C16,C18,C21,C22",9,100n,C_0603_1608Metric,Samsung CL10B104KB8NNNC (X7R 50V),B,,0.004,0.04,
-C2,1,10u 25V,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.12,
-"C5,C6",2,22u 10V,C_1206_3216Metric,Samsung CL31A226MPHNNNE (X5R 10V); datasheet table uses 2 x 22 uF,E,,0.150,0.30,
-"C7,C9,C14,C17,C19,C20",6,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,,0.120,0.72,
+"C1,C3,C4,C10,C11,C16,C18,C21,C22",9,100n,C_0603_1608Metric,Samsung CL10B104KB8NNNC (X7R 50V),B,C14663,0.004,0.04,CC0603KRX7R9BB104 basic
+C2,1,10u 25V,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,C13585,0.120,0.12,CL31A106KBHNNNE 10uF 50V basic
+"C5,C6",2,22u 10V,C_1206_3216Metric,Samsung CL31A226MPHNNNE (X5R 10V); datasheet table uses 2 x 22 uF,E,C12891,0.150,0.30,CL31A226KAHNNNE 22uF 25V basic
+"C7,C9,C14,C17,C19,C20",6,10u,C_1206_3216Metric,Samsung CL31B106KAHNNNE (X7R 25V),B,C13585,0.120,0.72,CL31A106KBHNNNE 10uF 50V basic
 C8,1,22u 6.3V tantalum,CP_EIA-3216-18_Kemet-A,"22 uF 6.3 V tantalum, 3216 (A case), e.g. Kemet T491A226M006AT / AVX TAJA226K006R",E,C11366,0.200,0.20,AVX TAJA226K010RNJ 22uF 10V 3216-18 (10 V rating is fine for the 3.3 V rail)
-C12,1,1u,C_0603_1608Metric,Samsung CL10A105KA8NNNC (X5R 25V),B,,0.010,0.01,
-C13,1,4.7n,C_0603_1608Metric,Samsung CL10B472KB8NNNC,B,,0.005,0.01,
+C12,1,1u,C_0603_1608Metric,Samsung CL10A105KA8NNNC (X5R 25V),B,C15849,0.010,0.01,CL10A105KB8NNNC basic
+C13,1,4.7n,C_0603_1608Metric,Samsung CL10B472KB8NNNC,B,C53987,0.005,0.01,0603B472K500NT basic
 C15,1,100u 25V,CP_Elec_6.3x7.7,Nichicon UWT1E101MCL1GS or similar 6.3x7.7 SMD electrolytic 25V,E,C72478,0.250,0.25,ROQANG RVT1V101M0607 100uF 35V 6.3x7.7 (old C569574 out of stock; 25V option C72477)
 D1,1,BZT52C12 12V,D_SOD-123,"BZT52C12 12V zener, SOD-123",B,C19077410,0.030,0.03,"BZT52C12 12V zener, preferred part"
 D2,1,SMBJ15A,D_SMB,Littelfuse SMBJ15A,E,C188412,0.200,0.20,"SMBJ15A unidirectional SMB, stock 77k (old C2961881 out of stock)"
 "D3,D4",2,B5819W,D_SOD-123,"B5819W (1A 40V Schottky, SOD-123)",B,C64885,0.030,0.06,"B5819W Schottky, preferred part (no extended fee); basic alternative C8598"
-"D5,D6,D7,D8",4,SS34,D_SMA,"SS34 (3A 40V Schottky, SMA)",B,,0.060,0.24,
-D9,1,SM712,SOT-23,Semtech SM712.TCT,E,C5247923,0.300,0.30,LGE SM712; alternative C5364052
-D10,1,green,LED_0603_1608Metric,"generic 0603 LED, green",B,,0.030,0.03,
-D11,1,yellow,LED_0603_1608Metric,"generic 0603 LED, yellow",B,,0.030,0.03,
-D12,1,blue,LED_0603_1608Metric,"generic 0603 LED, blue",B,,0.040,0.04,
-D13,1,red,LED_0603_1608Metric,"generic 0603 LED, red",B,,0.030,0.03,
+"D5,D6,D7,D8",4,SS34,D_SMA,"SS34 (3A 40V Schottky, SMA)",B,C8678,0.060,0.24,SS34 SMA; check polarity in the JLC preview
+D9,1,SM712,SOT-23,Semtech SM712.TCT,E,C5364052,0.300,0.30,"JingYang SM712, EasyEDA footprint verified (pin 3 common, CPL rot 180); previous LGE C5247923 has no EasyEDA data"
+D10,1,green,LED_0603_1608Metric,"generic 0603 LED, green",B,C12624,0.030,0.03,"KT-0603G green; pin 1 = cathode like KiCad, CPL rot 0 (checked from the EasyEDA symbol). Replaced Everlight C72043: JLC shortfall 2026-11-03"
+D11,1,yellow,LED_0603_1608Metric,"generic 0603 LED, yellow",B,C2287,0.030,0.03,"KT-0603Y yellow; its pin 1 is the ANODE (opposite of KiCad), CPL rot stays 0. Replaced Everlight C72038: JLC shortfall"
+D12,1,blue,LED_0603_1608Metric,"generic 0603 LED, blue",B,C2288,0.040,0.04,"KT-0603B blue; pin 1 = cathode like KiCad, CPL rot 0. Replaced Everlight C72041: JLC shortfall"
+D13,1,red,LED_0603_1608Metric,"generic 0603 LED, red",B,C2286,0.030,0.03,"KT-0603R red; its pin 1 is the anode, opposite to the other LEDs, CPL rot stays 0 (verified from the EasyEDA symbol)"
 F1,1,PTC 3A 16V,Fuse_1812_4532Metric,"1812 PTC resettable fuse 3A hold, >=16V (e.g. Bourns MF-MSMF300 series; verify)",E,C6851473,0.300,0.30,"TECHFUSE mSMD300-16V, 3 A hold 5 A trip 16 V; alternatives C702820, C21261157"
 J1,1,J_12V IN,TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,"5.08 mm 2-pin screw terminal, horizontal (Phoenix MKDS 1,5/2-5.08 or equivalent)",H,C474952,0.450,0.45,"Cixi Kefa KF128-5.08-2P-AA, through-hole, JLCPCB solders it"
 J2,1,"J_DBG (GND, TX, RX, 3V3)",PinHeader_1x04_P2.54mm_Vertical,1x4 pin header 2.54 mm,H,C52016392,0.060,0.06,hanxia 1x4 pin header 2.54 mm
@@ -31,19 +31,20 @@ JP2,1,JP_BIAS_A,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper p
 JP3,1,JP_BIAS_B,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,"solder jumper (copper pads, no part)",-,,0.000,0.00,
 L1,1,4.7u Isat>=2A,L_Bourns-SRN4018,"FNR4018S4R7MT or similar 4 x 4 mm shielded 4.7 uH, Isat >= 2 A",E,C167806,0.250,0.25,"FNR4018S4R7MT 4x4 shielded, 1.8 A / 2.2 A Isat; enough for a rail under 1 A"
 Q1,1,AO3407A,SOT-23,"Alpha&Omega AO3407A (P-FET 30V, Vgs +-20V)",E,C347478,0.080,0.08,"UMW clone, extended; other AO3407A clones exist"
-"Q2,Q3,Q4,Q5",4,AO3400A,SOT-23,Alpha&Omega AO3400A,B,,0.040,0.16,
-"R1,R4,R5",3,10k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
-"R2,R10,R12,R14,R16",5,100k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
-R3,1,22k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
-"R6,R7",2,5.1k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
-R8,1,1M,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
-"R9,R11,R13,R15",4,100,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
-R17,1,120,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
-"R18,R19,R20,R21,R23",5,680,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.01,
-R22,1,200,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,,0.003,0.00,
+"Q2,Q3,Q4,Q5",4,AO3400A,SOT-23,Alpha&Omega AO3400A,B,C20917,0.040,0.16,AO3400A basic; CPL rot +180
+"R1,R4,R5",3,10k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C25804,0.003,0.01,0603WAF1002T5E basic
+"R2,R10,R12,R14,R16",5,100k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C25803,0.003,0.01,0603WAF1003T5E basic
+R3,1,22k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C31850,0.003,0.00,0603WAF2202T5E basic
+"R6,R7",2,5.1k,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C23186,0.003,0.01,0603WAF5101T5E basic
+R8,1,1M,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C22935,0.003,0.00,0603WAF1004T5E basic
+"R9,R11,R13,R15",4,100,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C22775,0.003,0.01,0603WAF1000T5E basic
+R17,1,120,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C22787,0.003,0.00,0603WAF1200T5E basic
+"R18,R19,R20,R21,R23",5,680,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C23228,0.003,0.01,0603WAF6800T5E basic
+R22,1,200,R_0603_1608Metric,"generic thick-film resistor 1%, 0603",B,C8218,0.003,0.00,0603WAF2000T5E basic
 SW1,1,RESET,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C221880,0.120,0.12,C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871
 SW2,1,BOOT,SW_SPST_PTS645Sx43SMTR92,C&K PTS645SK43SMTR92 LFS tactile switch,E,C221880,0.120,0.12,C&K PTS645SM43SMTR92 (1.6 N); the SK43 version is LCSC C221871
 "TP1,TP2,TP3,TP4",4,TP,TestPoint_Pad_D1.5mm,"test pad (copper only, no part)",-,,0.000,0.00,
+"TP5,TP6,TP7,TP8,TP9,TP10,TP11,TP12,TP13,TP14,TP15,TP16,TP17,TP18,TP19,TP20,TP21,TP22,TP23,TP24,TP25,TP26,TP27,TP28",24,TP,TestPoint_Pad_D1.0mm,"test pad (copper only, no part)",-,,0.000,0.00,
 U1,1,AP63205WU-7 (5V 2A buck),TSOT-23-6,Diodes AP63205WU-7,E,C2071056,0.450,0.45,
 U2,1,AMS1117-3.3,SOT-223-3_TabPin2,"AMS1117-3.3 (1A LDO, SOT-223; JLCPCB basic part)",B,C6186,0.050,0.05,"AMS1117-3.3; confirm the C number and stock in the JLCPCB search (alternatives C22459274, LD1117-3.3 C347229)"
 U3,1,ESP32-S3-WROOM-1-N8,ESP32-S3-WROOM-1,Espressif ESP32-S3-WROOM-1-N8,E,C2913198,4.200,4.20,

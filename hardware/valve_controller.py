@@ -376,6 +376,12 @@ section("test_points")
 for n in (V12, V5, V3, GND):
     tp = Part("Connector", "TestPoint", value="TP", footprint=fp("TestPoint:TestPoint_Pad_D1.5mm"))
     n += tp[1]
+# Rev C extra test points for bring-up (added 2026-11-03), 1.0 mm pads, placed on existing tracks by eco_testpoints.py
+for n in (VBUS, V5B, VIN_F, RP_GATE, VMON, EN_N, BOOT_N, RS_DE, RS_TX, RS_RX,
+          LORA["NSS"], LORA["SCK"], LORA["MOSI"], LORA["MISO"], LORA["NRST"], LORA["BUSY"], LORA["DIO1"], LORA["RXEN"],
+          VALVEN[0], VALVEN[1], VALVEN[2], VALVEN[3], GND, GND):
+    tp = Part("Connector", "TestPoint", value="TP", footprint=fp("TestPoint:TestPoint_Pad_D1.0mm"))
+    n += tp[1]
 
 
 # --------------------------------------------------------------------------------------

@@ -67,7 +67,7 @@ LCSC = {   # (value prefix, footprint fragment) -> (LCSC number, note)
  ("PTC 3A", "Fuse_1812"): ("C6851473", "TECHFUSE mSMD300-16V, 3 A hold 5 A trip 16 V; alternatives C702820, C21261157"),
  ("4.7u", "SRN4018"): ("C167806", "FNR4018S4R7MT 4x4 shielded, 1.8 A / 2.2 A Isat; enough for a rail under 1 A"),
  ("SMBJ15A", "D_SMB"): ("C188412", "SMBJ15A unidirectional SMB, stock 77k (old C2961881 out of stock)"),
- ("SM712", "SOT-23"): ("C5247923", "LGE SM712; alternative C5364052"),
+ ("SM712", "SOT-23"): ("C5364052", "JingYang SM712, EasyEDA footprint verified (pin 3 common, CPL rot 180); previous LGE C5247923 has no EasyEDA data"),
  ("100u 25V", "CP_Elec"): ("C72478", "ROQANG RVT1V101M0607 100uF 35V 6.3x7.7 (old C569574 out of stock; 25V option C72477)"),
  ("BZT52C12", "SOD-123"): ("C19077410", "BZT52C12 12V zener, preferred part"),
  ("B5819W", "SOD-123"): ("C64885", "B5819W Schottky, preferred part (no extended fee); basic alternative C8598"),
@@ -82,7 +82,31 @@ LCSC = {   # (value prefix, footprint fragment) -> (LCSC number, note)
  ("J_DBG", "PinHeader_1x04"): ("C52016392", "hanxia 1x4 pin header 2.54 mm"),
  ("J_USB", "USB_C"): ("C165948", "HRO TYPE-C-31-M-12; JLCPCB may list it under another number: check"),
 }
+LCSC_EXACT = {   # (value, footprint fragment) -> (LCSC, note); EasyEDA footprints checked 2026-11-03
+ ("10k", "R_0603"): ("C25804", "0603WAF1002T5E basic"), ("100k", "R_0603"): ("C25803", "0603WAF1003T5E basic"),
+ ("22k", "R_0603"): ("C31850", "0603WAF2202T5E basic"), ("5.1k", "R_0603"): ("C23186", "0603WAF5101T5E basic"),
+ ("1M", "R_0603"): ("C22935", "0603WAF1004T5E basic"), ("100", "R_0603"): ("C22775", "0603WAF1000T5E basic"),
+ ("120", "R_0603"): ("C22787", "0603WAF1200T5E basic"), ("680", "R_0603"): ("C23228", "0603WAF6800T5E basic"),
+ ("200", "R_0603"): ("C8218", "0603WAF2000T5E basic"),
+ ("100n", "C_0603"): ("C14663", "CC0603KRX7R9BB104 basic"), ("1u", "C_0603"): ("C15849", "CL10A105KB8NNNC basic"),
+ ("4.7n", "C_0603"): ("C53987", "0603B472K500NT basic"),
+ ("10u 25V", "C_1206"): ("C13585", "CL31A106KBHNNNE 10uF 50V basic"), ("10u", "C_1206"): ("C13585", "CL31A106KBHNNNE 10uF 50V basic"),
+ ("22u 10V", "C_1206"): ("C12891", "CL31A226KAHNNNE 22uF 25V basic"),
+ ("SS34", "D_SMA"): ("C8678", "SS34 SMA; check polarity in the JLC preview"),
+ ("AO3400A", "SOT-23"): ("C20917", "AO3400A basic; CPL rot +180"),
+ ("green", "LED_0603"): ("C12624", "KT-0603G green; pin 1 = cathode like KiCad, CPL rot 0 (checked from the EasyEDA symbol). Replaced Everlight C72043: JLC shortfall 2026-11-03"),
+ ("yellow", "LED_0603"): ("C2287", "KT-0603Y yellow; its pin 1 is the ANODE (opposite of KiCad), CPL rot stays 0. Replaced Everlight C72038: JLC shortfall"),
+ ("blue", "LED_0603"): ("C2288", "KT-0603B blue; pin 1 = cathode like KiCad, CPL rot 0. Replaced Everlight C72041: JLC shortfall"),
+ ("red", "LED_0603"): ("C2286", "KT-0603R red; its pin 1 is the anode, opposite to the other LEDs, CPL rot stays 0 (verified from the EasyEDA symbol)"),
+}
+
+
 def lcsc(v, f):
+    if (v, f.split(":")[-1][:0] or "") in ():
+        pass
+    for (kv, kf), val in LCSC_EXACT.items():
+        if v == kv and kf in f:
+            return val
     for (kv, kf), val in LCSC.items():
         if v.startswith(kv) and kf in f:
             return val

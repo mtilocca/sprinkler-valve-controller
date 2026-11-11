@@ -51,10 +51,41 @@ PDF: [hardware/valve_controller_schematic.pdf](hardware/valve_controller_schemat
 
 ## Board
 
-Open `hardware/valve_controller.kicad_pcb` (or the project `hardware/valve_controller.kicad_pro`) in KiCad 10.
+Open `hardware/valve_controller.kicad_pcb` (or the project `hardware/valve_controller.kicad_pro`) in KiCad 10. Layout notes: [docs/10-board-layout.md](docs/10-board-layout.md).
 
-![3D view, top (Rev C)](docs/images/board-3d-top-revc.png)
+### 3D views
 
+![3D view, isometric](docs/images/board-3d-iso-revc.png)
+
+![3D view, top](docs/images/board-3d-top-revc.png)
+
+![3D view, bottom](docs/images/board-3d-bottom-revc.png)
+
+### Layout
+
+Top side with silkscreen:
+
+![Board layout, top](docs/images/board-layout-top-revc.png)
+
+Both copper layers (red = top, blue = bottom, GND pours on both):
+
+![Copper layers](docs/images/board-copper-revc.png)
+
+### Schematic sheets
+
+The schematic is generated label-only (nets are connected by name, see `hardware/README.md`). Full PDF: [hardware/valve_controller_schematic.pdf](hardware/valve_controller_schematic.pdf).
+
+| Sheet | Image |
+|-------|-------|
+| `power_in` | ![power_in](docs/images/schematic-power_in.png) |
+| `aux_power` | ![aux_power](docs/images/schematic-aux_power.png) |
+| `esp32` | ![esp32](docs/images/schematic-esp32.png) |
+| `usb_c` | ![usb_c](docs/images/schematic-usb_c.png) |
+| `valves` | ![valves](docs/images/schematic-valves.png) |
+| `rs485` | ![rs485](docs/images/schematic-rs485.png) |
+| `lora` | ![lora](docs/images/schematic-lora.png) |
+| `leds` | ![leds](docs/images/schematic-leds.png) |
+| `test_points` | ![test_points](docs/images/schematic-test_points.png) |
 
 ## Fabrication specs
 

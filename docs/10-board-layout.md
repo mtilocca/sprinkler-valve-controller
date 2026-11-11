@@ -1,6 +1,6 @@
 # 10. Board layout and capabilities (Rev C)
 
-![3D view of the Rev C board, top](images/board-3d-top-revc.png)
+![3D view of the Rev C board, top](images/board-3d-iso-revc.png)
 
 100 × 60 mm, 2 layers, four M3 holes. The silkscreen icons at the bottom right (WiFi, BT, LoRa, Modbus) show what the board can do at a glance. Under them are the ratings: `12V DC IN 15V MAX`, `VALVES 1A MAX EACH`, `RS485 ISOLATED`. The "Villa La Gatta Sensors & Control" text is on the bottom side.
 

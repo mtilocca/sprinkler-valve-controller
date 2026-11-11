@@ -7,7 +7,11 @@ import csv, os, shutil, subprocess, sys, zipfile
 rev = sys.argv[1]
 KCLI = ["flatpak", "run", "--command=kicad-cli", "org.kicad.KiCad"]
 PCB = "valve_controller.kicad_pcb"
-CPL_FIX = {"U3": (-4.0, 0), "U2": (0.0, 180), "U5": (0.0, 270)}   # ref: (dy, drot)
+CPL_FIX = {"U3": (0.0, -4.0, 0), "U2": (0.0, 0.0, 180), "U5": (0.0, 0.0, 270),     # ref: (dx, dy, drot); first three from the JLC 3D preview
+           # found 2026-11-03 by matching each LCSC part's EasyEDA footprint to the board pads (method reproduces U2/U3/U5)
+           "Q1": (0.0, 0.0, 180), "U1": (0.0, 0.0, 270), "U4": (0.0, 0.0, 270), "J9": (0.76, 0.0, 270), "J3": (0.0, -1.53, 0),
+           # SOT-23 parts: AO3400A C20917 and SM712 C5364052 verified from EasyEDA data (no longer assumed)
+           "Q2": (0.0, 0.0, 180), "Q3": (0.0, 0.0, 180), "Q4": (0.0, 0.0, 180), "Q5": (0.0, 0.0, 180), "D9": (0.0, 0.0, 180)}   # D13 (KT-0603R C2286) must stay at 0: its EasyEDA pin 1 is the ANODE, opposite of the other LEDs; checked 2026-11-03
 
 # ---- Gerbers + drill
 gd = "fab/gerber"
@@ -35,7 +39,7 @@ with open("fab/CPL_valve_controller.csv", "w", newline="") as f:
     w = csv.writer(f)
     w.writerow(["Designator", "Val", "Package", "Mid X", "Mid Y", "Rotation", "Layer"])
     for ref, val, pkg, x, y, rot, side in rows:
-        dy, dr = CPL_FIX.get(ref, (0.0, 0))
-        w.writerow([ref, val, pkg, f"{float(x):.6f}mm", f"{float(y) + dy:.6f}mm", f"{(float(rot) + dr) % 360:.6f}", "Top" if side == "top" else "Bottom"])
+        dx, dy, dr = CPL_FIX.get(ref, (0.0, 0.0, 0))
+        w.writerow([ref, val, pkg, f"{float(x) + dx:.6f}mm", f"{float(y) + dy:.6f}mm", f"{(float(rot) + dr) % 360:.6f}", "Top" if side == "top" else "Bottom"])
 os.remove("_pos.csv")
 print("CPL rows:", len(rows))
